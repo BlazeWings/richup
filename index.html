@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>大富翁英语学习游戏</title>
+    <title>英语学习大富翁</title>
     <style>
         * {
             margin: 0;
@@ -12,479 +12,388 @@
         }
 
         body {
-            font-family: 'Microsoft YaHei', sans-serif;
+            font-family: 'Microsoft YaHei', Arial, sans-serif;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            overflow: hidden;
-            user-select: none;
-        }
-
-        #game-container {
-            width: 100vw;
-            height: 100vh;
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
+            overflow: hidden;
         }
 
-        #game-board {
-            width: 660px;
-            height: 660px;
-            background: #f0f0f0;
+        .game-container {
+            width: 90vw;
+            height: 90vh;
+            max-width: 1200px;
+            max-height: 800px;
+            background: #fff;
             border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
             position: relative;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
         }
 
-        /* 中央控制区域 */
+        .game-title {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .game-board {
+            flex: 1;
+            position: relative;
+            background: #ecf0f1;
+        }
+
+        .board-grid {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(11, 1fr);
+            grid-template-rows: repeat(11, 1fr);
+            gap: 1px;
+            padding: 10px;
+        }
+
+        .grid-cell {
+            background: white;
+            border: 1px solid #bdc3c7;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: 10px;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grid-cell:hover {
+            transform: scale(1.05);
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .grid-cell.passed {
+            background: #3498db;
+            color: white;
+        }
+
+        .cell-type {
+            font-size: 8px;
+            font-weight: bold;
+            margin-bottom: 2px;
+        }
+
+        .cell-content {
+            font-size: 7px;
+            line-height: 1.2;
+            max-height: 40px;
+            overflow: hidden;
+        }
+
         .center-area {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 300px;
-            height: 300px;
-            background: rgba(255,255,255,0.95);
+            width: 45%;
+            height: 45%;
+            background: #34495e;
             border-radius: 15px;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            z-index: 10;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            gap: 20px;
+            box-shadow: inset 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .player-info {
-            width: 120px;
-            height: 80px;
+        .player-panel {
             background: white;
+            padding: 15px;
             border-radius: 10px;
-            margin: 10px;
+            min-width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .player-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 10px;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            border: 3px solid transparent;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
+            font-size: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
-        .player-info.active {
-            border-color: #ffd700;
-            animation: breathing 2s infinite;
-        }
+        .player1-avatar { background: #e74c3c; }
+        .player2-avatar { background: #3498db; }
 
-        @keyframes breathing {
-            0%, 100% { box-shadow: 0 0 5px #ffd700; }
-            50% { box-shadow: 0 0 20px #ffd700; }
-        }
-
-        .player-name {
-            font-weight: bold;
-            font-size: 14px;
+        .player-info h3 {
             margin-bottom: 5px;
+            color: #2c3e50;
         }
 
-        .player-mushrooms {
-            font-size: 16px;
-            color: #e74c3c;
+        .mushroom-count {
+            font-size: 20px;
             font-weight: bold;
+            color: #27ae60;
         }
 
-        .mushroom-icon {
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            background: #e74c3c;
-            border-radius: 50%;
-            margin-left: 5px;
-            vertical-align: middle;
+        .dice-container {
+            text-align: center;
         }
 
-        #dice-button {
+        .dice {
             width: 80px;
             height: 80px;
-            background: #3498db;
+            background: white;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 36px;
             font-weight: bold;
-            color: white;
             cursor: pointer;
-            transition: all 0.3s;
-            margin: 20px 0;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
         }
 
-        #dice-button:hover:not(:disabled) {
-            transform: scale(1.1);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        .dice:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
-        #dice-button:active:not(:disabled) {
-            transform: scale(0.9);
+        .dice.rolling {
+            animation: roll 0.5s infinite;
         }
 
-        #dice-button:disabled {
-            background: #95a5a6;
-            cursor: not-allowed;
-            opacity: 0.6;
+        @keyframes roll {
+            0% { transform: rotate(0deg); }
+            25% { transform: rotate(90deg); }
+            50% { transform: rotate(180deg); }
+            75% { transform: rotate(270deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        .dice-rolling {
-            animation: spin 0.5s infinite linear;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-
-        /* 格子样式 */
-        .grid-cell {
-            position: absolute;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 10px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            border: 2px solid white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .grid-cell.highlight {
-            animation: glow 0.5s;
-        }
-
-        .grid-cell.current {
-            box-shadow: 0 0 20px #f39c12;
-            transform: scale(1.2);
-            z-index: 5;
-        }
-
-        @keyframes glow {
-            0% { box-shadow: 0 0 5px #f39c12; }
-            100% { box-shadow: 0 0 30px #f39c12; }
-        }
-
-        .grid-cell.start {
-            background: #e74c3c;
+        .current-player {
+            font-size: 14px;
             color: white;
+            margin-top: 10px;
         }
 
-        .grid-cell.library {
-            background: #3498db;
-            color: white;
-        }
-
-        .grid-cell.foreign-lang {
-            background: #9b59b6;
-            color: white;
-        }
-
-        .grid-cell.exam-hall {
-            background: #e67e22;
-            color: white;
-        }
-
-        .grid-cell.test-site {
-            background: #2ecc71;
-            color: white;
-        }
-
-        .grid-cell.opportunity {
-            background: #f1c40f;
-            color: #333;
-        }
-
-        /* 房产标识 */
-        .property-marker {
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 15px;
-            height: 15px;
-            border-radius: 3px;
-            opacity: 0.7;
-            z-index: 3;
-        }
-
-        .property-marker.level-1 {
-            width: 15px;
-            height: 15px;
-            opacity: 0.7;
-        }
-
-        .property-marker.level-2 {
-            width: 25px;
-            height: 25px;
-            opacity: 0.9;
-            box-shadow: 0 0 10px currentColor;
-            animation: property-glow 2s infinite;
-        }
-
-        @keyframes property-glow {
-            0%, 100% { box-shadow: 0 0 5px currentColor; }
-            50% { box-shadow: 0 0 15px currentColor; }
-        }
-
-        /* 玩家幽灵 */
-        .player-ghost {
-            position: absolute;
-            width: 40px;
-            height: 30px;
-            border-radius: 50% 50% 0 0;
-            z-index: 4;
-            transition: all 0.3s;
-            pointer-events: none;
-        }
-
-        .player-ghost::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 20px;
-            background: inherit;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float 2s infinite ease-in-out;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(-5px); }
-        }
-
-        .ghost-blue {
-            background: rgba(52, 152, 219, 0.8);
-        }
-
-        .ghost-orange {
-            background: rgba(230, 126, 34, 0.8);
-        }
-
-        /* 弹窗样式 */
-        .modal-overlay {
+        .modal {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             background: rgba(0,0,0,0.7);
-            display: flex;
-            align-items: center;
+            z-index: 1000;
             justify-content: center;
-            z-index: 100;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
         }
 
         .modal-content {
             background: white;
-            border-radius: 20px;
             padding: 30px;
+            border-radius: 15px;
             max-width: 600px;
             max-height: 80vh;
             overflow-y: auto;
             position: relative;
-            animation: slideIn 0.3s;
+            animation: slideIn 0.3s ease;
         }
 
         @keyframes slideIn {
-            from { transform: scale(0.8); opacity: 0; }
-            to { transform: scale(1); opacity: 1; }
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
-        .modal-header {
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
             font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            text-align: center;
-            color: #2c3e50;
-        }
-
-        .modal-body {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #34495e;
-        }
-
-        .modal-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
-        }
-
-        .modal-button {
-            padding: 12px 30px;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
+            color: #95a5a6;
         }
 
-        .modal-button.primary {
-            background: #3498db;
-            color: white;
-        }
-
-        .modal-button.primary:hover {
-            background: #2980b9;
-            transform: translateY(-2px);
-        }
-
-        .modal-button.secondary {
-            background: #95a5a6;
-            color: white;
-        }
-
-        .modal-button.secondary:hover {
-            background: #7f8c8d;
-        }
-
-        .question-content {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 20px;
+        .modal-close:hover {
+            color: #e74c3c;
         }
 
         .question-title {
             font-size: 18px;
             font-weight: bold;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            color: #2c3e50;
         }
 
-        .question-options {
+        .question-content {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .options-container {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
 
-        .question-option {
-            padding: 12px 15px;
-            background: white;
-            border: 2px solid #e0e0e0;
+        .option-btn {
+            padding: 12px;
+            border: 2px solid #ecf0f1;
             border-radius: 8px;
+            background: white;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.3s ease;
+            text-align: left;
         }
 
-        .question-option:hover {
+        .option-btn:hover {
             border-color: #3498db;
             background: #ecf0f1;
         }
 
-        .question-option.selected {
-            border-color: #3498db;
+        .option-btn.correct {
+            border-color: #27ae60;
+            background: #d5f4e6;
+        }
+
+        .option-btn.wrong {
+            border-color: #e74c3c;
+            background: #fadbd8;
+        }
+
+        .timer {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
             background: #3498db;
             color: white;
         }
 
-        .countdown-timer {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            font-weight: bold;
-            color: #e74c3c;
+        .btn-success {
+            background: #27ae60;
+            color: white;
         }
 
-        .countdown-timer.warning {
-            animation: blink 1s infinite;
+        .btn-danger {
+            background: #e74c3c;
+            color: white;
         }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
 
-        /* 输入框样式 */
-        .answer-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0e0;
-            border-radius: 10px;
-            font-size: 16px;
+        .property-info {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
             margin-bottom: 15px;
-            transition: border-color 0.3s;
         }
 
-        .answer-input:focus {
-            outline: none;
-            border-color: #3498db;
+        .property-owner {
+            font-weight: bold;
+            color: #2c3e50;
         }
 
-        /* 机会卡样式 */
+        .player-token {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            transition: all 0.5s ease;
+            z-index: 5;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+
+        .token-player1 {
+            background: #e74c3c;
+            top: 5px;
+            left: 5px;
+        }
+
+        .token-player2 {
+            background: #3498db;
+            bottom: 5px;
+            right: 5px;
+        }
+
         .opportunity-card {
             background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
             color: white;
-            padding: 30px;
-            border-radius: 20px;
+            padding: 20px;
+            border-radius: 10px;
             text-align: center;
-            font-size: 18px;
+        }
+
+        .opportunity-title {
+            font-size: 20px;
             font-weight: bold;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            margin-bottom: 10px;
         }
 
-        /* 反馈弹窗 */
-        .feedback-bubble {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
-            padding: 20px 40px;
-            border-radius: 30px;
-            font-size: 18px;
-            font-weight: bold;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            z-index: 200;
-            animation: feedbackPop 0.5s;
+        .luck-card {
+            background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
         }
 
-        @keyframes feedbackPop {
-            0% { transform: translate(-50%, -50%) scale(0); }
-            80% { transform: translate(-50%, -50%) scale(1.1); }
-            100% { transform: translate(-50%, -50%) scale(1); }
-        }
-
-        /* 胜利画面 */
-        .victory-screen {
+        .game-over {
             text-align: center;
             padding: 40px;
         }
 
-        .victory-ghost {
-            width: 100px;
-            height: 80px;
-            border-radius: 50% 50% 0 0;
-            margin: 0 auto 20px;
-            animation: victoryFloat 2s infinite;
-        }
-
-        @keyframes victoryFloat {
-            0%, 100% { transform: translateY(0) scale(1); }
-            50% { transform: translateY(-20px) scale(1.1); }
-        }
-
-        .victory-title {
-            font-size: 36px;
-            color: #f39c12;
+        .winner-announcement {
+            font-size: 32px;
+            font-weight: bold;
             margin-bottom: 20px;
+            color: #27ae60;
         }
 
         .final-stats {
@@ -494,856 +403,1098 @@
             margin: 20px 0;
         }
 
-        .property-list {
-            max-height: 200px;
-            overflow-y: auto;
-            background: white;
-            padding: 15px;
+        .restart-btn {
+            background: #9b59b6;
+            color: white;
+            padding: 15px 30px;
+            border: none;
             border-radius: 10px;
-            margin: 20px 0;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .restart-btn:hover {
+            background: #8e44ad;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: #ecf0f1;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: #3498db;
+            transition: width 0.3s ease;
+        }
+
+        .house-icon {
+            position: absolute;
+            top: 2px;
+            right: 2px;
+            font-size: 12px;
+        }
+
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .loading-content {
+            text-align: center;
+            color: white;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #ecf0f1;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .skip-btn {
+            background: #95a5a6;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .skip-btn:hover {
+            background: #7f8c8d;
         }
     </style>
 </head>
 <body>
-    <div id="game-container">
-        <div id="game-board">
-            <!-- 格子将通过JS动态生成 -->
+    <div class="loading" id="loading">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h2>正在加载游戏资源...</h2>
+            <p id="loading-text">正在加载题库...</p>
+        </div>
+    </div>
+
+    <div class="game-container" id="gameContainer" style="display: none;">
+        <div class="game-title">英语学习大富翁 🎮</div>
+        
+        <div class="game-board">
+            <div class="board-grid" id="boardGrid"></div>
             
-            <!-- 中央控制区域 -->
             <div class="center-area">
-                <div class="player-info active" id="player1-info">
-                    <div class="player-name" style="color: #3498db;">玩家 1</div>
-                    <div class="player-mushrooms">
-                        <span id="player1-mushrooms">1500</span>
-                        <span class="mushroom-icon"></span>
+                <div class="player-panel">
+                    <div class="player-avatar player1-avatar">👻</div>
+                    <div class="player-info">
+                        <h3>玩家 1</h3>
+                        <div class="mushroom-count">🍄 <span id="player1Mushrooms">1500</span></div>
                     </div>
                 </div>
                 
-                <button id="dice-button" disabled>?</button>
-                
-                <div class="player-info" id="player2-info">
-                    <div class="player-name" style="color: #e67e22;">玩家 2</div>
-                    <div class="player-mushrooms">
-                        <span id="player2-mushrooms">1500</span>
-                        <span class="mushroom-icon"></span>
+                <div class="player-panel">
+                    <div class="player-avatar player2-avatar">👻</div>
+                    <div class="player-info">
+                        <h3>玩家 2</h3>
+                        <div class="mushroom-count">🍄 <span id="player2Mushrooms">1500</span></div>
                     </div>
+                </div>
+                
+                <div class="dice-container">
+                    <div class="dice" id="dice">🎲</div>
+                    <div class="current-player" id="currentPlayer">当前回合: 玩家 1</div>
                 </div>
             </div>
-            
-            <!-- 玩家幽灵 -->
-            <div class="player-ghost ghost-blue" id="ghost-1"></div>
-            <div class="player-ghost ghost-orange" id="ghost-2"></div>
+        </div>
+    </div>
+
+    <!-- 模态框 -->
+    <div class="modal" id="gameModal">
+        <div class="modal-content">
+            <span class="modal-close" id="modalClose">&times;</span>
+            <div id="modalBody"></div>
         </div>
     </div>
 
     <script>
-        // ==================== 游戏核心数据 ====================
-        class Game {
-            constructor() {
-                this.currentPlayer = 1;
-                this.players = {
-                    1: { position: 0, mushrooms: 1500, properties: [], color: '#3498db' },
-                    2: { position: 0, mushrooms: 1500, properties: [], color: '#e67e22' }
-                };
-                this.gridStatus = Array(40).fill(null).map(() => ({
-                    owner: null,
-                    level: 0,
-                    type: this.getGridType(0),
-                    usedQuestionIndex: null
-                }));
-                this.diceEnabled = false;
-                this.skipNextTurn = { 1: false, 2: false };
-                this.extraRolls = { 1: 0, 2: 0 };
-                this.gameOver = false;
+        // 游戏状态
+        const gameState = {
+            currentPlayer: 1,
+            players: [
+                { id: 1, mushrooms: 1500, position: 0, properties: [], color: '#e74c3c' },
+                { id: 2, mushrooms: 1500, position: 0, properties: [], color: '#3498db' }
+            ],
+            board: [],
+            properties: new Map(),
+            usedQuestions: new Set(),
+            isDiceRolling: false,
+            timer: null,
+            timeLeft: 0,
+            currentQuestion: null,
+            isAnswering: false
+        };
+
+        // 网格配置
+        const GRID_SIZE = 11;
+        const TOTAL_CELLS = 40;
+        
+        // 特殊格子位置
+        const SPECIAL_CELLS = {
+            START: 0,
+            LIBRARY: 10,
+            FOREIGN_COLLEGE: 20,
+            CET_EXAM: 30
+        };
+
+        // 题库数据
+        const questionBanks = {
+            translation: [],
+            vocabulary: [],
+            reading: [],
+            wordSelection: [],
+            opportunity: []
+        };
+
+        // 加载JSON数据
+        async function loadGameData() {
+            try {
+                updateLoadingText('正在加载翻译题库...');
+                const translationRes = await fetch('翻译格.json');
+                const translationData = await translationRes.json();
+                questionBanks.translation = translationData.translation_grid;
                 
-                // 题库数据
-                this.questionBank = {
-                    translation: [],
-                    vocabulary: [],
-                    reading: [],
-                    wordSelection: []
-                };
-                this.usedQuestions = {
-                    translation: new Set(),
-                    vocabulary: new Set(),
-                    reading: new Set(),
-                    wordSelection: new Set()
-                };
-                this.opportunityCards = [];
-                this.luckCards = [];
+                updateLoadingText('正在加载词汇题库...');
+                const vocabularyRes = await fetch('单词格.json');
+                const vocabularyData = await vocabularyRes.json();
+                questionBanks.vocabulary = vocabularyData.vocabulary_grid;
                 
-                this.init();
-            }
-
-            async init() {
-                await this.loadQuestionBanks();
-                this.renderBoard();
-                this.renderPlayers();
-                this.diceEnabled = true;
-                this.updateUI();
-            }
-
-            getGridType(index) {
-                const specialGrids = {
-                    0: 'start',
-                    5: 'library', 15: 'library', 25: 'library', 35: 'library',
-                    10: 'foreign-lang', 20: 'foreign-lang', 30: 'foreign-lang',
-                    12: 'exam-hall'
-                };
-                if (specialGrids[index]) return specialGrids[index];
-                if (index % 7 === 3) return 'opportunity';
-                return ['translation', 'vocabulary', 'reading', 'word-selection'][index % 4];
-            }
-
-            async loadQuestionBanks() {
-                // 模拟加载题库数据（实际应从JSON文件加载）
-                // 由于无法直接加载外部文件，这里使用示例数据
-                this.questionBank.translation = [
-                    {
-                        chinese_original: "狮舞（Lion Dance）是中国最广为流传的民间舞蹈之一",
-                        option_a: "Lion Dance is one of the most widespread folk dances in China.",
-                        option_b: "The Lion Dance is one of the most popular folk dance in China.",
-                        option_c: "Lion Dancing is one of the most widely spread folk dances of China.",
-                        option_d: "The Dance of Lion is one of China's most widespread folk dances.",
-                        answer: "A",
-                        analysis: "B 项 \"dance\" 应为复数 \"dances\"。"
-                    }
+                updateLoadingText('正在加载阅读题库...');
+                const readingRes = await fetch('阅读格.json');
+                const readingData = await readingRes.json();
+                questionBanks.reading = readingData.reading_comprehension_grid;
+                
+                updateLoadingText('正在加载选词填空题库...');
+                const wordSelectionRes = await fetch('选词格.json');
+                const wordSelectionData = await wordSelectionRes.json();
+                questionBanks.wordSelection = wordSelectionData.word_selection_grid;
+                
+                updateLoadingText('正在加载机会卡...');
+                const opportunityRes = await fetch('机会卡.json');
+                const opportunityData = await opportunityRes.json();
+                questionBanks.opportunity = [
+                    ...opportunityData.opportunity_cards.quiz_category,
+                    ...opportunityData.opportunity_cards.luck_category.map((card, index) => ({
+                        id: 100 + index,
+                        type: 'luck',
+                        ...card
+                    }))
                 ];
                 
-                this.questionBank.vocabulary = [
-                    {
-                        word: "bargain",
-                        option_a: "n. 交易；便宜货；v. 讨价还价；谈判",
-                        option_b: "n. 酒吧；酒馆；v. 禁止；阻拦",
-                        option_c: "n. 障碍；阻碍；v. 妨碍；阻碍",
-                        answer: "A"
-                    }
-                ];
-
-                this.questionBank.reading = [
-                    {
-                        passage: "New research suggests that pandas may be at risk of dying out because they are too comfortable.",
-                        question: "What do we learn from new research about pandas?",
-                        options: {
-                            "A": "They are losing habitat due to the building of roads and houses.",
-                            "B": "They have stopped seeking new mates for reproduction.",
-                            "C": "They may not adapt to the fragmentation of their habitat.",
-                            "D": "They may cease to exist as a result of enjoying too good a life."
-                        },
-                        answer: "D"
-                    }
-                ];
-
-                this.questionBank.wordSelection = [
-                    {
-                        sentence: "It's well known that physical exercise is beneficial not just to physical health but also to mental health.",
-                        options: {
-                            "A": "detailed / required",
-                            "B": "required / partly",
-                            "C": "partly / distinction",
-                            "D": "distinction / vigorous"
-                        },
-                        answer: "A"
-                    }
-                ];
-
-                // 机会卡
-                this.opportunityCards = [
-                    { id: 1, question: "看到道路标识上写着'DETOUR'是什么意思？", answer: "绕路/改道" },
-                    { id: 19, question: "What comes once in a year, twice in a week, but never in a day?", answer: "The letter \"E\"" }
-                ];
-
-                this.luckCards = [
-                    { content: "Won the first prize and received 300 mushrooms.", change: 300 },
-                    { content: "Caught cheating and was fined 100 mushrooms.", change: -100 }
-                ];
-            }
-
-            renderBoard() {
-                const board = document.getElementById('game-board');
-                const centerX = 330, centerY = 330;
-                const radius = 250;
+                updateLoadingText('正在初始化棋盘...');
+                initializeBoard();
                 
-                for (let i = 0; i < 40; i++) {
-                    const angle = (i * 9) - 90; // 每个格子9度，从顶部开始
-                    const radian = (angle * Math.PI) / 180;
-                    const x = centerX + radius * Math.cos(radian) - 28;
-                    const y = centerY + radius * Math.sin(radian) - 28;
-                    
-                    const cell = document.createElement('div');
-                    cell.className = `grid-cell ${this.gridStatus[i].type}`;
-                    cell.id = `grid-${i}`;
-                    cell.style.left = `${x}px`;
-                    cell.style.top = `${y}px`;
-                    cell.textContent = i;
-                    
-                    board.appendChild(cell);
-                }
-            }
-
-            renderPlayers() {
-                this.updatePlayerPosition(1);
-                this.updatePlayerPosition(2);
-            }
-
-            updatePlayerPosition(playerId) {
-                const player = this.players[playerId];
-                const cell = document.getElementById(`grid-${player.position}`);
-                const rect = cell.getBoundingClientRect();
-                const boardRect = document.getElementById('game-board').getBoundingClientRect();
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('gameContainer').style.display = 'flex';
                 
-                const ghost = document.getElementById(`ghost-${playerId}`);
-                const offset = playerId === 1 ? -20 : 20;
-                ghost.style.left = `${rect.left - boardRect.left + offset}px`;
-                ghost.style.top = `${rect.top - boardRect.top - 40}px`;
-            }
-
-            async rollDice() {
-                if (!this.diceEnabled || this.gameOver) return;
-                
-                this.diceEnabled = false;
-                const diceButton = document.getElementById('dice-button');
-                diceButton.classList.add('dice-rolling');
-                diceButton.disabled = true;
-                
-                // 骰子滚动动画
-                let rollCount = 0;
-                const rollInterval = setInterval(() => {
-                    diceButton.textContent = Math.floor(Math.random() * 6) + 1;
-                    rollCount++;
-                    if (rollCount > 10) {
-                        clearInterval(rollInterval);
-                        const finalValue = Math.floor(Math.random() * 6) + 1;
-                        diceButton.textContent = finalValue;
-                        diceButton.classList.remove('dice-rolling');
-                        
-                        setTimeout(() => this.movePlayer(finalValue), 500);
-                    }
-                }, 100);
-            }
-
-            async movePlayer(steps) {
-                const player = this.players[this.currentPlayer];
-                
-                // 移动动画
-                for (let i = 0; i < steps; i++) {
-                    player.position = (player.position + 1) % 40;
-                    this.updatePlayerPosition(this.currentPlayer);
-                    
-                    // 经过起点格奖励
-                    if (player.position === 0) {
-                        player.mushrooms += 288;
-                        this.showFeedback('经过起点！+288 蘑菇', 'success');
-                    }
-                    
-                    await this.sleep(300);
-                    
-                    // 高亮经过的格子
-                    const cell = document.getElementById(`grid-${player.position}`);
-                    cell.classList.add('highlight');
-                    setTimeout(() => cell.classList.remove('highlight'), 500);
-                }
-                
-                // 处理当前格子事件
-                await this.handleGridEvent(player.position);
-            }
-
-            async handleGridEvent(position) {
-                const grid = this.gridStatus[position];
-                const type = grid.type;
-                
-                switch (type) {
-                    case 'start':
-                        await this.handleStartGrid();
-                        break;
-                    case 'library':
-                        await this.handleLibraryGrid();
-                        break;
-                    case 'foreign-lang':
-                        await this.handleForeignLangGrid();
-                        break;
-                    case 'exam-hall':
-                        await this.handleExamHallGrid();
-                        break;
-                    case 'opportunity':
-                        await this.handleOpportunityGrid();
-                        break;
-                    default:
-                        await this.handleTestSiteGrid(position);
-                        break;
-                }
-                
-                this.updateUI();
-                this.endTurn();
-            }
-
-            async handleStartGrid() {
-                // 起点已在移动过程中处理
-                await this.sleep(500);
-            }
-
-            async handleLibraryGrid() {
-                this.showFeedback('进入图书馆！跳过下一轮，对手连投两次', 'info');
-                this.skipNextTurn[this.currentPlayer] = true;
-                const opponent = this.currentPlayer === 1 ? 2 : 1;
-                this.extraRolls[opponent] = 2;
-            }
-
-            async handleForeignLangGrid() {
-                this.showFeedback('被咖啡厅香味吸引！额外投骰判定...', 'info');
-                await this.sleep(1000);
-                
-                const extraDice = Math.floor(Math.random() * 6) + 1;
-                if (extraDice <= 4) {
-                    this.showFeedback('去买杯咖啡吧！跳过下一轮', 'warning');
-                    this.skipNextTurn[this.currentPlayer] = true;
-                } else {
-                    this.showFeedback('生活费不够，下次再说吧', 'info');
-                }
-            }
-
-            async handleExamHallGrid() {
-                this.showModal('四六级考场', '所有玩家同时答题！');
-                await this.sleep(1000);
-                
-                // 从阅读题库随机抽取题目
-                const question = this.getRandomQuestion('reading');
-                const result = await this.showReadingQuestion(question, 120);
-                
-                if (result.correct) {
-                    this.players[this.currentPlayer].mushrooms += 100;
-                    this.showFeedback('答对了！+100 蘑菇', 'success');
-                } else {
-                    this.players[this.currentPlayer].mushrooms -= 100;
-                    this.showFeedback('答错了！-100 蘑菇', 'error');
-                }
-            }
-
-            async handleOpportunityGrid() {
-                const isKnowledge = Math.random() > 0.5;
-                
-                if (isKnowledge) {
-                    const card = this.opportunityCards[Math.floor(Math.random() * this.opportunityCards.length)];
-                    const result = await this.showOpportunityCard(card);
-                    if (result.correct) {
-                        this.players[this.currentPlayer].mushrooms += 100;
-                        this.showFeedback('答对了！+100 蘑菇', 'success');
-                    }
-                } else {
-                    const card = this.luckCards[Math.floor(Math.random() * this.luckCards.length)];
-                    this.players[this.currentPlayer].mushrooms += card.change;
-                    const msg = card.change > 0 ? `+${card.change} 蘑菇` : `${card.change} 蘑菇`;
-                    this.showFeedback(msg, card.change > 0 ? 'success' : 'error');
-                }
-            }
-
-            async handleTestSiteGrid(position) {
-                const grid = this.gridStatus[position];
-                
-                if (!grid.owner) {
-                    // 空地：购买逻辑
-                    const price = 200; // 基础价格
-                    const decision = await this.showPurchaseDialog(price);
-                    
-                    if (decision === 'buy') {
-                        await this.handlePurchase(position, price);
-                    }
-                } else if (grid.owner === this.currentPlayer) {
-                    // 自己的地：升级逻辑
-                    if (grid.level === 1) {
-                        const decision = await this.showUpgradeDialog(200);
-                        if (decision === 'upgrade') {
-                            await this.handleUpgrade(position);
-                        }
-                    } else {
-                        this.showFeedback('已经升级到最高级了！', 'info');
-                    }
-                } else {
-                    // 对手的地：过路费逻辑
-                    const toll = grid.level === 2 ? 600 : Math.ceil(200 * 1.5);
-                    const result = await this.handleTollPayment(position, toll);
-                    
-                    if (!result.paid) {
-                        // 支付失败，处理破产
-                        await this.handleBankruptcy();
-                    }
-                }
-            }
-
-            async handlePurchase(position, price) {
-                const player = this.players[this.currentPlayer];
-                
-                if (player.mushrooms < price) {
-                    this.showFeedback('蘑菇不足，无法购买！', 'error');
-                    return false;
-                }
-                
-                const type = this.gridStatus[position].type;
-                const question = this.getRandomQuestion(type);
-                const result = await this.showQuestionDialog(question, type, 60);
-                
-                if (result.correct) {
-                    player.mushrooms -= price;
-                    this.gridStatus[position].owner = this.currentPlayer;
-                    this.gridStatus[position].level = 1;
-                    this.gridStatus[position].usedQuestionIndex = result.questionIndex;
-                    this.players[this.currentPlayer].properties.push({
-                        position: position,
-                        level: 1,
-                        price: price
-                    });
-                    
-                    this.renderProperty(position);
-                    this.showFeedback('购买成功！获得地契卡', 'success');
-                    return true;
-                } else {
-                    this.showFeedback('答题错误，购买失败', 'error');
-                    return false;
-                }
-            }
-
-            async handleUpgrade(position) {
-                const player = this.players[this.currentPlayer];
-                const price = 200; // 升级费用
-                
-                if (player.mushrooms < price) {
-                    this.showFeedback('蘑菇不足，无法升级！', 'error');
-                    return false;
-                }
-                
-                // 冻结费用
-                player.mushrooms -= price;
-                
-                const type = this.gridStatus[position].type;
-                const usedIndex = this.gridStatus[position].usedQuestionIndex;
-                const question = this.getRandomQuestion(type, [usedIndex]);
-                const result = await this.showQuestionDialog(question, type, 60);
-                
-                if (result.correct) {
-                    this.gridStatus[position].level = 2;
-                    const prop = this.players[this.currentPlayer].properties.find(p => p.position === position);
-                    if (prop) prop.level = 2;
-                    
-                    this.renderProperty(position);
-                    this.showFeedback('升级成功！房产已成豪华别墅', 'success');
-                    return true;
-                } else {
-                    // 升级失败，返还费用
-                    player.mushrooms += price;
-                    this.showFeedback('升级失败，费用已返还', 'warning');
-                    return false;
-                }
-            }
-
-            async handleTollPayment(position, toll) {
-                const player = this.players[this.currentPlayer];
-                const owner = this.gridStatus[position].owner;
-                
-                if (player.mushrooms >= toll) {
-                    const type = this.gridStatus[position].type;
-                    const usedIndex = this.gridStatus[position].usedQuestionIndex;
-                    const question = this.getRandomQuestion(type, [usedIndex]);
-                    const result = await this.showQuestionDialog(question, type, 60);
-                    
-                    if (result.correct) {
-                        this.showFeedback('答题正确！免费通行！', 'success');
-                        return { paid: true, amount: 0 };
-                    } else {
-                        player.mushrooms -= toll;
-                        this.players[owner].mushrooms += toll;
-                        this.showFeedback(`支付过路费 ${toll} 蘑菇`, 'warning');
-                        return { paid: true, amount: toll };
-                    }
-                } else {
-                    // 蘑菇不足，尝试卖房产
-                    if (!await this.sellPropertiesToPay(toll)) {
-                        return { paid: false };
-                    }
-                    
-                    // 卖房后重新支付
-                    player.mushrooms -= toll;
-                    this.players[owner].mushrooms += toll;
-                    this.showFeedback(`支付过路费 ${toll} 蘑菇`, 'warning');
-                    return { paid: true, amount: toll };
-                }
-            }
-
-            async sellPropertiesToPay(amount) {
-                const player = this.players[this.currentPlayer];
-                const properties = player.properties.sort((a, b) => a.price - b.price);
-                
-                for (let prop of properties) {
-                    if (player.mushrooms >= amount) break;
-                    
-                    const sellPrice = Math.floor(prop.price * 0.5);
-                    player.mushrooms += sellPrice;
-                    
-                    // 清除房产
-                    this.gridStatus[prop.position].owner = null;
-                    this.gridStatus[prop.position].level = 0;
-                    this.gridStatus[prop.position].usedQuestionIndex = null;
-                    
-                    // 移除房产标识
-                    const marker = document.querySelector(`#grid-${prop.position} .property-marker`);
-                    if (marker) marker.remove();
-                    
-                    this.showFeedback(`强制出售房产，获得 ${sellPrice} 蘑菇`, 'warning');
-                    await this.sleep(800);
-                }
-                
-                return player.mushrooms >= amount;
-            }
-
-            async handleBankruptcy() {
-                this.gameOver = true;
-                const winner = this.currentPlayer === 1 ? 2 : 1;
-                
-                this.showVictoryScreen(winner);
-            }
-
-            getRandomQuestion(type, excludeIndices = []) {
-                const bank = this.questionBank[type];
-                if (!bank || bank.length === 0) return null;
-                
-                const available = [];
-                for (let i = 0; i < bank.length; i++) {
-                    if (!this.usedQuestions[type].has(i) && !excludeIndices.includes(i)) {
-                        available.push(i);
-                    }
-                }
-                
-                if (available.length === 0) {
-                    // 题库耗尽，重置
-                    this.usedQuestions[type].clear();
-                    for (let i = 0; i < bank.length; i++) {
-                        if (!excludeIndices.includes(i)) {
-                            available.push(i);
-                        }
-                    }
-                }
-                
-                const randomIndex = available[Math.floor(Math.random() * available.length)];
-                return { ...bank[randomIndex], index: randomIndex };
-            }
-
-            renderProperty(position) {
-                const grid = this.gridStatus[position];
-                const cell = document.getElementById(`grid-${position}`);
-                
-                // 移除旧的房产标识
-                const oldMarker = cell.querySelector('.property-marker');
-                if (oldMarker) oldMarker.remove();
-                
-                // 添加新的房产标识
-                const marker = document.createElement('div');
-                marker.className = `property-marker level-${grid.level}`;
-                marker.style.backgroundColor = this.players[grid.owner].color;
-                cell.appendChild(marker);
-            }
-
-            showFeedback(message, type = 'info') {
-                const bubble = document.createElement('div');
-                bubble.className = 'feedback-bubble';
-                bubble.textContent = message;
-                bubble.style.border = `3px solid ${type === 'success' ? '#2ecc71' : type === 'error' ? '#e74c3c' : '#f39c12'}`;
-                
-                document.body.appendChild(bubble);
-                
-                setTimeout(() => {
-                    bubble.remove();
-                }, 2000);
-            }
-
-            showModal(title, content, buttons = []) {
-                return new Promise(resolve => {
-                    const overlay = document.createElement('div');
-                    overlay.className = 'modal-overlay';
-                    
-                    const modal = document.createElement('div');
-                    modal.className = 'modal-content';
-                    
-                    let buttonsHtml = '';
-                    if (buttons.length > 0) {
-                        buttonsHtml = `<div class="modal-buttons">${buttons.map(btn => 
-                            `<button class="modal-button ${btn.type}" onclick="window.modalResult('${btn.value}')">${btn.text}</button>`
-                        ).join('')}</div>`;
-                    }
-                    
-                    modal.innerHTML = `
-                        <div class="modal-header">${title}</div>
-                        <div class="modal-body">${content}</div>
-                        ${buttonsHtml}
-                    `;
-                    
-                    overlay.appendChild(modal);
-                    document.body.appendChild(overlay);
-                    
-                    window.modalResult = (value) => {
-                        overlay.remove();
-                        resolve(value);
-                    };
-                    
-                    // 如果没有按钮，2秒后自动关闭
-                    if (buttons.length === 0) {
-                        setTimeout(() => {
-                            overlay.remove();
-                            resolve();
-                        }, 2000);
-                    }
-                });
-            }
-
-            async showPurchaseDialog(price) {
-                const result = await this.showModal('购买领地', 
-                    `是否花费 ${price} 蘑菇购买此地？<br>当前余额: ${this.players[this.currentPlayer].mushrooms} 蘑菇`,
-                    [
-                        { text: '购买领地', type: 'primary', value: 'buy' },
-                        { text: '暂时放弃', type: 'secondary', value: 'skip' }
-                    ]
-                );
-                return result;
-            }
-
-            async showUpgradeDialog(price) {
-                const result = await this.showModal('升级房产', 
-                    `是否花费 ${price} 蘑菇升级到2级？<br>升级后过路费固定为600蘑菇`,
-                    [
-                        { text: '升级房产', type: 'primary', value: 'upgrade' },
-                        { text: '保持现状', type: 'secondary', value: 'skip' }
-                    ]
-                );
-                return result;
-            }
-
-            async showQuestionDialog(question, type, timeLimit) {
-                return new Promise(resolve => {
-                    const overlay = document.createElement('div');
-                    overlay.className = 'modal-overlay';
-                    
-                    const modal = document.createElement('div');
-                    modal.className = 'modal-content';
-                    
-                    let contentHtml = '';
-                    
-                    if (type === 'translation') {
-                        contentHtml = `
-                            <div class="question-content">
-                                <div class="question-title">翻译题</div>
-                                <p style="margin-bottom: 20px;">${question.chinese_original}</p>
-                                <div class="question-options">
-                                    <div class="question-option" data-value="A">${question.option_a}</div>
-                                    <div class="question-option" data-value="B">${question.option_b}</div>
-                                    <div class="question-option" data-value="C">${question.option_c}</div>
-                                    <div class="question-option" data-value="D">${question.option_d}</div>
-                                </div>
-                            </div>
-                        `;
-                    } else if (type === 'vocabulary') {
-                        contentHtml = `
-                            <div class="question-content">
-                                <div class="question-title">单词题: ${question.word}</div>
-                                <div class="question-options">
-                                    <div class="question-option" data-value="A">${question.option_a}</div>
-                                    <div class="question-option" data-value="B">${question.option_b}</div>
-                                    <div class="question-option" data-value="C">${question.option_c}</div>
-                                </div>
-                            </div>
-                        `;
-                    } else if (type === 'reading') {
-                        contentHtml = `
-                            <div class="question-content">
-                                <div class="question-title">阅读理解</div>
-                                <p style="margin-bottom: 20px; font-size: 14px;">${question.passage}</p>
-                                <p style="margin-bottom: 20px;"><strong>${question.question}</strong></p>
-                                <div class="question-options">
-                                    ${Object.entries(question.options).map(([key, value]) => 
-                                        `<div class="question-option" data-value="${key}">${key}: ${value}</div>`
-                                    ).join('')}
-                                </div>
-                            </div>
-                        `;
-                    } else if (type === 'word-selection') {
-                        const [first, second] = question.sentence.split('______');
-                        contentHtml = `
-                            <div class="question-content">
-                                <div class="question-title">选词填空</div>
-                                <p style="margin-bottom: 20px;">${first}____${second}</p>
-                                <div class="question-options">
-                                    ${Object.entries(question.options).map(([key, value]) => 
-                                        `<div class="question-option" data-value="${key}">${key}: ${value}</div>`
-                                    ).join('')}
-                                </div>
-                            </div>
-                        `;
-                    }
-                    
-                    modal.innerHTML = `
-                        <div class="modal-header">答题挑战</div>
-                        <div class="modal-body">${contentHtml}</div>
-                        <div class="countdown-timer" id="countdown">${timeLimit}</div>
-                    `;
-                    
-                    overlay.appendChild(modal);
-                    document.body.appendChild(overlay);
-                    
-                    // 倒计时
-                    let timeLeft = timeLimit;
-                    const timer = setInterval(() => {
-                        timeLeft--;
-                        const countdownEl = document.getElementById('countdown');
-                        countdownEl.textContent = timeLeft;
-                        
-                        if (timeLeft <= 10) {
-                            countdownEl.classList.add('warning');
-                        }
-                        
-                        if (timeLeft <= 0) {
-                            clearInterval(timer);
-                            overlay.remove();
-                            resolve({ correct: false, questionIndex: question.index });
-                        }
-                    }, 1000);
-                    
-                    // 选项点击
-                    modal.querySelectorAll('.question-option').forEach(option => {
-                        option.addEventListener('click', () => {
-                            clearInterval(timer);
-                            const selected = option.dataset.value;
-                            const correct = selected === question.answer;
-                            
-                            if (correct) {
-                                this.usedQuestions[type].add(question.index);
-                            }
-                            
-                            overlay.remove();
-                            resolve({ correct, questionIndex: question.index });
-                        });
-                    });
-                });
-            }
-
-            async showReadingQuestion(question, timeLimit) {
-                return this.showQuestionDialog(question, 'reading', timeLimit);
-            }
-
-            async showOpportunityCard(card) {
-                const result = await this.showModal('机会卡挑战', 
-                    `<p style="margin-bottom: 20px;">${card.question}</p>
-                    <input type="text" class="answer-input" placeholder="请输入答案" id="opportunity-answer">`,
-                    [
-                        { text: '提交答案', type: 'primary', value: 'submit' },
-                        { text: '放弃', type: 'secondary', value: 'skip' }
-                    ]
-                );
-                
-                if (result === 'submit') {
-                    const answer = document.getElementById('opportunity-answer').value.trim();
-                    const correct = this.checkOpportunityAnswer(answer, card.answer);
-                    return { correct };
-                }
-                
-                return { correct: false };
-            }
-
-            checkOpportunityAnswer(input, correct) {
-                // 简单的答案匹配（实际应更复杂）
-                const inputLower = input.toLowerCase();
-                const correctLower = correct.toLowerCase();
-                return inputLower.includes(correctLower) || correctLower.includes(inputLower);
-            }
-
-            showVictoryScreen(winner) {
-                const winnerData = this.players[winner];
-                const loserData = this.players[winner === 1 ? 2 : 1];
-                
-                const propertiesList = winnerData.properties.map(p => 
-                    `格子${p.position} - ${p.level === 2 ? '豪华别墅' : '普通房产'}`
-                ).join('<br>');
-                
-                this.showModal('游戏结束', 
-                    `<div class="victory-screen">
-                        <div class="victory-ghost" style="background: ${winnerData.color};"></div>
-                        <div class="victory-title">玩家 ${winner} 获胜！</div>
-                        <div class="final-stats">
-                            <p>最终蘑菇数: ${winnerData.mushrooms}</p>
-                            <p>拥有房产: ${winnerData.properties.length} 处</p>
-                        </div>
-                        <div class="property-list">
-                            <strong>房产列表:</strong><br>
-                            ${propertiesList || '无'}
-                        </div>
-                        <button class="modal-button primary" onclick="location.reload()">重新开始</button>
-                    </div>`
-                );
-            }
-
-            sleep(ms) {
-                return new Promise(resolve => setTimeout(resolve, ms));
-            }
-
-            updateUI() {
-                // 更新蘑菇数显示
-                document.getElementById('player1-mushrooms').textContent = this.players[1].mushrooms;
-                document.getElementById('player2-mushrooms').textContent = this.players[2].mushrooms;
-                
-                // 更新当前玩家高亮
-                document.getElementById('player1-info').classList.toggle('active', this.currentPlayer === 1);
-                document.getElementById('player2-info').classList.toggle('active', this.currentPlayer === 2);
-                
-                // 更新骰子按钮状态
-                const diceButton = document.getElementById('dice-button');
-                if (this.gameOver) {
-                    diceButton.disabled = true;
-                } else if (this.skipNextTurn[this.currentPlayer]) {
-                    diceButton.disabled = true;
-                    diceButton.textContent = '跳过';
-                } else if (this.extraRolls[this.currentPlayer] > 0) {
-                    diceButton.disabled = false;
-                    diceButton.textContent = `×${this.extraRolls[this.currentPlayer]}`;
-                } else {
-                    diceButton.disabled = false;
-                    diceButton.textContent = '?';
-                }
-            }
-
-            endTurn() {
-                if (this.gameOver) return;
-                
-                // 处理跳回合
-                if (this.skipNextTurn[this.currentPlayer]) {
-                    this.skipNextTurn[this.currentPlayer] = false;
-                }
-                
-                // 处理连投
-                if (this.extraRolls[this.currentPlayer] > 0) {
-                    this.extraRolls[this.currentPlayer]--;
-                    if (this.extraRolls[this.currentPlayer] > 0) {
-                        this.updateUI();
-                        return; // 继续当前玩家回合
-                    }
-                }
-                
-                // 切换玩家
-                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
-                this.diceEnabled = true;
-                this.updateUI();
+            } catch (error) {
+                console.error('加载游戏数据失败:', error);
+                alert('游戏资源加载失败，请检查JSON文件路径是否正确！');
             }
         }
 
-        // ==================== 启动游戏 ====================
-        const game = new Game();
+        function updateLoadingText(text) {
+            document.getElementById('loading-text').textContent = text;
+        }
 
-        // 骰子按钮事件
-        document.getElementById('dice-button').addEventListener('click', () => {
-            game.rollDice();
-        });
-
-        // 防止答题期间使用开发者工具
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
-                e.preventDefault();
+        // 初始化棋盘
+        function initializeBoard() {
+            const boardGrid = document.getElementById('boardGrid');
+            boardGrid.innerHTML = '';
+            
+            // 创建40个格子（按大富翁标准布局）
+            for (let i = 0; i < TOTAL_CELLS; i++) {
+                const cell = document.createElement('div');
+                cell.className = 'grid-cell';
+                cell.id = `cell-${i}`;
+                
+                // 设置格子内容
+                const cellType = getCellType(i);
+                cell.innerHTML = `
+                    <div class="cell-type">${cellType.name}</div>
+                    <div class="cell-content" id="cell-content-${i}"></div>
+                    <div class="house-icon" id="house-${i}"></div>
+                `;
+                
+                // 设置特殊样式
+                if (i === SPECIAL_CELLS.START) {
+                    cell.style.background = '#f1c40f';
+                    cell.style.color = '#2c3e50';
+                } else if (i === SPECIAL_CELLS.LIBRARY) {
+                    cell.style.background = '#9b59b6';
+                    cell.style.color = 'white';
+                } else if (i === SPECIAL_CELLS.FOREIGN_COLLEGE) {
+                    cell.style.background = '#e67e22';
+                    cell.style.color = 'white';
+                } else if (i === SPECIAL_CELLS.CET_EXAM) {
+                    cell.style.background = '#e74c3c';
+                    cell.style.color = 'white';
+                }
+                
+                boardGrid.appendChild(cell);
+                
+                // 加载题目内容
+                loadCellContent(i, cellType.type);
             }
-        });
+            
+            // 放置玩家棋子
+            placePlayerTokens();
+        }
+
+        // 获取格子类型
+        function getCellType(index) {
+            const types = [
+                { name: '起点', type: 'start' },
+                { name: '阅读格', type: 'reading' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '翻译格', type: 'translation' },
+                { name: '选词格', type: 'wordSelection' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '阅读格', type: 'reading' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '翻译格', type: 'translation' },
+                { name: '图书馆', type: 'library' },
+                { name: '选词格', type: 'wordSelection' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '阅读格', type: 'reading' },
+                { name: '翻译格', type: 'translation' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '选词格', type: 'wordSelection' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '阅读格', type: 'reading' },
+                { name: '外国语学院', type: 'foreignCollege' },
+                { name: '翻译格', type: 'translation' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '选词格', type: 'wordSelection' },
+                { name: '阅读格', type: 'reading' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '翻译格', type: 'translation' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '选词格', type: 'wordSelection' },
+                { name: '四六级考场', type: 'cetExam' },
+                { name: '阅读格', type: 'reading' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '翻译格', type: 'translation' },
+                { name: '选词格', type: 'wordSelection' },
+                { name: '词汇格', type: 'vocabulary' },
+                { name: '机会卡', type: 'opportunity' },
+                { name: '阅读格', type: 'reading' }
+            ];
+            
+            return types[index] || { name: '空地', type: 'empty' };
+        }
+
+        // 加载格子内容
+        function loadCellContent(cellIndex, cellType) {
+            const contentElement = document.getElementById(`cell-content-${cellIndex}`);
+            let content = '';
+            
+            switch(cellType) {
+                case 'translation':
+                    content = '翻译题';
+                    break;
+                case 'vocabulary':
+                    content = '词汇题';
+                    break;
+                case 'reading':
+                    content = '阅读题';
+                    break;
+                case 'wordSelection':
+                    content = '选词填空';
+                    break;
+                case 'opportunity':
+                    content = '机会卡';
+                    break;
+                case 'start':
+                    content = '🎉 领取288蘑菇';
+                    break;
+                case 'library':
+                    content = '📚 学习休息';
+                    break;
+                case 'foreignCollege':
+                    content = '🏫 外院咖啡';
+                    break;
+                case 'cetExam':
+                    content = '✍️ 四六级考场';
+                    break;
+                default:
+                    content = '空地';
+            }
+            
+            contentElement.textContent = content;
+        }
+
+        // 放置玩家棋子
+        function placePlayerTokens() {
+            // 移除现有棋子
+            document.querySelectorAll('.player-token').forEach(token => token.remove());
+            
+            // 为每个玩家创建棋子
+            gameState.players.forEach(player => {
+                const token = document.createElement('div');
+                token.className = `player-token token-player${player.id}`;
+                token.innerHTML = '👻';
+                token.id = `token-${player.id}`;
+                
+                const currentCell = document.getElementById(`cell-${player.position}`);
+                if (currentCell) {
+                    currentCell.appendChild(token);
+                }
+            });
+        }
+
+        // 骰子点击事件
+        document.getElementById('dice').addEventListener('click', rollDice);
+
+        // 掷骰子
+        async function rollDice() {
+            if (gameState.isDiceRolling || gameState.isAnswering) return;
+            
+            gameState.isDiceRolling = true;
+            const dice = document.getElementById('dice');
+            dice.classList.add('rolling');
+            
+            // 随机跳动效果
+            let rollCount = 0;
+            const rollInterval = setInterval(() => {
+                dice.textContent = Math.floor(Math.random() * 6) + 1;
+                rollCount++;
+                
+                if (rollCount > 10) {
+                    clearInterval(rollInterval);
+                    const finalResult = Math.floor(Math.random() * 6) + 1;
+                    dice.textContent = finalResult;
+                    dice.classList.remove('rolling');
+                    
+                    setTimeout(() => {
+                        movePlayer(finalResult);
+                        gameState.isDiceRolling = false;
+                    }, 500);
+                }
+            }, 100);
+        }
+
+        // 移动玩家
+        async function movePlayer(steps) {
+            const player = gameState.players[gameState.currentPlayer - 1];
+            const startPos = player.position;
+            const targetPos = (startPos + steps) % TOTAL_CELLS;
+            
+            // 移动动画
+            for (let i = 1; i <= steps; i++) {
+                const currentPos = (startPos + i) % TOTAL_CELLS;
+                player.position = currentPos;
+                
+                // 标记经过的格子
+                const cell = document.getElementById(`cell-${currentPos}`);
+                if (cell && i < steps) {
+                    cell.classList.add('passed');
+                }
+                
+                placePlayerTokens();
+                await sleep(300);
+                
+                // 移除标记
+                if (cell && i < steps) {
+                    setTimeout(() => cell.classList.remove('passed'), 200);
+                }
+            }
+            
+            // 处理格子事件
+            await handleCellEvent(targetPos);
+            
+            // 检查是否经过起点
+            if (startPos + steps >= TOTAL_CELLS) {
+                player.mushrooms += 288;
+                updatePlayerDisplay();
+                showMessage('🎉 经过起点，领取288蘑菇！');
+            }
+        }
+
+        // 处理格子事件
+        async function handleCellEvent(position) {
+            const cellType = getCellType(position);
+            
+            switch(cellType.type) {
+                case 'start':
+                    // 起点奖励已在移动函数中处理
+                    break;
+                case 'library':
+                    await handleLibrary();
+                    break;
+                case 'foreignCollege':
+                    await handleForeignCollege();
+                    break;
+                case 'cetExam':
+                    await handleCETExam();
+                    break;
+                case 'opportunity':
+                    await handleOpportunityCard();
+                    break;
+                case 'reading':
+                case 'vocabulary':
+                case 'translation':
+                case 'wordSelection':
+                    await handleProperty(position, cellType.type);
+                    break;
+            }
+            
+            // 结束回合
+            setTimeout(() => endTurn(), 1000);
+        }
+
+        // 处理图书馆
+        async function handleLibrary() {
+            showMessage('📚 来都来了，学习一下再走吧！休息一轮');
+            await sleep(2000);
+        }
+
+        // 处理外国语学院
+        async function handleForeignCollege() {
+            showModalMessage('🏫 你被外院咖啡厅咖啡的香味吸引，不禁犹豫要不要进去', '外院事件');
+            
+            return new Promise(resolve => {
+                setTimeout(async () => {
+                    const diceResult = Math.floor(Math.random() * 6) + 1;
+                    
+                    if (diceResult <= 4) {
+                        showModalMessage('去外院咖啡厅来杯校徽咖啡吧！休息一轮', '外院事件');
+                        await sleep(2000);
+                        closeModal();
+                        // 休息一轮的逻辑在回合结束时处理
+                    } else {
+                        showModalMessage('生活费不够了，还是下次再说吧', '外院事件');
+                        await sleep(2000);
+                        closeModal();
+                    }
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        // 处理四六级考场
+        async function handleCETExam() {
+            const question = getRandomQuestion('reading');
+            if (!question) {
+                resolve();
+                return;
+            }
+            
+            showModalMessage('✍️ 四六级考场开始！所有玩家答题，2分钟时间', '四六级考场');
+            await sleep(2000);
+            
+            // 获取所有玩家答案
+            const player1Answer = await showQuestionModal(question, 120);
+            const player2Answer = await showQuestionModal(question, 120);
+            
+            // 检查答案
+            const correct = question.answer;
+            
+            if (player1Answer === correct) {
+                gameState.players[0].mushrooms += 100;
+                showMessage('玩家1答对，获得100蘑菇！');
+            } else {
+                gameState.players[0].mushrooms -= 100;
+                showMessage('玩家1答错，扣除100蘑菇！');
+            }
+            
+            if (player2Answer === correct) {
+                gameState.players[1].mushrooms += 100;
+                showMessage('玩家2答对，获得100蘑菇！');
+            } else {
+                gameState.players[1].mushrooms -= 100;
+                showMessage('玩家2答错，扣除100蘑菇！');
+            }
+            
+            updatePlayerDisplay();
+            closeModal();
+        }
+
+        // 处理机会卡
+        async function handleOpportunityCard() {
+            const card = questionBanks.opportunity[Math.floor(Math.random() * questionBanks.opportunity.length)];
+            
+            if (card.type === 'luck') {
+                // 运气卡，直接执行效果
+                const player = gameState.players[gameState.currentPlayer - 1];
+                const content = card.content;
+                
+                // 解析效果
+                if (content.includes('奖励') || content.includes('获得') || content.includes('收到')) {
+                    const match = content.match(/\d+/);
+                    if (match) {
+                        const amount = parseInt(match[0]);
+                        player.mushrooms += amount;
+                        showModalMessage(`🎉 ${content}`, '运气卡');
+                    }
+                } else if (content.includes('罚款') || content.includes('损失') || content.includes('扣除')) {
+                    const match = content.match(/\d+/);
+                    if (match) {
+                        const amount = parseInt(match[0]);
+                        player.mushrooms -= amount;
+                        showModalMessage(`😢 ${content}`, '运气卡');
+                    }
+                } else {
+                    showModalMessage(`📋 ${content}`, '运气卡');
+                }
+                
+                updatePlayerDisplay();
+                await sleep(2000);
+                closeModal();
+            } else {
+                // 答题卡
+                showModalMessage(`🎯 ${card.question}`, '机会卡挑战');
+                await sleep(2000);
+                
+                if (card.question.includes('DETOUR') || card.question.includes('French Fries') || 
+                    card.question.includes('ATM') || card.question.includes('M')) {
+                    // 需要输入答案
+                    const userAnswer = await showInputModal('请输入答案：');
+                    
+                    if (userAnswer.toLowerCase() === card.answer.toLowerCase()) {
+                        showModalMessage('🎉 答对了！获得100蘑菇！', '挑战成功');
+                        gameState.players[gameState.currentPlayer - 1].mushrooms += 100;
+                    } else {
+                        showModalMessage(`😢 答错了！正确答案是：${card.answer}`, '挑战失败');
+                    }
+                } else if (card.question.includes('What comes') || card.question.includes('What can you hold') ||
+                          card.question.includes('I am not alive') || card.question.includes('What question')) {
+                    // 脑筋急转弯
+                    const userAnswer = await showInputModal('请输入答案：');
+                    
+                    if (userAnswer.toLowerCase() === card.answer.toLowerCase()) {
+                        showModalMessage('🎉 答对了！获得100蘑菇！', '挑战成功');
+                        gameState.players[gameState.currentPlayer - 1].mushrooms += 100;
+                    } else {
+                        showModalMessage(`😢 答错了！正确答案是：${card.answer}`, '挑战失败');
+                    }
+                } else {
+                    // 常识题，直接显示答案
+                    showModalMessage(`📋 ${card.question}\n\n${card.analysis}`, '趣味常识');
+                    await sleep(3000);
+                }
+                
+                updatePlayerDisplay();
+                await sleep(2000);
+                closeModal();
+            }
+        }
+
+        // 处理地产
+        async function handleProperty(position, questionType) {
+            const property = gameState.properties.get(position);
+            const player = gameState.players[gameState.currentPlayer - 1];
+            
+            if (!property) {
+                // 无主地产，询问是否购买
+                const price = getPropertyPrice(position);
+                const shouldBuy = await showBuyModal(`是否购买此地产？价格：${price}蘑菇`, price);
+                
+                if (shouldBuy) {
+                    // 答题购买
+                    const question = getRandomQuestion(questionType);
+                    if (!question) return;
+                    
+                    const userAnswer = await showQuestionModal(question, 60);
+                    const correct = checkAnswer(question, userAnswer);
+                    
+                    if (correct) {
+                        // 购买成功
+                        player.mushrooms -= price;
+                        gameState.properties.set(position, {
+                            owner: player.id,
+                            price: price,
+                            hasHouse: false,
+                            questionType: questionType
+                        });
+                        
+                        showMessage(`🎉 购买成功！花费${price}蘑菇`);
+                        updatePlayerDisplay();
+                        updateCellDisplay(position);
+                    } else {
+                        showMessage('😢 答题错误，购买失败！');
+                    }
+                }
+            } else if (property.owner === player.id) {
+                // 自己的地产，询问是否升级
+                if (!property.hasHouse) {
+                    const shouldUpgrade = await showBuyModal('是否在此地产上建造房屋？费用：300蘑菇', 300);
+                    
+                    if (shouldUpgrade && player.mushrooms >= 300) {
+                        // 答题升级
+                        const question = getRandomQuestion(property.questionType);
+                        if (!question) return;
+                        
+                        const userAnswer = await showQuestionModal(question, 60);
+                        const correct = checkAnswer(question, userAnswer);
+                        
+                        if (correct) {
+                            property.hasHouse = true;
+                            player.mushrooms -= 300;
+                            showMessage('🎉 建造成功！过路费升级为600蘑菇');
+                            updatePlayerDisplay();
+                            updateCellDisplay(position);
+                        } else {
+                            showMessage('😢 答题错误，建造失败！');
+                        }
+                    }
+                } else {
+                    showMessage('🏠 此地产已建有房屋');
+                }
+            } else {
+                // 别人的地产，支付过路费
+                const owner = gameState.players[property.owner - 1];
+                const toll = property.hasHouse ? 600 : Math.floor(property.price * 1.5);
+                
+                showMessage(`💰 支付过路费${toll}蘑菇给玩家${owner.id}`);
+                
+                // 答题可免过路费
+                const question = getRandomQuestion(property.questionType);
+                if (!question) return;
+                
+                const userAnswer = await showQuestionModal(question, 60);
+                const correct = checkAnswer(question, userAnswer);
+                
+                if (correct) {
+                    showMessage('🎉 答对了！免过路费！');
+                } else {
+                    player.mushrooms -= toll;
+                    owner.mushrooms += toll;
+                    showMessage(`😢 答错了！支付${toll}蘑菇`);
+                    updatePlayerDisplay();
+                }
+            }
+        }
+
+        // 获取随机题目
+        function getRandomQuestion(type) {
+            let questions = [];
+            
+            switch(type) {
+                case 'translation':
+                    questions = questionBanks.translation;
+                    break;
+                case 'vocabulary':
+                    questions = questionBanks.vocabulary;
+                    break;
+                case 'reading':
+                    questions = questionBanks.reading;
+                    break;
+                case 'wordSelection':
+                    questions = questionBanks.wordSelection;
+                    break;
+            }
+            
+            if (questions.length === 0) return null;
+            
+            // 避免重复题目
+            const availableQuestions = questions.filter(q => !gameState.usedQuestions.has(getQuestionId(q, type)));
+            if (availableQuestions.length === 0) {
+                gameState.usedQuestions.clear();
+                return questions[Math.floor(Math.random() * questions.length)];
+            }
+            
+            const question = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+            gameState.usedQuestions.add(getQuestionId(question, type));
+            
+            return question;
+        }
+
+        // 获取题目ID
+        function getQuestionId(question, type) {
+            return `${type}-${question.question_number || question.id}`;
+        }
+
+        // 检查答案
+        function checkAnswer(question, userAnswer) {
+            if (!userAnswer) return false;
+            
+            const correctAnswer = question.answer;
+            if (question.options) {
+                // 选择题
+                return userAnswer.toUpperCase() === correctAnswer.toUpperCase();
+            } else {
+                // 简答题
+                return userAnswer.toLowerCase().includes(correctAnswer.toLowerCase());
+            }
+        }
+
+        // 获取地产价格
+        function getPropertyPrice(position) {
+            const prices = [100, 120, 140, 160, 180, 200, 220, 240, 260, 280, 300, 320, 340, 360, 380, 400];
+            return prices[position % prices.length];
+        }
+
+        // 更新格子显示
+        function updateCellDisplay(position) {
+            const cell = document.getElementById(`cell-${position}`);
+            const property = gameState.properties.get(position);
+            
+            if (property) {
+                const houseIcon = document.getElementById(`house-${position}`);
+                if (property.hasHouse) {
+                    houseIcon.textContent = '🏠';
+                }
+                
+                // 设置所有者颜色
+                const ownerColor = gameState.players[property.owner - 1].color;
+                cell.style.borderTop = `5px solid ${ownerColor}`;
+            }
+        }
+
+        // 更新玩家显示
+        function updatePlayerDisplay() {
+            document.getElementById('player1Mushrooms').textContent = gameState.players[0].mushrooms;
+            document.getElementById('player2Mushrooms').textContent = gameState.players[1].mushrooms;
+            document.getElementById('currentPlayer').textContent = `当前回合: 玩家 ${gameState.currentPlayer}`;
+            
+            // 检查破产
+            gameState.players.forEach(player => {
+                if (player.mushrooms <= 0) {
+                    endGame(gameState.players.find(p => p.id !== player.id));
+                }
+            });
+        }
+
+        // 结束回合
+        function endTurn() {
+            // 检查是否有玩家需要休息
+            const currentPlayer = gameState.players[gameState.currentPlayer - 1];
+            const playerPos = currentPlayer.position;
+            
+            if (playerPos === SPECIAL_CELLS.LIBRARY || 
+                (playerPos === SPECIAL_CELLS.FOREIGN_COLLEGE && Math.floor(Math.random() * 6) + 1 <= 4)) {
+                // 跳过下一回合
+                showMessage(`玩家${gameState.currentPlayer}休息一轮`);
+                gameState.currentPlayer = gameState.currentPlayer === 1 ? 2 : 1;
+            }
+            
+            gameState.currentPlayer = gameState.currentPlayer === 1 ? 2 : 1;
+            updatePlayerDisplay();
+        }
+
+        // 结束游戏
+        function endGame(winner) {
+            const modal = document.getElementById('gameModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            const ownedProperties = Array.from(gameState.properties.entries())
+                .filter(([_, prop]) => prop.owner === winner.id)
+                .map(([pos, prop]) => ({
+                    position: pos,
+                    type: getCellType(pos).name,
+                    hasHouse: prop.hasHouse
+                }));
+            
+            modalBody.innerHTML = `
+                <div class="game-over">
+                    <div class="winner-announcement">🏆 玩家 ${winner.id} 获胜！</div>
+                    <div class="final-stats">
+                        <h3>最终统计</h3>
+                        <p>玩家1蘑菇: ${gameState.players[0].mushrooms}</p>
+                        <p>玩家2蘑菇: ${gameState.players[1].mushrooms}</p>
+                        <h4>拥有的地产：</h4>
+                        <ul>
+                            ${ownedProperties.map(prop => `
+                                <li>${prop.type} (位置: ${prop.position}) ${prop.hasHouse ? '🏠' : ''}</li>
+                            `).join('')}
+                        </ul>
+                    </div>
+                    <button class="restart-btn" onclick="restartGame()">重新开始</button>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+        }
+
+        // 重新开始游戏
+        function restartGame() {
+            closeModal();
+            gameState.currentPlayer = 1;
+            gameState.players = [
+                { id: 1, mushrooms: 1500, position: 0, properties: [], color: '#e74c3c' },
+                { id: 2, mushrooms: 1500, position: 0, properties: [], color: '#3498db' }
+            ];
+            gameState.properties.clear();
+            gameState.usedQuestions.clear();
+            gameState.isDiceRolling = false;
+            gameState.isAnswering = false;
+            
+            initializeBoard();
+            updatePlayerDisplay();
+        }
+
+        // 显示购买模态框
+        function showBuyModal(message, price) {
+            return new Promise(resolve => {
+                const modal = document.getElementById('gameModal');
+                const modalBody = document.getElementById('modalBody');
+                const player = gameState.players[gameState.currentPlayer - 1];
+                
+                modalBody.innerHTML = `
+                    <h2 class="question-title">购买选项</h2>
+                    <p>${message}</p>
+                    <p>当前蘑菇: ${player.mushrooms}</p>
+                    <div class="action-buttons">
+                        <button class="btn btn-success" id="buyBtn">购买</button>
+                        <button class="btn btn-danger" id="skipBtn">跳过</button>
+                    </div>
+                `;
+                
+                modal.classList.add('active');
+                
+                document.getElementById('buyBtn').onclick = () => {
+                    if (player.mushrooms >= price) {
+                        closeModal();
+                        resolve(true);
+                    } else {
+                        showMessage('蘑菇不足！');
+                        resolve(false);
+                    }
+                };
+                
+                document.getElementById('skipBtn').onclick = () => {
+                    closeModal();
+                    resolve(false);
+                };
+            });
+        }
+
+        // 显示题目模态框
+        function showQuestionModal(question, timeLimit) {
+            return new Promise(resolve => {
+                const modal = document.getElementById('gameModal');
+                const modalBody = document.getElementById('modalBody');
+                
+                let optionsHtml = '';
+                if (question.options) {
+                    // 选择题
+                    const optionKeys = ['A', 'B', 'C', 'D'];
+                    const optionTexts = [
+                        question.option_a,
+                        question.option_b,
+                        question.option_c,
+                        question.option_d
+                    ].filter(opt => opt);
+                    
+                    optionsHtml = `
+                        <div class="options-container">
+                            ${optionTexts.map((opt, index) => `
+                                <button class="option-btn" data-answer="${optionKeys[index]}">
+                                    ${optionKeys[index]}. ${opt}
+                                </button>
+                            `).join('')}
+                        </div>
+                    `;
+                } else if (question.sentence) {
+                    // 选词填空
+                    const options = Object.entries(question.options).filter(([key, value]) => 
+                        key !== 'answer' && value
+                    );
+                    
+                    optionsHtml = `
+                        <div class="options-container">
+                            ${options.map(([key, value]) => `
+                                <button class="option-btn" data-answer="${key}">
+                                    ${key}: ${value}
+                                </button>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    // 简答题
+                    optionsHtml = `
+                        <input type="text" id="answerInput" placeholder="请输入答案" style="width: 100%; padding: 10px; border: 2px solid #ecf0f1; border-radius: 5px;">
+                        <div class="action-buttons" style="margin-top: 15px;">
+                            <button class="btn btn-primary" id="submitAnswer">提交答案</button>
+                            <button class="skip-btn" id="skipQuestion">跳过</button>
+                        </div>
+                    `;
+                }
+                
+                modalBody.innerHTML = `
+                    <h2 class="question-title">答题挑战</h2>
+                    <div class="timer">剩余时间: <span id="timeLeft">${timeLimit}</span>秒</div>
+                    <div class="question-content">
+                        ${question.chinese_original || question.sentence || question.question || question.passage || ''}
+                    </div>
+                    ${optionsHtml}
+                `;
+                
+                modal.classList.add('active');
+                gameState.isAnswering = true;
+                
+                // 计时器
+                let timeLeft = timeLimit;
+                const timer = setInterval(() => {
+                    timeLeft--;
+                    document.getElementById('timeLeft').textContent = timeLeft;
+                    
+                    if (timeLeft <= 0) {
+                        clearInterval(timer);
+                        gameState.isAnswering = false;
+                        closeModal();
+                        showMessage('⏰ 时间到！答题失败！');
+                        resolve(null);
+                    }
+                }, 1000);
+                
+                // 选项点击事件
+                document.querySelectorAll('.option-btn').forEach(btn => {
+                    btn.onclick = () => {
+                        clearInterval(timer);
+                        gameState.isAnswering = false;
+                        closeModal();
+                        resolve(btn.dataset.answer);
+                    };
+                });
+                
+                // 提交按钮事件
+                const submitBtn = document.getElementById('submitAnswer');
+                if (submitBtn) {
+                    submitBtn.onclick = () => {
+                        const answer = document.getElementById('answerInput').value;
+                        clearInterval(timer);
+                        gameState.isAnswering = false;
+                        closeModal();
+                        resolve(answer);
+                    };
+                }
+                
+                // 跳过按钮
+                const skipBtn = document.getElementById('skipQuestion');
+                if (skipBtn) {
+                    skipBtn.onclick = () => {
+                        clearInterval(timer);
+                        gameState.isAnswering = false;
+                        closeModal();
+                        resolve(null);
+                    };
+                }
+                
+                // 保存计时器引用
+                gameState.timer = timer;
+            });
+        }
+
+        // 显示输入模态框
+        function showInputModal(message) {
+            return new Promise(resolve => {
+                const modal = document.getElementById('gameModal');
+                const modalBody = document.getElementById('modalBody');
+                
+                modalBody.innerHTML = `
+                    <h2 class="question-title">输入答案</h2>
+                    <p>${message}</p>
+                    <input type="text" id="inputAnswer" placeholder="请输入答案" style="width: 100%; padding: 10px; border: 2px solid #ecf0f1; border-radius: 5px;">
+                    <div class="action-buttons" style="margin-top: 15px;">
+                        <button class="btn btn-primary" id="confirmInput">确认</button>
+                        <button class="skip-btn" id="cancelInput">取消</button>
+                    </div>
+                `;
+                
+                modal.classList.add('active');
+                
+                document.getElementById('confirmInput').onclick = () => {
+                    const answer = document.getElementById('inputAnswer').value;
+                    closeModal();
+                    resolve(answer);
+                };
+                
+                document.getElementById('cancelInput').onclick = () => {
+                    closeModal();
+                    resolve('');
+                };
+            });
+        }
+
+        // 显示消息模态框
+        function showModalMessage(message, title) {
+            const modal = document.getElementById('gameModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <h2 class="question-title">${title}</h2>
+                <p style="font-size: 18px; line-height: 1.6;">${message}</p>
+            `;
+            
+            modal.classList.add('active');
+        }
+
+        // 显示普通消息
+        function showMessage(message) {
+            const modal = document.getElementById('gameModal');
+            const modalBody = document.getElementById('modalBody');
+            
+            modalBody.innerHTML = `
+                <h2 class="question-title">系统消息</h2>
+                <p style="font-size: 18px; text-align: center;">${message}</p>
+            `;
+            
+            modal.classList.add('active');
+            
+            setTimeout(() => {
+                closeModal();
+            }, 2000);
+        }
+
+        // 关闭模态框
+        function closeModal() {
+            const modal = document.getElementById('gameModal');
+            modal.classList.remove('active');
+            
+            // 清除计时器
+            if (gameState.timer) {
+                clearInterval(gameState.timer);
+                gameState.timer = null;
+            }
+        }
+
+        // 模态框关闭按钮
+        document.getElementById('modalClose').onclick = closeModal;
+
+        // 辅助函数
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        // 启动游戏
+        window.onload = loadGameData;
     </script>
 </body>
 </html>
