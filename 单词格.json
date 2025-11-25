@@ -1,0 +1,454 @@
+{
+  "vocabulary_grid": [
+    {
+      "question_number": 1,
+      "word": "bargain",
+      "option_a": "n. 交易；便宜货；v. 讨价还价；谈判",
+      "option_b": "n. 酒吧；酒馆；v. 禁止；阻拦",
+      "option_c": "n. 障碍；阻碍；v. 妨碍；阻碍",
+      "answer": "A",
+      "analysis": "bargain 可作名词和动词，名词义“交易；便宜货”，动词义“讨价还价；谈判”。例句：This jacket is a real bargain at $50.（这件夹克 50 美元真的很划算。）/ They bargained with the seller for a lower price.（他们和卖家讨价还价争取低价。）"
+    },
+    {
+      "question_number": 2,
+      "word": "circumstance",
+      "option_a": "n. 环境；情况；境遇；经济状况",
+      "option_b": "n. 循环；周期；v. 循环；轮转",
+      "option_c": "n. 文明；文化；v. 使文明；教化",
+      "answer": "A",
+      "analysis": "circumstance 为名词，核心含义“环境；情况；境遇”，也可特指“经济状况”。例句：We have to adapt to changing circumstances.（我们必须适应不断变化的环境。）/ His family is in difficult circumstances.（他的家庭经济困难。）"
+    },
+    {
+      "question_number": 3,
+      "word": "demonstrate",
+      "option_a": "v. 证明；论证；演示；表明；示威",
+      "option_b": "v. 否认；否定；拒绝承认；驳回",
+      "option_c": "v. 设计；构思；绘制；谋划",
+      "answer": "A",
+      "analysis": "demonstrate 为动词，含义“证明；论证；演示；表明；示威”，侧重通过行动或证据展现。例句：The experiment demonstrates the theory is correct.（实验证明该理论是正确的。）/ Thousands of people demonstrated for equal rights.（数千人示威游行争取平等权利。）"
+    },
+    {
+      "question_number": 4,
+      "word": "evolve",
+      "option_a": "v. 进化；演变；发展；逐步形成",
+      "option_b": "v. 评估；评价；估价；评定",
+      "option_c": "v. 逃避；逃脱；避免；溜走",
+      "answer": "A",
+      "analysis": "evolve 为动词，含义“进化；演变；发展；逐步形成”，侧重缓慢且持续的变化。例句：Species evolve over millions of years.（物种经过数百万年的进化。）/ The company has evolved into a global brand.（这家公司已发展成为全球品牌。）"
+    },
+    {
+      "question_number": 5,
+      "word": "finance",
+      "option_a": "n. 金融；财政；资金；v. 为...提供资金；理财",
+      "option_b": "n. 火焰；火光；v. 燃烧；发光",
+      "option_c": "n. 焦点；中心；v. 聚焦；集中",
+      "answer": "A",
+      "analysis": "finance 可作名词和动词，名词义“金融；财政；资金”，动词义“为...提供资金；理财”。例句：He works in the field of international finance.（他在国际金融领域工作。）/ The government will finance the new hospital.（政府将为新医院提供资金。）"
+    },
+    {
+      "question_number": 6,
+      "word": "generate",
+      "option_a": "v. 产生；生成；引起；创造；发电",
+      "option_b": "v. 概括；总结；归纳；概述",
+      "option_c": "v. 聚集；集合；收集；积累",
+      "answer": "A",
+      "analysis": "generate 为动词，含义“产生；生成；引起；创造；发电”，侧重创造或引发某物。例句：The machine generates electricity from wind.（这台机器利用风力发电。）/ The new policy generated a lot of discussion.（新政策引起了广泛讨论。）"
+    },
+    {
+      "question_number": 7,
+      "word": "highlight",
+      "option_a": "v. 强调；突出；使显著；n. 亮点；重点；精彩部分",
+      "option_b": "v. 阻碍；妨碍；阻止；n. 障碍；阻碍物",
+      "option_c": "v. 犹豫；迟疑；踌躇；n. 犹豫；迟疑",
+      "answer": "A",
+      "analysis": "highlight 可作动词和名词，动词义“强调；突出；使显著”，名词义“亮点；重点；精彩部分”。例句：The report highlights the need for better education.（报告强调了改善教育的必要性。）/ The concert's highlight was her solo performance.（音乐会的亮点是她的独奏表演。）"
+    },
+    {
+      "question_number": 8,
+      "word": "illustrate",
+      "option_a": "v. 说明；阐明；举例说明；给...配插图",
+      "option_b": "v. 模仿；模拟；仿造；假装",
+      "option_c": "v. 改进；改善；提高；改良",
+      "answer": "A",
+      "analysis": "illustrate 为动词，含义“说明；阐明；举例说明；给...配插图”，侧重通过例子或图像辅助理解。例句：He used a diagram to illustrate his point.（他用图表来说明自己的观点。）/ The book is illustrated with beautiful photos.（这本书配有精美的照片插图。）"
+    },
+    {
+      "question_number": 9,
+      "word": "justify",
+      "option_a": "v. 证明...正当；为...辩护；辩解；使合理",
+      "option_b": "v. 跳跃；跳动；跃过；n. 跳跃；飞跃",
+      "option_c": "v. 联合；结合；联结；n. 联合；结合",
+      "answer": "A",
+      "analysis": "justify 为动词，含义“证明...正当；为...辩护；辩解；使合理”，侧重说明行为或观点的合理性。例句：She tried to justify her absence.（她试图为自己的缺席辩解。）/ The cost is justified by the quality.（品质对得起这个价格。）"
+    },
+    {
+      "question_number": 10,
+      "word": "knot",
+      "option_a": "n. 结；绳结；节；疙瘩；v. 打结；使纠结",
+      "option_b": "n. 知识；学问；学识；v. 知道；了解",
+      "option_c": "n. 膝盖；膝部；v. 用膝盖碰",
+      "answer": "A",
+      "analysis": "knot 可作名词和动词，名词义“结；绳结；节；疙瘩”，动词义“打结；使纠结”。例句：She tied a knot in the rope.（她在绳子上打了个结。）/ Her hair was knotted after the wind.（风吹过后她的头发打结了。）"
+    },
+    {
+      "question_number": 11,
+      "word": "launch",
+      "option_a": "v. 发射；发起；推出；启动；n. 发射；发起；上市",
+      "option_b": "v. 大笑；发笑；嘲笑；n. 笑声；笑",
+      "option_c": "v. 学习；学会；研究；n. 学习；学问",
+      "answer": "A",
+      "analysis": "launch 可作动词和名词，动词义“发射；发起；推出；启动”，名词义“发射；发起；上市”。例句：The company launched a new product.（公司推出了一款新产品。）/ The launch of the satellite was successful.（卫星发射成功。）"
+    },
+    {
+      "question_number": 12,
+      "word": "maintain",
+      "option_a": "v. 维持；保持；维护；坚持；赡养",
+      "option_b": "v. 管理；经营；处理；支配",
+      "option_c": "v. 制造；生产；创造；引起",
+      "answer": "A",
+      "analysis": "maintain 为动词，含义“维持；保持；维护；坚持；赡养”，侧重持续保持某种状态或履行责任。例句：We need to maintain friendly relations.（我们需要维持友好关系。）/ He maintains his innocence.（他坚持自己是无辜的。）"
+    },
+    {
+      "question_number": 13,
+      "word": "neglect",
+      "option_a": "v. 忽视；忽略；疏忽；怠慢；n. 忽视；疏忽",
+      "option_b": "v. 谈判；协商；洽谈；n. 谈判；协商",
+      "option_c": "v. 否认；否定；拒绝；n. 否认；否定",
+      "answer": "A",
+      "analysis": "neglect 可作动词和名词，动词义“忽视；忽略；疏忽；怠慢”，名词义“忽视；疏忽”。例句：Don't neglect your health.（不要忽视你的健康。）/ The accident was caused by neglect of duty.（事故是由于失职造成的。）"
+    },
+    {
+      "question_number": 14,
+      "word": "oblige",
+      "option_a": "v. 迫使；责成；使感激；施恩惠于",
+      "option_b": "v. 观察；观测；遵守；注意到",
+      "option_c": "v. 获得；得到；达到；实现",
+      "answer": "A",
+      "analysis": "oblige 为动词，含义“迫使；责成；使感激；施恩惠于”，侧重因责任或礼貌而做某事。例句：Circumstances oblige me to leave.（情况迫使我不得不离开。）/ I'm obliged to you for your help.（感谢你的帮助。）"
+    },
+    {
+      "question_number": 15,
+      "word": "persist",
+      "option_a": "v. 坚持；持续；固执；存留",
+      "option_b": "v. 说服；劝说；使相信；使信服",
+      "option_c": "v. 困惑；迷惑；使困惑；使迷惑",
+      "answer": "A",
+      "analysis": "persist 为动词，含义“坚持；持续；固执；存留”，侧重不顾困难或反对继续。例句：She persisted in her dream despite setbacks.（尽管遇到挫折，她仍坚持自己的梦想。）/ The rain persisted for three days.（雨持续下了三天。）"
+    },
+    {
+      "question_number": 16,
+      "word": "quit",
+      "option_a": "v. 放弃；辞职；停止；离开；adj. 摆脱的；自由的",
+      "option_b": "v. 排队；列队；n. 队伍；队列",
+      "option_c": "v. 询问；打听；查询；n. 问题；询问",
+      "answer": "A",
+      "analysis": "quit 可作动词和形容词，动词义“放弃；辞职；停止；离开”，形容词义“摆脱的；自由的”。例句：He quit his job to travel.（他辞职去旅行。）/ She is finally quit of the burden.（她终于摆脱了这个负担。）"
+    },
+    {
+      "question_number": 17,
+      "word": "relevant",
+      "option_a": "adj. 相关的；切题的；中肯的；有实际意义的",
+      "option_b": "adj. 可靠的；可信的；确实的；真实的",
+      "option_c": "adj. 放松的；松懈的；宽松的；v. 放松；松懈",
+      "answer": "A",
+      "analysis": "relevant 为形容词，含义“相关的；切题的；中肯的；有实际意义的”，侧重与主题或情况相关联。例句：Please provide relevant information.（请提供相关信息。）/ His comments are not relevant to the discussion.（他的评论与讨论无关。）"
+    },
+    {
+      "question_number": 18,
+      "word": "schedule",
+      "option_a": "n. 日程表；时间表；计划表；v. 安排；排定；列入",
+      "option_b": "n. 场景；场面；情景；v. 设想；想象",
+      "option_c": "n. 分数；得分；成绩；v. 得分；打分",
+      "answer": "A",
+      "analysis": "schedule 可作名词和动词，名词义“日程表；时间表；计划表”，动词义“安排；排定；列入”。例句：Do you have a busy schedule this week?（你这周日程忙吗？）/ The meeting is scheduled for Friday.（会议安排在周五。）"
+    },
+    {
+      "question_number": 19,
+      "word": "temporary",
+      "option_a": "adj. 暂时的；临时的；短期的；n. 临时工；临时雇员",
+      "option_b": "adj. 永恒的；永久的；持久的；n. 永恒；永久",
+      "option_c": "adj. 频繁的；经常的；屡次的；n. 频繁；经常",
+      "answer": "A",
+      "analysis": "temporary 可作形容词和名词，形容词义“暂时的；临时的；短期的”，名词义“临时工；临时雇员”。例句：This is a temporary solution.（这是一个临时解决方案。）/ The company hires temporaries during peak season.（公司在旺季雇佣临时工。）"
+    },
+    {
+      "question_number": 20,
+      "word": "ultimate",
+      "option_a": "adj. 最终的；最后的；根本的；终极的；n. 终极；顶点",
+      "option_b": "adj. 独特的；唯一的；独有的；特殊的",
+      "option_c": "adj. 普遍的；广泛的；全体的；通用的",
+      "answer": "A",
+      "analysis": "ultimate 可作形容词和名词，形容词义“最终的；最后的；根本的；终极的”，名词义“终极；顶点”。例句：What is your ultimate goal?（你的最终目标是什么？）/ The ultimate decision is yours.（最终决定权在你手中。）"
+    },
+    {
+      "question_number": 21,
+      "word": "vary",
+      "option_a": "v. 变化；变动；不同；多样化；改变",
+      "option_b": "v. 拜访；访问；探望；参观；n. 访问；拜访",
+      "option_c": "v. 振动；颤动；摇摆；n. 振动；颤动",
+      "answer": "A",
+      "analysis": "vary 为动词，含义“变化；变动；不同；多样化；改变”，侧重在形式、数量或性质上有差异。例句：Prices vary from store to store.（价格因商店而异。）/ We need to vary our diet for health.（为了健康我们需要多样化饮食。）"
+    },
+    {
+      "question_number": 22,
+      "word": "witness",
+      "option_a": "n. 目击者；证人；证据；v. 目击；见证；作证",
+      "option_b": "n. 重量；体重；分量；v. 称重；权衡",
+      "option_c": "n. 愿望；渴望；心愿；v. 希望；想要；愿望",
+      "answer": "A",
+      "analysis": "witness 可作名词和动词，名词义“目击者；证人；证据”，动词义“目击；见证；作证”。例句：He was a witness to the accident.（他是事故的目击者。）/ She witnessed the signing of the agreement.（她见证了协议的签署。）"
+    },
+    {
+      "question_number": 23,
+      "word": "yield",
+      "option_a": "v. 产生；产出；屈服；让步；n. 产量；产出；收益",
+      "option_b": "v. 叫喊；呼喊；n. 叫喊；呼喊",
+      "option_c": "v. 挥舞；挥动；n. 挥舞；挥动",
+      "answer": "A",
+      "analysis": "yield 可作动词和名词，动词义“产生；产出；屈服；让步”，名词义“产量；产出；收益”。例句：The farm yields a good harvest this year.（农场今年收成很好。）/ He refused to yield to pressure.（他拒绝向压力屈服。）"
+    },
+    {
+      "question_number": 24,
+      "word": "zone",
+      "option_a": "n. 区域；地区；地带；分区；v. 划分区域；使分成地带",
+      "option_b": "n. 动物园；动物园里的动物；v. 把...送入动物园",
+      "option_c": "n. 拉链；拉锁；v. 拉上拉链；用拉链扣上",
+      "answer": "A",
+      "analysis": "zone 可作名词和动词，名词义“区域；地区；地带；分区”，动词义“划分区域；使分成地带”。例句：This is a residential zone.（这是一个住宅区。）/ The city is zoned for commercial use.（这座城市被划分为商业区。）"
+    },
+    {
+      "question_number": 25,
+      "word": "margin",
+      "option_a": "n. 边缘；边际；页边空白；利润；v. 加边于；加旁注于",
+      "option_b": "n. 机器；机械；设备；v. 用机器制造；加工",
+      "option_c": "n. 魔法；巫术；魔力；v. 用魔法变出；使神奇",
+      "answer": "A",
+      "analysis": "margin 可作名词和动词，名词义“边缘；边际；页边空白；利润”，动词义“加边于；加旁注于”。例句：Write your notes in the margin.（把笔记写在页边空白处。）/ The company has a high profit margin.（这家公司利润率很高。）"
+    },
+    {
+      "question_number": 26,
+      "word": "novel",
+      "option_a": "n. 小说；长篇小说；adj. 新奇的；新颖的；独特的",
+      "option_b": "n. 笔记；记录；便条；v. 记录；记下；注意到",
+      "option_c": "n. 数字；数目；数量；adj. 数字的；数码的",
+      "answer": "A",
+      "analysis": "novel 可作名词和形容词，名词义“小说；长篇小说”，形容词义“新奇的；新颖的；独特的”。例句：She is reading a historical novel.（她正在读一本历史小说。）/ He came up with a novel idea.（他想出了一个新颖的主意。）"
+    },
+    {
+      "question_number": 27,
+      "word": "orient",
+      "option_a": "v. 使适应；使定向；确定方向；n. 东方；亚洲",
+      "option_b": "v. 起源；发源；来自；n. 起源；源头；出身",
+      "option_c": "v. 组织；安排；整理；n. 组织；机构；团体",
+      "answer": "A",
+      "analysis": "orient 可作动词和名词，动词义“使适应；使定向；确定方向”，名词义“东方；亚洲”（常大写为 Orient）。例句：It took her a week to orient herself to the new job.（她花了一周时间适应新工作。）/ The company is expanding into the Orient.（这家公司正在向亚洲扩张。）"
+    },
+    {
+      "question_number": 28,
+      "word": "prompt",
+      "option_a": "adj. 迅速的；及时的；立刻的；v. 促使；推动；提示；n. 提示；催促",
+      "option_b": "adj. 自豪的；骄傲的；得意的；v. 以...为荣；自豪",
+      "option_c": "adj. 纯粹的；纯净的；完全的；v. 净化；提纯",
+      "answer": "A",
+      "analysis": "prompt 可作形容词、动词和名词，形容词义“迅速的；及时的；立刻的”，动词义“促使；推动；提示”，名词义“提示；催促”。例句：She gave a prompt reply to the email.（她及时回复了邮件。）/ The noise prompted him to look outside.（噪音促使他看向窗外。）"
+    },
+    {
+      "question_number": 29,
+      "word": "radiate",
+      "option_a": "v. 辐射；散发；发出；流露；adj. 辐射状的；有射线的",
+      "option_b": "v. 到达；抵达；达成；n. 到达；抵达",
+      "option_c": "v. 抚养；养育；培养；n. 抚养；养育",
+      "answer": "A",
+      "analysis": "radiate 可作动词和形容词，动词义“辐射；散发；发出；流露”，形容词义“辐射状的；有射线的”。例句：The sun radiates light and heat.（太阳辐射光和热。）/ Her face radiated happiness.（她的脸上洋溢着幸福。）"
+    },
+    {
+      "question_number": 30,
+      "word": "session",
+      "option_a": "n. 会议；会议期间；会期；学年；一段时间",
+      "option_b": "n. 信号；暗号；标志；v. 发信号；示意",
+      "option_c": "n. 签名；署名；签字；v. 签名；署名；签字",
+      "answer": "A",
+      "analysis": "session 为名词，含义“会议；会议期间；会期；学年；一段时间”，侧重特定目的的聚会或时段。例句：The conference will have three sessions.（会议将有三个议程。）/ She has a yoga session every morning.（她每天早上有一节瑜伽课。）"
+    },
+    {
+      "question_number": 31,
+      "word": "thrive",
+      "option_a": "v. 繁荣；兴旺；茁壮成长；蓬勃发展",
+      "option_b": "v. 威胁；恐吓；预示；n. 威胁；恐吓",
+      "option_c": "v. 投掷；扔；投；抛；n. 投掷；扔",
+      "answer": "A",
+      "analysis": "thrive 为动词，含义“繁荣；兴旺；茁壮成长；蓬勃发展”，侧重在有利环境中蓬勃生长或发展。例句：Plants thrive in warm weather.（植物在温暖的天气里茁壮成长。）/ The business is thriving in the new location.（这家企业在新地点蓬勃发展。）"
+    },
+    {
+      "question_number": 32,
+      "word": "undertake",
+      "option_a": "v. 承担；从事；着手；承诺；保证",
+      "option_b": "v. 理解；明白；懂得；领会；n. 理解；领会",
+      "option_c": "v. 低估；看轻；看低；n. 低估；看轻",
+      "answer": "A",
+      "analysis": "undertake 为动词，含义“承担；从事；着手；承诺；保证”，侧重主动承担任务或作出承诺。例句：She undertook the project alone.（她独自承担了这个项目。）/ He undertook to finish the work on time.（他承诺按时完成工作。）"
+    },
+    {
+      "question_number": 33,
+      "word": "venture",
+      "option_a": "n. 冒险；冒险事业；风险项目；v. 冒险；敢于；大胆尝试",
+      "option_b": "n. 版本；译本；说法；v. 翻译；改编；改写",
+      "option_c": "n. 胜利；成功；战胜；v. 战胜；击败；赢得",
+      "answer": "A",
+      "analysis": "venture 可作名词和动词，名词义“冒险；冒险事业；风险项目”，动词义“冒险；敢于；大胆尝试”。例句：Starting a business is a big venture.（创业是一项大冒险。）/ She ventured into the forest alone.（她独自大胆走进了森林。）"
+    },
+    {
+      "question_number": 34,
+      "word": "weaken",
+      "option_a": "v. 削弱；减弱；使虚弱；变弱；衰退",
+      "option_b": "v. 编织；编结；n. 编织物；编织品",
+      "option_c": "v. 哭泣；流泪；悲叹；n. 哭泣；流泪",
+      "answer": "A",
+      "analysis": "weaken 为动词，含义“削弱；减弱；使虚弱；变弱；衰退”，侧重力量、程度或影响的降低。例句：The storm weakened overnight.（暴风雨在夜间减弱了。）/ Lack of exercise weakens the body.（缺乏锻炼会使身体虚弱。）"
+    },
+    {
+      "question_number": 35,
+      "word": "abandon",
+      "option_a": "v. 放弃；抛弃；遗弃；离弃；n. 放任；放纵",
+      "option_b": "v. 接受；承认；认可；接纳；n. 接受；承认",
+      "option_c": "v. 缺席；缺勤；缺课；n. 缺席；缺勤",
+      "answer": "A",
+      "analysis": "abandon 可作动词和名词，动词义“放弃；抛弃；遗弃；离弃”，名词义“放任；放纵”。例句：He abandoned his plans for travel.（他放弃了旅行计划。）/ She shouted with abandon.（她尽情地大喊。）"
+    },
+    {
+      "question_number": 36,
+      "word": "compensate",
+      "option_a": "v. 补偿；赔偿；弥补；抵消；n. 补偿；赔偿",
+      "option_b": "v. 竞争；竞赛；争夺；n. 竞争；竞赛",
+      "option_c": "v. 抱怨；诉苦；投诉；n. 抱怨；诉苦",
+      "answer": "A",
+      "analysis": "compensate 可作动词和名词，动词义“补偿；赔偿；弥补；抵消”，名词义“补偿；赔偿”（常用复数形式compensations）。例句：The company compensated her for the injury.（公司为她的受伤作出了赔偿。）/ Hard work is no compensation for lack of skill.（努力工作无法弥补技能的不足。）"
+    },
+    {
+      "question_number": 37,
+      "word": "diverse",
+      "option_a": "adj. 不同的；多样的；形形色色的；多元化的",
+      "option_b": "adj. 困难的；艰难的；不易的；n. 困难；难题",
+      "option_c": "adj. 直接的；坦率的；直达的；v. 指导；指挥；导演",
+      "answer": "A",
+      "analysis": "diverse 为形容词，含义“不同的；多样的；形形色色的；多元化的”，侧重种类繁多且有差异。例句：The team has diverse backgrounds.（这个团队有多元化的背景。）/ We offer diverse products to meet needs.（我们提供多样化的产品以满足需求。）"
+    },
+    {
+      "question_number": 38,
+      "word": "equivalent",
+      "option_a": "adj. 相等的；等价的；相当的；n. 等价物；相等物；对应物",
+      "option_b": "adj. 必要的；必需的；必不可少的；n. 必需品",
+      "option_c": "adj. 错误的；不正确的；有毛病的；n. 错误；过失",
+      "answer": "A",
+      "analysis": "equivalent 可作形容词和名词，形容词义“相等的；等价的；相当的”，名词义“等价物；相等物；对应物”。例句：One dollar is equivalent to about seven yuan.（一美元约等于七元人民币。）/ What is the equivalent of this word in English?（这个词在英语中的对应词是什么？）"
+    },
+    {
+      "question_number": 39,
+      "word": "foster",
+      "option_a": "v. 培养；促进；养育；收养；adj. 收养的；寄养的",
+      "option_b": "v. 忘记；遗忘；忽略；n. 忘记；遗忘",
+      "option_c": "v. 禁止；不许；阻止；n. 禁止；禁令",
+      "answer": "A",
+      "analysis": "foster 可作动词和形容词，动词义“培养；促进；养育；收养”，形容词义“收养的；寄养的”。例句：We need to foster teamwork.（我们需要培养团队合作精神。）/ They are foster parents to three children.（他们是三个孩子的养父母。）"
+    },
+    {
+      "question_number": 40,
+      "word": "gracious",
+      "option_a": "adj. 亲切的；和蔼的；优雅的；仁慈的；adv. 和蔼地；仁慈地",
+      "option_b": "adj. 贪婪的；贪心的；渴望的；n. 贪婪；贪心",
+      "option_c": "adj. 感激的；感谢的；欣慰的；v. 感谢；感激",
+      "answer": "A",
+      "analysis": "gracious 可作形容词和副词，形容词义“亲切的；和蔼的；优雅的；仁慈的”，副词义“和蔼地；仁慈地”（常用graciously）。例句：She is a gracious hostess.（她是一位亲切的女主人。）/ He thanked her graciously.（他和蔼地向她道谢。）"
+    },
+    {
+      "question_number": 41,
+      "word": "hamper",
+      "option_a": "v. 阻碍；妨碍；牵制；n. 食篮；有盖大篮",
+      "option_b": "v. 处理；应付；对待；n. 手柄；把手；手感",
+      "option_c": "v. 伤害；损害；危害；n. 伤害；损害",
+      "answer": "A",
+      "analysis": "hamper 可作动词和名词，动词义“阻碍；妨碍；牵制”，名词义“食篮；有盖大篮”。例句：Bad weather hampered the rescue effort.（恶劣天气阻碍了救援工作。）/ She brought a picnic hamper to the park.（她带了一个野餐篮去公园。）"
+    },
+    {
+      "question_number": 42,
+      "word": "inject",
+      "option_a": "v. 注射；注入；引入；投入；插入",
+      "option_b": "v. 检查；检验；审视；n. 检查；检验",
+      "option_c": "v. 影响；感化；感染；n. 影响；感化",
+      "answer": "A",
+      "analysis": "inject 为动词，含义“注射；注入；引入；投入；插入”，侧重将某物注入或引入另一物。例句：The doctor injected the patient with medicine.（医生给病人注射了药物。）/ We need to inject new energy into the project.（我们需要为项目注入新的活力。）"
+    },
+    {
+      "question_number": 43,
+      "word": "junction",
+      "option_a": "n. 连接点；交叉点；接合处；枢纽",
+      "option_b": "n. 法官；裁判员；v. 判断；裁决；审判",
+      "option_c": "n. 玩笑；笑话；v. 开玩笑；说笑话",
+      "answer": "A",
+      "analysis": "junction 为名词，含义“连接点；交叉点；接合处；枢纽”，侧重道路、线路等的交汇点。例句：Turn left at the next junction.（在下一个路口左转。）/ This is an important railway junction.（这是一个重要的铁路枢纽。）"
+    },
+    {
+      "question_number": 44,
+      "word": "liable",
+      "option_a": "adj. 有责任的；有义务的；可能的；易于...的",
+      "option_b": "adj. 忠诚的；忠实的；忠贞的；n. 忠诚；忠实",
+      "option_c": "adj. 有限的；有限制的；n. 限制；限度",
+      "answer": "A",
+      "analysis": "liable 为形容词，含义“有责任的；有义务的；可能的；易于...的”，侧重法律责任或某种倾向。例句：The company is liable for the damage.（公司应对损害负责。）/ She is liable to get angry easily.（她容易发脾气。）"
+    },
+    {
+      "question_number": 45,
+      "word": "mature",
+      "option_a": "adj. 成熟的；成年的；深思熟虑的；v. 成熟；长成；变得成熟",
+      "option_b": "adj. 谦虚的；谦逊的；谦让的；n. 谦虚；谦逊",
+      "option_c": "adj. 主要的；重要的；主修的；v. 主修；专攻",
+      "answer": "A",
+      "analysis": "mature 可作形容词和动词，形容词义“成熟的；成年的；深思熟虑的”，动词义“成熟；长成；变得成熟”。例句：He is a mature young man.（他是一个成熟的年轻人。）/ The plan needs time to mature.（这个计划需要时间完善。）"
+    },
+    {
+      "question_number": 46,
+      "word": "notable",
+      "option_a": "adj. 值得注意的；显著的；著名的；n. 名人；显要人物",
+      "option_b": "adj. 正常的；平常的；标准的；n. 正常；常态",
+      "option_c": "adj. 新奇的；新颖的；陌生的；n. 新奇；新奇事物",
+      "answer": "A",
+      "analysis": "notable 可作形容词和名词，形容词义“值得注意的；显著的；著名的”，名词义“名人；显要人物”。例句：There was a notable improvement in his work.（他的工作有了显著进步。）/ She is a notable in the field of science.（她是科学界的名人。）"
+    },
+    {
+      "question_number": 47,
+      "word": "offset",
+      "option_a": "v. 抵消；弥补；补偿；n. 抵消；补偿；分支",
+      "option_b": "v. 提供；供给；给予；n. 提供；供给；供应品",
+      "option_c": "v. 反对；反抗；抵抗；n. 反对；反抗；抵抗",
+      "answer": "A",
+      "analysis": "offset 可作动词和名词，动词义“抵消；弥补；补偿”，名词义“抵消；补偿；分支”。例句：The gains offset the losses.（收益抵消了损失。）/ We need an offset to the extra costs.（我们需要补偿额外的费用。）"
+    },
+    {
+      "question_number": 48,
+      "word": "perspective",
+      "option_a": "n. 观点；看法；视角；远景；透视法",
+      "option_b": "n. 许可；允许；执照；v. 允许；许可；批准",
+      "option_c": "n. 人；人们；民族；v. 居住；栖息",
+      "answer": "A",
+      "analysis": "perspective 为名词，含义“观点；看法；视角；远景；透视法”，侧重看待事物的角度。例句：We need to consider different perspectives.（我们需要考虑不同的观点。）/ The painting uses perspective well.（这幅画很好地运用了透视法。）"
+    },
+    {
+      "question_number": 49,
+      "word": "quota",
+      "option_a": "n. 配额；限额；定额；指标",
+      "option_b": "n. 质量；品质；特性；v. 质量；品质",
+      "option_c": "n. 数量；数目；量；v. 数；计算",
+      "answer": "A",
+      "analysis": "quota 为名词，含义“配额；限额；定额；指标”，侧重规定的数量或比例。例句：The country has a quota on imports.（这个国家对进口有配额限制。）/ She has reached her sales quota this month.（她这个月已经完成了销售指标。）"
+    },
+    {
+      "question_number": 50,
+      "word": "refine",
+      "option_a": "v. 精炼；提纯；精制；改进；完善；使文雅",
+      "option_b": "v. 拒绝；回绝；拒绝接受；n. 拒绝；回绝",
+      "option_c": "v. 记住；记得；牢记；n. 记忆；回忆",
+      "answer": "A",
+      "analysis": "refine 为动词，含义“精炼；提纯；精制；改进；完善；使文雅”，侧重提纯物质或优化事物。例句：Oil is refined to make gasoline.（石油经过精炼制成汽油。）/ She needs to refine her writing skills.（她需要提高自己的写作技巧。）"
+    }
+  ]
+}

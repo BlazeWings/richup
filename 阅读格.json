@@ -1,0 +1,563 @@
+{
+  "reading_comprehension_grid": [
+    {
+      "question_number": 1,
+      "passage": "New research suggests that pandas may be at risk of dying out because they are too comfortable. Experts say too much happiness can stop the bears from searching for new mates. Environmentalists have long believed that building roads or homes near the bears may threaten their survival by 'reducing or fragmenting their natural habitats', The Times reported. But the new research suggests that a 'modest degree of discomfort and fragmentation' may actually help preserve panda populations.",
+      "question": "What do we learn from new research about pandas?",
+      "options": {
+        "A": "They are losing habitat due to the building of roads and houses.",
+        "B": "They have stopped seeking new mates for reproduction.",
+        "C": "They may not adapt to the fragmentation of their habitat.",
+        "D": "They may cease to exist as a result of enjoying too good a life."
+      },
+      "answer": "D",
+      "analysis": "题目段落开篇明确提到'新研究表明，大熊猫可能因生活过于舒适而面临灭绝风险'，与选项D完全对应。选项A是环保人士的传统观点，非新研究结论；选项B中'已经停止'表述绝对，原文仅说'过多的幸福感会阻止它们寻找新配偶'；选项C与新研究结论相反，新研究认为适度栖息地碎片化有助于保护大熊猫。"
+    },
+    {
+      "question_number": 2,
+      "passage": "Environmentalists have long believed that building roads or homes near the bears may threaten their survival by 'reducing or fragmenting their natural habitats', The Times reported. But the new research suggests that a 'modest degree of discomfort and fragmentation' may actually help preserve panda populations. The research was conducted by scientists from Michigan State University. It concluded that pandas fail to wander off in search of new mates if they find their habitat too comfortable, resulting in a lack of vital genetic diversity.",
+      "question": "What can we conclude from the new research by scientists at Michigan State University?",
+      "options": {
+        "A": "Environmentalists' long-time belief regarding panda conservation may be misleading.",
+        "B": "Housing development near pandas' homes may threaten their survival.",
+        "C": "Pandas' natural habitats are becoming less suitable for reproduction.",
+        "D": "The increased panda population is attributed to the fragmentation of their habitat."
+      },
+      "answer": "A",
+      "analysis": "原文提到环保人士长期认为栖息地减少或碎片化会威胁大熊猫生存，但新研究指出'适度的不适和碎片化可能有助于保护大熊猫种群'，说明环保人士的传统观点可能存在误导性，对应选项A。选项B是环保人士的观点，非新研究结论；选项C原文未提及；选项D表述错误，原文仅说适度碎片化有帮助，未说种群增加是因为碎片化。"
+    },
+    {
+      "question_number": 3,
+      "passage": "The research was conducted by scientists from Michigan State University. It concluded that pandas fail to wander off in search of new mates if they find their habitat too comfortable, resulting in a lack of vital genetic diversity. For their study - outlined in a paper in the journal Conservation Biology - the team looked at genetic diversity and spread among a Chinese panda population. The ideal level of perfectly livable habitat was found to be only 80% of an area, with the remainder either too harsh or too affected by human activity. The experts concluded that pandas should ideally 'be happy enough to thrive, but not so content that they don't want to move around and find new mates'.",
+      "question": "What is the experts' conclusion regarding pandas?",
+      "options": {
+        "A": "It is urgent to provide an ideal habitat for them to thrive.",
+        "B": "It is very important to preserve their genetic diversity.",
+        "C": "Their chances of finding new mates have a lot to do with their habitat.",
+        "D": "Their environment for survival has been continuously worsening."
+      },
+      "answer": "C",
+      "analysis": "专家结论指出'大熊猫应足够幸福以繁衍，但又不能过于满足而不愿四处寻找新配偶'，结合前文'栖息地过于舒适会导致大熊猫不愿寻找新配偶'，可推断出大熊猫寻找新配偶的机会与栖息地状况密切相关，对应选项C。选项A中'迫切需要提供理想栖息地'并非核心结论；选项B是栖息地问题导致的结果，非专家对大熊猫本身的结论；选项D原文未提及。"
+    },
+    {
+      "question_number": 4,
+      "passage": "The experts concluded that pandas should ideally 'be happy enough to thrive, but not so content that they don't want to move around and find new mates'. Their conclusions about what The Guardian described as this 'sweet spot' are in line with the so-called Goldilocks principle: that there can be just the right amount of something. The concept has been applied to a wide range of disciplines, from developmental psychology to economics and engineering.",
+      "question": "What can we infer from the passage about the Goldilocks principle?",
+      "options": {
+        "A": "It needs to be confirmed by more studies on pandas.",
+        "B": "It applies to the preservation of pandas too.",
+        "C": "It has implications for future panda research.",
+        "D": "It can be used to locate the right spot for pandas."
+      },
+      "answer": "B",
+      "analysis": "原文明确提到专家关于大熊猫栖息地'最佳状态'的结论与Goldilocks原则一致，该原则指'事物存在恰到好处的量'，说明其适用于大熊猫保护，对应选项B。选项A错误，原文已说明结论与该原则一致，无需额外验证；选项C混淆概念，具有未来研究意义的是新研究发现，而非该原则；选项D表述片面，该原则是一种理念，非定位栖息地的工具。"
+    },
+    {
+      "question_number": 5,
+      "passage": "Claudio Sillero, a professor of conservation biology at Oxford University, told the newspaper that the new findings could have implications beyond panda conservation. 'Most large animals that eat meat live in increasingly fragmented landscapes,' said Sillero, who was not involved in the research. 'It may well be that the messy nature of their relationship with human efforts induces more animals to scatter or travel further, and might result in greater genetic connectivity and enhanced population persistence.'",
+      "question": "What can the new findings do according to Professor Sillero?",
+      "options": {
+        "A": "Help discover new ways for the conservation of pandas.",
+        "B": "Help remove pandas from the list of endangered species.",
+        "C": "Shed light on the conservation of most large meat-eating animals.",
+        "D": "Show the complexity of interactions between humans and animals."
+      },
+      "answer": "C",
+      "analysis": "Sillero教授提到'新发现的意义可能超出大熊猫保护范畴'，并指出大多数大型食肉动物生活在碎片化环境中，这种环境可能促进动物扩散和基因交流，说明新发现能为大多数大型食肉动物的保护提供启发，对应选项C。选项A错误，教授强调的是超出大熊猫保护的意义；选项B无依据；选项D并非教授重点，核心是新发现对动物保护的启示。"
+    },
+    {
+      "question_number": 6,
+      "passage": "The research was conducted by scientists from Michigan State University. It concluded that pandas fail to wander off in search of new mates if they find their habitat too comfortable, resulting in a lack of vital genetic diversity. For their study - outlined in a paper in the journal Conservation Biology - the team looked at genetic diversity and spread among a Chinese panda population. The ideal level of perfectly livable habitat was found to be only 80% of an area, with the remainder either too harsh or too affected by human activity.",
+      "question": "What is the ideal proportion of perfectly livable habitat for pandas?",
+      "options": {
+        "A": "20% of an area.",
+        "B": "80% of an area.",
+        "C": "50% of an area.",
+        "D": "100% of an area."
+      },
+      "answer": "B",
+      "analysis": "题目段落明确表述'研究发现，完全适宜居住的栖息地理想比例仅为一个区域的80%'，直接对应选项B。选项A是不适宜或受人类活动影响的栖息地比例；选项C和D无依据。"
+    },
+    {
+      "question_number": 7,
+      "passage": "New research suggests that pandas may be at risk of dying out because they are too comfortable. Experts say too much happiness can stop the bears from searching for new mates. Environmentalists have long believed that building roads or homes near the bears may threaten their survival by 'reducing or fragmenting their natural habitats', The Times reported. But the new research suggests that a 'modest degree of discomfort and fragmentation' may actually help preserve panda populations. The research was conducted by scientists from Michigan State University. It concluded that pandas fail to wander off in search of new mates if they find their habitat too comfortable, resulting in a lack of vital genetic diversity.",
+      "question": "Why does too comfortable a habitat harm pandas?",
+      "options": {
+        "A": "It reduces their resistance to diseases.",
+        "B": "It makes them lose interest in searching for new mates.",
+        "C": "It leads to overpopulation in a limited area.",
+        "D": "It destroys their natural living habits."
+      },
+      "answer": "B",
+      "analysis": "原文多次提到'过于舒适的栖息地会让大熊猫不愿四处寻找新配偶'，最终导致基因多样性不足，这是舒适栖息地对大熊猫的危害，对应选项B。选项A、C、D原文均未提及。"
+    },
+    {
+      "question_number": 8,
+      "passage": "The experts concluded that pandas should ideally 'be happy enough to thrive, but not so content that they don't want to move around and find new mates'. Their conclusions about what The Guardian described as this 'sweet spot' are in line with the so-called Goldilocks principle: that there can be just the right amount of something. The most recent count of pandas found that there were more than 1,800 left in the wild, putting them on the list of vulnerable, but not endangered, species.",
+      "question": "What is the current status of pandas in the wild?",
+      "options": {
+        "A": "They are endangered species.",
+        "B": "They are vulnerable but not endangered.",
+        "C": "Their population is decreasing rapidly.",
+        "D": "They are no longer at risk of dying out."
+      },
+      "answer": "B",
+      "analysis": "原文明确说明'最新统计显示，野外大熊猫数量超过1800只，被列为易危物种，但非濒危物种'，直接对应选项B。选项A与原文矛盾；选项C原文未提及；选项D错误，大熊猫仍面临因生活过于舒适而灭绝的风险。"
+    },
+    {
+      "question_number": 9,
+      "passage": "Environmentalists have long believed that building roads or homes near the bears may threaten their survival by 'reducing or fragmenting their natural habitats', The Times reported. But the new research suggests that a 'modest degree of discomfort and fragmentation' may actually help preserve panda populations.",
+      "question": "What do environmentalists traditionally believe threatens pandas' survival?",
+      "options": {
+        "A": "Lack of genetic diversity.",
+        "B": "Too much human activity in their habitats.",
+        "C": "Reduction or fragmentation of their natural habitats.",
+        "D": "Insufficient food resources."
+      },
+      "answer": "C",
+      "analysis": "原文明确提到'环保人士长期认为，在大熊猫栖息地附近修路或建房会通过“减少或碎片化其天然栖息地”威胁它们的生存'，直接对应选项C。选项A是栖息地过于舒适导致的结果；选项B表述模糊；选项D原文未提及。"
+    },
+    {
+      "question_number": 10,
+      "passage": "The experts concluded that pandas should ideally 'be happy enough to thrive, but not so content that they don't want to move around and find new mates'. Their conclusions about what The Guardian described as this 'sweet spot' are in line with the so-called Goldilocks principle: that there can be just the right amount of something. The ideal level of perfectly livable habitat was found to be only 80% of an area, with the remainder either too harsh or too affected by human activity.",
+      "question": "What does 'sweet spot' refer to in the context of panda conservation?",
+      "options": {
+        "A": "A habitat that is neither too comfortable nor too harsh.",
+        "B": "A perfect genetic diversity level for pandas.",
+        "C": "A suitable number of new mates for pandas.",
+        "D": "A balanced proportion of human activity in pandas' habitats."
+      },
+      "answer": "A",
+      "analysis": "原文提到'sweet spot'对应的专家结论是'大熊猫应足够幸福以繁衍，但又不能过于满足而不愿寻找新配偶'，结合前文'理想栖息地中80%适宜居住，20%要么过于恶劣要么受人类活动影响'，可推断'sweet spot'指既不太舒适也不太恶劣的栖息地，对应选项A。选项B、C、D表述错误。"
+    },
+    {
+      "question_number": 11,
+      "passage": "With those born with natural talents, it feels as if they excel without really trying. But what about those of us who don't have a natural talent? We've been told all our lives that if you work hard, you too can succeed. But with the release of Angela Duckworth's Grit, we are given a new key to success. 'As much as talent counts, effort counts twice,' says Duckworth in Grit.",
+      "question": "What does the passage say about people born with natural talents?",
+      "options": {
+        "A": "They seem to outdo others without hard work.",
+        "B": "They appear to know all the secrets to success.",
+        "C": "They feel it only too logical to succeed.",
+        "D": "They are bound to excel effortlessly."
+      },
+      "answer": "A",
+      "analysis": "原文开篇提到'对于那些天生有天赋的人来说，他们似乎无需真正努力就能表现出色'，对应选项A。选项B无依据；选项C原文未提及；选项D表述绝对，'bound to'与原文'feels as if'不符。"
+    },
+    {
+      "question_number": 12,
+      "passage": "She introduces a new concept that talent may be overrated, and if you want real success, what you need is grit the perfect combination of passion and persistence. Even if you have natural talent it's nothing without grit.",
+      "question": "What does Duckworth say about talent?",
+      "options": {
+        "A": "It is a new concept much too overrated.",
+        "B": "It proves necessary for big achievements.",
+        "C": "It plays a lesser role in one's success.",
+        "D": "It is a guarantee for real success in life."
+      },
+      "answer": "C",
+      "analysis": "Duckworth提出'天赋固然重要，但努力的重要性是天赋的两倍'，且'即使有天赋，没有毅力也毫无意义'，说明天赋在成功中的作用不如努力和毅力，对应选项C。选项A错误，天赋并非新概念；选项B无依据；选项D与原文矛盾。"
+    },
+    {
+      "question_number": 13,
+      "passage": "Duckworth says grit is the difference between success and failure. A person who has grit is more likely to succeed than a person who does not. When we think about attaining success - whether it's landing that job or learning that new skill - our thoughts are immediately burdened by all the things we must first learn. If you want that new job, you have to learn the job skills, then the interview skills, then the dress part - and you must be perfect at all of them.",
+      "question": "What does the passage say about people thinking of attaining success?",
+      "options": {
+        "A": "They are puzzled how to present their best to the employer.",
+        "B": "They are burdened by their expectation of perfection.",
+        "C": "They will try hard to land a job that fits their skills best.",
+        "D": "They will find themselves lacking in all the skills they need."
+      },
+      "answer": "B",
+      "analysis": "原文提到'当我们想到获得成功时，脑海中会立刻被必须先学习的所有事情所困扰，且必须在所有方面都做到完美'，说明人们在追求成功时被追求完美的期望所累，对应选项B。选项A片面；选项C无依据；选项D表述绝对。"
+    },
+    {
+      "question_number": 14,
+      "passage": "Grit is different because it tells us that perfection isn't the goal. Grit lifts the unreasonable expectations off our shoulders. Grit tells us that the door is open wider than we first thought possible. Grit allows us to redefine our goals.",
+      "question": "How does the author think grit can be helpful to us?",
+      "options": {
+        "A": "It allows us to know what we are good at.",
+        "B": "It opens our eyes to new opportunities.",
+        "C": "It focuses our attention on what we do.",
+        "D": "It lets us reconsider the goals to achieve."
+      },
+      "answer": "D",
+      "analysis": "原文明确提到'毅力让我们能够重新定义自己的目标'，对应选项D。选项A无依据；选项B混淆概念；选项C原文未提及。"
+    },
+    {
+      "question_number": 15,
+      "passage": "The real workings of grit are to have sustainable passion and continue to try. Effort means more than your natural ability. Even if you haven't mastered a skill, grit tells you that you can still succeed if you can transform your passion into action. In a way, Duckworth is giving new hope to people who have shut the doors on their dreams. She is saying it is possible that you can accomplish anything. If at first you fail, then try one more time with grit.",
+      "question": "What message does Duckworth try to convey in her book Grit?",
+      "options": {
+        "A": "We should perfect ourselves to ensure success.",
+        "B": "We should stay persistent even in face of failures.",
+        "C": "We can never master a skill without constant practice.",
+        "D": "We can never expect to reach our goals without passion."
+      },
+      "answer": "B",
+      "analysis": "Duckworth定义毅力为'激情与坚持的完美结合'，并强调'即使失败，也要带着毅力再试一次'，核心信息是面对失败要坚持不懈，对应选项B。选项A与原文矛盾；选项C无依据；选项D片面。"
+    },
+    {
+      "question_number": 16,
+      "passage": "She introduces a new concept that talent may be overrated, and if you want real success, what you need is grit the perfect combination of passion and persistence. Even if you have natural talent it's nothing without grit.",
+      "question": "What is grit defined as by Duckworth?",
+      "options": {
+        "A": "A combination of talent and hard work.",
+        "B": "A mix of passion and persistence.",
+        "C": "The ability to learn new skills quickly.",
+        "D": "The determination to pursue perfection."
+      },
+      "answer": "B",
+      "analysis": "原文明确给出毅力的定义——'激情与坚持的完美结合'，直接对应选项B。选项A错误；选项C无依据；选项D与原文矛盾。"
+    },
+    {
+      "question_number": 17,
+      "passage": "Grit is different because it tells us that perfection isn't the goal. Grit lifts the unreasonable expectations off our shoulders. Grit tells us that the door is open wider than we first thought possible.",
+      "question": "Why is grit different from the traditional view of success?",
+      "options": {
+        "A": "It emphasizes natural talent over effort.",
+        "B": "It rejects the idea that perfection is the goal.",
+        "C": "It focuses on mastering multiple skills.",
+        "D": "It believes success depends on opportunities."
+      },
+      "answer": "B",
+      "analysis": "毅力的不同之处在于它告诉我们完美并非目标，对应选项B。选项A错误；选项C无依据；选项D原文未提及。"
+    },
+    {
+      "question_number": 18,
+      "passage": "In a way, Duckworth is giving new hope to people who have shut the doors on their dreams. She is saying it is possible that you can accomplish anything.",
+      "question": "Who can benefit from the concept of grit?",
+      "options": {
+        "A": "People born with great talents.",
+        "B": "People who have given up on their dreams.",
+        "C": "People who are good at adapting to changes.",
+        "D": "People who pursue perfection in everything."
+      },
+      "answer": "B",
+      "analysis": "Duckworth正在给那些关闭梦想之门的人带来新的希望，说明放弃梦想的人能从毅力的概念中受益，对应选项B。选项A错误；选项C无依据；选项D与原文矛盾。"
+    },
+    {
+      "question_number": 19,
+      "passage": "'As much as talent counts, effort counts twice,' says Duckworth in Grit. She introduces a new concept that talent may be overrated, and if you want real success, what you need is grit the perfect combination of passion and persistence. Even if you have natural talent it's nothing without grit.",
+      "question": "What does Duckworth say about the relationship between talent and grit?",
+      "options": {
+        "A": "Talent is more important than grit for success.",
+        "B": "Grit is unnecessary if one has natural talent.",
+        "C": "Talent is meaningless without grit.",
+        "D": "Grit can replace talent in achieving success."
+      },
+      "answer": "C",
+      "analysis": "原文明确表示'即使有天赋，没有毅力也毫无意义'，对应选项C。选项A错误；选项B与原文矛盾；选项D无依据。"
+    },
+    {
+      "question_number": 20,
+      "passage": "The real workings of grit are to have sustainable passion and continue to try. Effort means more than your natural ability. Even if you haven't mastered a skill, grit tells you that you can still succeed if you can transform your passion into action.",
+      "question": "What is the key to success according to Duckworth?",
+      "options": {
+        "A": "Sustainable passion and continuous effort.",
+        "B": "Mastering multiple skills related to the goal.",
+        "C": "Setting realistic and achievable goals.",
+        "D": "Learning from failures and adjusting strategies."
+      },
+      "answer": "A",
+      "analysis": "Duckworth定义毅力为'激情与坚持的完美结合'，且提到'毅力的真正作用是拥有持久的激情并持续尝试'，说明成功的关键是持久的激情和持续的努力，对应选项A。选项B无依据；选项C原文未提及；选项D无依据。"
+    },
+    {
+      "question_number": 21,
+      "passage": "The shift to remote work has made online meetings a daily routine for millions of people. However, a growing body of research suggests that virtual meetings are not always as effective as in-person ones. A study conducted by researchers at a leading university analyzed data from 500 companies across various industries. The findings revealed that participants in online meetings were less likely to contribute ideas freely, often held back by technical glitches or the lack of nonverbal cues. In contrast, face-to-face meetings fostered more active engagement, with participants reporting higher levels of understanding and collaboration.",
+      "question": "What does the research mentioned in the passage indicate?",
+      "options": {
+        "A": "Online meetings are more efficient for large companies.",
+        "B": "Nonverbal cues are unimportant in virtual communication.",
+        "C": "Face-to-face meetings promote more active engagement.",
+        "D": "Technical issues rarely affect online meeting participants."
+      },
+      "answer": "C",
+      "analysis": "原文明确提到'面对面会议促进了更积极的参与，参与者反馈理解度和协作度更高'，与选项C一致。选项A与原文矛盾；选项B违背原文；选项D与原文不符。"
+    },
+    {
+      "question_number": 22,
+      "passage": "Another aspect highlighted in the research is the impact of meeting duration on productivity. Online meetings tend to be longer than in-person ones, as participants often spend extra time troubleshooting technical problems or repeating information to ensure clarity. A survey of 2,000 employees found that 68% of respondents felt that online meetings were often unnecessarily prolonged, leading to fatigue and reduced focus.",
+      "question": "Why do online meetings tend to be longer according to the research?",
+      "options": {
+        "A": "Participants need more time to build trust.",
+        "B": "Technical troubleshooting and repeated information take extra time.",
+        "C": "There are no clear agendas for most online meetings.",
+        "D": "Employees are more likely to get distracted in virtual settings."
+      },
+      "answer": "B",
+      "analysis": "原文直接说明'线上会议往往比面对面会议更长，因为参与者经常需要额外时间解决技术问题或重复信息以确保清晰传达'，与选项B完全匹配。选项A原文未提及；选项C与原文不符；选项D并非时长更长的原因。"
+    },
+    {
+      "question_number": 23,
+      "passage": "Despite the drawbacks, online meetings also offer unique advantages. They eliminate the need for travel, reducing both time and financial costs for companies and employees. A small business owner interviewed for the study reported saving over $10,000 annually on travel expenses after switching to virtual meetings. Additionally, online meetings allow for greater flexibility, enabling participants from different locations to join without geographical constraints.",
+      "question": "What is a unique advantage of online meetings mentioned in the passage?",
+      "options": {
+        "A": "They are more structured than in-person meetings.",
+        "B": "They reduce travel costs and offer greater flexibility.",
+        "C": "They enhance nonverbal communication between participants.",
+        "D": "They are less likely to cause participant fatigue."
+      },
+      "answer": "B",
+      "analysis": "原文明确指出线上会议的独特优势是'无需出差，减少公司和员工的时间及财务成本'以及'提供更大的灵活性，让不同地点的参与者无需受地理限制参与'，与选项B一致。选项A、C、D均为面对面会议的优势或线上会议的劣势。"
+    },
+    {
+      "question_number": 24,
+      "passage": "Urban public spaces, such as parks, plazas, and community gardens, play a vital role in enhancing residents' quality of life. A recent study published in an urban planning journal examined 30 cities across Europe and Asia, focusing on the relationship between public space design and community well-being. The results showed that cities with well-designed public spaces had higher rates of social interaction among residents, lower levels of stress, and improved mental health outcomes. Key design elements included accessible seating areas, greenery, and safe walking paths.",
+      "question": "What do the key design elements of urban public spaces include?",
+      "options": {
+        "A": "High-rise buildings and shopping malls.",
+        "B": "Accessible seating, greenery, and safe walking paths.",
+        "C": "Large parking lots and public transportation hubs.",
+        "D": "Indoor recreation centers and libraries."
+      },
+      "answer": "B",
+      "analysis": "原文直接列举城市公共空间的关键设计元素为'便利的休息区、绿植和安全的步行道'，与选项B完全一致。选项A、C、D均未在原文中提及。"
+    },
+    {
+      "question_number": 25,
+      "passage": "The study also found that equitable access to public spaces is crucial for social inclusion. In many cities, public spaces are often concentrated in wealthier neighborhoods, leaving residents in low-income areas with limited access to quality outdoor areas. This inequality has been linked to higher rates of obesity, depression, and social isolation among disadvantaged groups.",
+      "question": "What is the impact of unequal access to urban public spaces?",
+      "options": {
+        "A": "It leads to better social cohesion in wealthy areas.",
+        "B": "It results in higher rates of obesity and depression in disadvantaged groups.",
+        "C": "It encourages urban planners to focus on indoor facilities.",
+        "D": "It reduces the need for inclusive design strategies."
+      },
+      "answer": "B",
+      "analysis": "原文明确说明'这种不平等与弱势群体中更高的肥胖率、抑郁症发病率和社会隔离有关'，与选项B一致。选项A并非不平等的影响；选项C原文未提及；选项D与原文相悖。"
+    },
+    {
+      "question_number": 26,
+      "passage": "Furthermore, the design of public spaces can influence environmental sustainability. Cities with more green public spaces have lower temperatures, as vegetation helps to reduce the urban heat island effect. Additionally, well-designed public spaces often incorporate sustainable features such as rainwater harvesting systems and solar-powered lighting, reducing the city's carbon footprint.",
+      "question": "How do green public spaces contribute to environmental sustainability?",
+      "options": {
+        "A": "They increase the urban heat island effect.",
+        "B": "They reduce city temperatures and carbon footprint.",
+        "C": "They require more energy for maintenance.",
+        "D": "They replace rainwater harvesting systems."
+      },
+      "answer": "B",
+      "analysis": "原文提到绿色公共空间'有助于降低城市热岛效应，使气温降低'，且'融入可持续特征，减少城市碳足迹'，与选项B一致。选项A与原文相悖；选项C原文未提及；选项D与原文不符。"
+    },
+    {
+      "question_number": 27,
+      "passage": "The rise of the digital economy has disrupted traditional business models across various industries. Many brick-and-mortar stores have struggled to compete with online retailers, which offer greater convenience and a wider range of products. However, some traditional businesses have successfully adapted by integrating digital technologies into their operations.",
+      "question": "How did some traditional businesses adapt to the digital economy?",
+      "options": {
+        "A": "By closing their physical stores completely.",
+        "B": "By integrating digital technologies into their operations.",
+        "C": "By reducing the range of products they offer.",
+        "D": "By raising prices to cover operational costs."
+      },
+      "answer": "B",
+      "analysis": "原文明确指出'一些传统企业通过将数字技术整合到运营中成功实现了转型'，与选项B表述完全一致。选项A与原文相悖；选项C、D原文均未提及。"
+    },
+    {
+      "question_number": 28,
+      "passage": "Another trend in the digital economy is the growth of platform-based business models. These platforms connect buyers and sellers directly, eliminating intermediaries and reducing transaction costs. However, this model also raises concerns about job security and labor rights, as many platform workers are classified as independent contractors and lack traditional employment benefits.",
+      "question": "What is a concern raised by platform-based business models?",
+      "options": {
+        "A": "Higher transaction costs for buyers.",
+        "B": "Lack of job security for platform workers.",
+        "C": "Over-reliance on physical store locations.",
+        "D": "Limited access to digital technologies."
+      },
+      "answer": "B",
+      "analysis": "原文提到平台型商业模式'引发了对工作保障和劳工权利的担忧，因为许多平台工人被归类为独立承包商，缺乏传统的就业福利'，与选项B一致。选项A与原文相悖；选项C、D原文未提及。"
+    },
+    {
+      "question_number": 29,
+      "passage": "Hope is not entirely out of reach. The rate of growth has begun to ease (sales were up 7% in the year, compared with 8% the previous year). This slowing down suggests that public awareness of plastic waste is starting to have an impact, even if the overall consumption remains high.",
+      "question": "What does the slowing rate of bottled water sales growth indicate?",
+      "options": {
+        "A": "Bottled water will soon be replaced by other drinks.",
+        "B": "There is still hope to fight against bottled water consumption.",
+        "C": "People have completely given up buying bottled water.",
+        "D": "Manufacturers are reducing the production of bottled water."
+      },
+      "answer": "B",
+      "analysis": "原文开篇指出'希望并非完全渺茫，瓶装水销量增长率已开始放缓'，且'增长率下降表明公众对塑料垃圾的关注度正产生影响'，与选项B一致。选项A、C过于绝对；选项D原文未提及。"
+    },
+    {
+      "question_number": 30,
+      "passage": "Water bottlers, unsurprisingly, don't support bans. But they raise concerns about health rather than profit margins. They argue that bottled water is a safe alternative when tap water quality is questionable, and that banning plastic bottles would limit consumer choice.",
+      "question": "On what do bottled water manufacturers base their opposition to plastic bottle bans?",
+      "options": {
+        "A": "High production costs of alternative packaging.",
+        "B": "Potential loss of profits from sales.",
+        "C": "Concerns about public health.",
+        "D": "Consumer dissatisfaction with tap water."
+      },
+      "answer": "C",
+      "analysis": "原文明确说明'瓶装水厂商不支持禁令，但他们提出的担忧是关于健康而非利润率'，与选项C完全匹配。选项A原文未提及；选项B是批评者的观点；选项D并非核心依据。"
+    },
+    {
+      "question_number": 31,
+      "passage": "Yet the bottled water market is livelier than ever. It defies our increasing awareness of the harm plastics do to the environment and a broader, growing sense that something has to change. Sales in the UK were worth a record £558.4 million this past year, an increase of 7% according to the latest figures from the market analyst Kantar.",
+      "question": "What happened to bottled water sales in Britain last year?",
+      "options": {
+        "A": "They dropped by 7% due to environmental concerns.",
+        "B": "They reached an all-time high despite environmental awareness.",
+        "C": "They were greatly affected by media coverage of pollution.",
+        "D": "They remained unchanged compared with the previous year."
+      },
+      "answer": "B",
+      "analysis": "原文提到'英国去年瓶装水销售额达到创纪录的5.584亿英镑，增长7%'，且'无视了我们对塑料环境危害日益增长的认识'，与选项B一致。选项A与原文相悖；选项C与原文不符；选项D不符合'创纪录'描述。"
+    },
+    {
+      "question_number": 32,
+      "passage": "As is so often the case, clever marketing can beat reason, awareness is rarely enough. Bottled water companies spend millions on advertising campaigns that associate their products with purity, health, and convenience. Even people who are aware of the environmental impact can be swayed by these persuasive marketing tactics, leading them to make irrational choices.",
+      "question": "Why do people still buy bottled water despite knowing its environmental harm?",
+      "options": {
+        "A": "They trust the quality of bottled water more.",
+        "B": "Clever marketing strategies can influence their decisions.",
+        "C": "They have no access to eco-friendly alternatives.",
+        "D": "Bottled water is much cheaper than other drinks."
+      },
+      "answer": "B",
+      "analysis": "原文核心观点为'巧妙的营销可以战胜理性，仅靠认知远远不够'，即使有环保意识的人也会受营销影响，对应选项B。选项A是营销传递的印象，非根本原因；选项C、D原文未提及。"
+    },
+    {
+      "question_number": 33,
+      "passage": "Cities across the world are taking action to reduce plastic waste from bottled water. San Francisco has banned them from city property and events, joining other major urban areas that have implemented similar restrictions.",
+      "question": "What action has San Francisco taken regarding bottled water?",
+      "options": {
+        "A": "It has promoted the production of eco-friendly bottles.",
+        "B": "It has banned single-use bottles from city property and events.",
+        "C": "It has provided free tap water in all public spaces.",
+        "D": "It has raised the price of bottled water to discourage consumption."
+      },
+      "answer": "B",
+      "analysis": "原文直接说明'旧金山已禁止在城市财产和活动中使用瓶装水'，与选项B表述完全一致。选项A、C、D原文均未提及。"
+    },
+    {
+      "question_number": 34,
+      "passage": "The weakening of the human connection to nature might be good for economic growth but is bad for people. This disconnection has been linked to a range of physical and mental health issues, including increased stress levels, higher rates of depression, and reduced overall well-being. As societies become more urbanized, people spend less time outdoors and more time in built environments, leading to a gradual loss of contact with the natural world. The author argues that this trend is shortsighted and that reestablishing a strong bond with nature is essential for human flourishing.",
+      "question": "What does the author want to emphasize in the first paragraph?",
+      "options": {
+        "A": "Economic growth should be prioritized over environmental protection.",
+        "B": "Urbanization has improved people's living standards.",
+        "C": "It is unwise to weaken the human connection to nature.",
+        "D": "Mental health issues are mainly caused by urbanization."
+      },
+      "answer": "C",
+      "analysis": "原文开篇指出'人类与自然联系的弱化可能有利于经济增长，但对人类自身有害'，并强调该趋势'目光短浅'，核心是反对弱化与自然的联系，对应选项C。选项A与作者观点相悖；选项B原文未提及；选项D过于绝对。"
+    },
+    {
+      "question_number": 35,
+      "passage": "Popular culture often reflects and reinforces societal trends, and in recent decades, it has become increasingly detached from the natural world. Movies, television shows, and social media content are more likely to depict urban settings and technological advancements than natural landscapes or outdoor activities. This shift in cultural representation has contributed to the growing disconnection between people and nature, as individuals are exposed to fewer images and narratives that celebrate the natural world. Researchers have found that this cultural detachment mirrors the real-world trend of reduced outdoor engagement.",
+      "question": "What did researchers find about popular culture?",
+      "options": {
+        "A": "It is increasingly detached from the natural world.",
+        "B": "It focuses too much on physical health issues.",
+        "C": "It encourages people to spend more time outdoors.",
+        "D": "It has little impact on people's lifestyle choices."
+      },
+      "answer": "A",
+      "analysis": "原文明确提到'近几十年来，流行文化与自然世界的联系越来越疏远'，且研究者发现'这种文化上的脱节反映了户外参与减少的现实趋势'，与选项A完全匹配。选项B、C与原文相反；选项D与原文不符。"
+    },
+    {
+      "question_number": 36,
+      "passage": "To address the disconnection from nature, the author proposes that people should reconnect with nature through the right to grow. This includes activities such as growing vegetables in community gardens, planting trees in urban areas, and participating in local conservation projects. These activities not only provide people with direct contact with the natural world but also foster a sense of responsibility and ownership.",
+      "question": "What does the author propose people do?",
+      "options": {
+        "A": "Move to rural areas to get closer to nature.",
+        "B": "Reconnect with nature through the right to grow.",
+        "C": "Reduce their reliance on popular culture.",
+        "D": "Participate in more indoor recreational activities."
+      },
+      "answer": "B",
+      "analysis": "原文直接说明'为解决与自然的脱节问题，作者建议人们通过'种植权'与自然重新建立联系'，与选项B表述一致。选项A、C、D原文均未提及。"
+    },
+    {
+      "question_number": 37,
+      "passage": "Vegetable planting has a long history of benefiting both individuals and communities. For centuries, people have grown vegetables to supplement their food supply, ensuring access to fresh, nutritious produce. In urban areas, community gardens and rooftop farms have become popular ways to grow vegetables, transforming underused spaces into green areas that improve the urban landscape.",
+      "question": "What do we learn from the passage about vegetable planting?",
+      "options": {
+        "A": "It is a recent trend in urban areas.",
+        "B": "It requires advanced technological support.",
+        "C": "It has long been used to increase food supply and improve urban landscape.",
+        "D": "It is mainly practiced by professional farmers."
+      },
+      "answer": "C",
+      "analysis": "原文提到'几个世纪以来，人们种植蔬菜以补充食物供应'，且在城市中'种植蔬菜成为改善城市景观的流行方式'，与选项C一致。选项A与'有悠久历史'相悖；选项B、D原文未提及。"
+    },
+    {
+      "question_number": 38,
+      "passage": "Publicly accessible fruit and vegetable gardens offer more than just practical benefits. Beyond providing fresh food and improving the environment, these gardens enhance people's community spirit. They create spaces where people from different backgrounds can work together, share knowledge, and build relationships.",
+      "question": "What can publicly accessible fruit and vegetable gardens do apart from their practical functions?",
+      "options": {
+        "A": "Reduce air pollution in urban areas.",
+        "B": "Lower the cost of fresh produce.",
+        "C": "Provide job opportunities for local residents.",
+        "D": "Enhance people's community spirit."
+      },
+      "answer": "D",
+      "analysis": "原文明确指出'除了提供新鲜食物和改善环境等实用功能外，这些花园还能增强人们的社区精神'，与选项D完全匹配。选项A、B属于实用功能；选项C原文未提及。"
+    },
+    {
+      "question_number": 39,
+      "passage": "Chocolates save us from many things, especially emotional distress. For decades, people have turned to chocolate for comfort during difficult times, believing that it can instantly lift their mood. Whether it's a bar of dark chocolate after a long day or a box of truffles to celebrate a special occasion, chocolate is often associated with pleasure and relaxation.",
+      "question": "What do people believe chocolates can do?",
+      "options": {
+        "A": "Cheer them up instantly.",
+        "B": "Cure serious mental health problems.",
+        "C": "Improve their physical health.",
+        "D": "Help them sleep better at night."
+      },
+      "answer": "A",
+      "analysis": "原文提到'人们在困难时期会求助于巧克力寻求慰藉，相信它能立即改善心情'，与选项A一致。选项B过于绝对；选项C、D原文未提及。"
+    },
+    {
+      "question_number": 40,
+      "passage": "However, scientists have recently made a worrying assertion: chocolates could become unavailable in less than 30 years. This warning is based on the threat that global warming poses to cacao trees, the source of chocolate's key ingredient. Cacao trees require specific growing conditions—warm temperatures, high humidity, and well-drained soil—and these conditions are becoming increasingly rare as climate change advances.",
+      "question": "What was scientists' recent assertion about chocolates?",
+      "options": {
+        "A": "They will become more expensive in the future.",
+        "B": "They are harmful to people's health if consumed excessively.",
+        "C": "They will replace other desserts in the market.",
+        "D": "They could become unavailable in less than 30 years."
+      },
+      "answer": "D",
+      "analysis": "原文直接说明'科学家最近提出了一个令人担忧的断言：巧克力可能在不到30年内变得难以获取'，与选项D表述完全一致。选项A、B、C原文均未提及。"
+    },
+    {
+      "question_number": 41,
+      "passage": "One possible solution to the cacao crisis is to shift cacao farms to cooler mountainous areas. However, this approach comes with significant drawbacks. Cooler mountain regions are often home to unique wildlife and fragile ecosystems. Moving cacao farms to these areas would require clearing large areas of forest, which would destroy the natural habitat of many species.",
+      "question": "What would happen if the cacao farms were shifted to cooler mountainous areas?",
+      "options": {
+        "A": "The natural habitat of wildlife there would be ruined.",
+        "B": "Cacao yields would increase significantly.",
+        "C": "It would reduce the impact of global warming.",
+        "D": "It would lower the production costs of chocolate."
+      },
+      "answer": "A",
+      "analysis": "原文明确提到'将可可农场转移到这些地区需要清理大片森林，这将破坏许多物种的自然栖息地'，与选项A一致。选项B、D与原文相悖；选项C原文未提及。"
+    },
+    {
+      "question_number": 42,
+      "passage": "Global warming has already taken a heavy toll on cacao farms around the world. Major cacao-producing countries, such as Ivory Coast and Ghana, have experienced significant decreases in cacao production in recent years. Rising temperatures have increased the risk of droughts and floods, which damage cacao trees and reduce yields. Farmers report that their harvests have declined by up to 30% in some areas.",
+      "question": "What do we learn about the cacao farms in the crisis of global warming?",
+      "options": {
+        "A": "They have moved to cooler regions successfully.",
+        "B": "They have adopted new farming technologies.",
+        "C": "They have suffered a lot due to a decrease in produce.",
+        "D": "They have received government support to cope with the crisis."
+      },
+      "answer": "C",
+      "analysis": "原文提到'全球变暖已给全球可可农场带来沉重打击'，且'一些地区的收成下降了高达30%'，与选项C一致。选项A与原文不符；选项B、D原文未提及。"
+    },
+    {
+      "question_number": 43,
+      "passage": "Scientists at the University of California's new bio-sciences building are working on a more sustainable solution: gene-editing cacao seedlings. The goal is to develop cacao trees that can withstand the drier, warmer conditions caused by global warming. By modifying the genes of cacao seedlings, researchers hope to create plants that are more resistant to drought, pests, and diseases.",
+      "question": "What are scientists trying to do in the University of California's new bio-sciences building?",
+      "options": {
+        "A": "Develop new types of chocolate with better taste.",
+        "B": "Gene-edit cacao seedlings for them to withstand a drier, warmer climate.",
+        "C": "Study the impact of global warming on cacao production.",
+        "D": "Train farmers to use sustainable farming methods."
+      },
+      "answer": "B",
+      "analysis": "原文直接说明'加州大学新生物科学大楼的科学家们正在研究一种更可持续的解决方案：对可可幼苗进行基因编辑'，目的是'培育能够承受全球变暖导致的更干燥、更温暖环境的可可树'，与选项B表述完全一致。选项A、C、D原文均未提及。"
+    }
+  ]
+}

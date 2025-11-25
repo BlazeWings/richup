@@ -1,0 +1,184 @@
+{
+  "word_selection_grid": [
+    {
+      "question_number": 1,
+      "sentence": "It's well known that physical exercise is beneficial not just to physical health but also to mental health. Yet whereas most countries have ______ evidence-backed guidelines on the type and intensity of exercise ______ for various physical health benefits, such guidelines do not yet exist for exercise and mood.",
+      "options": {
+        "A": "detailed / required",
+        "B": "required / partly",
+        "C": "partly / distinction",
+        "D": "distinction / vigorous"
+      },
+      "answer": "A",
+      "analysis": "空格修饰“guidelines”，需形容词。“detailed evidence-backed guidelines”表示“详细的、有证据支持的指导方针”，符合语境；过去分词作后置定语，修饰“exercise”。“exercise required for...”表示“各种健康益处所需的运动”。"
+    },
+    {
+      "question_number": 2,
+      "sentence": "Before ______ into some of the key take-aways, an important ______ made in the review is between aerobic exercise and anaerobic.",
+      "options": {
+        "A": "dipping / distinction",
+        "B": "distinction / involves",
+        "C": "involves / vigorous",
+        "D": "vigorous / moderate"
+      },
+      "answer": "A",
+      "analysis": "介词Before后接动名词。“dipping into some of the key take-aways”表示“深入探讨一些关键要点”，为固定搭配；不定冠词an后接名词。“an important distinction”表示“一个重要的区别”，后文进一步说明是两者间的区别。"
+    },
+    {
+      "question_number": 3,
+      "sentence": "The former ______ such things as walking, jogging and cycling and means exercising in such a way that your body is able to use oxygen to burn fat for energy.",
+      "options": {
+        "A": "constitutes",
+        "B": "involves",
+        "C": "vigorous",
+        "D": "moderate"
+      },
+      "answer": "B",
+      "analysis": "主语为the former（指代aerobic exercise），需谓语动词。“involves such things as...”表示“包括诸如……之类的事情”，符合句意。"
+    },
+    {
+      "question_number": 4,
+      "sentence": "In contrast, anaerobic exercise—such as lifting heavy weights—is of such ______ intensity that your body does not have time to use oxygen to create energy.",
+      "options": {
+        "A": "vigorous",
+        "B": "moderate",
+        "C": "contradictory",
+        "D": "detailed"
+      },
+      "answer": "A",
+      "analysis": "修饰intensity，需形容词。“vigorous intensity”表示“高强度”，与后文“your body does not have time to use oxygen”对应。"
+    },
+    {
+      "question_number": 5,
+      "sentence": "The researchers found ______ results from 19 relevant studies. Some favoured higher intensity, others low, while seven studies found that intensity made no ______ to mood benefits.",
+      "options": {
+        "A": "contradictory / difference",
+        "B": "difference / approximately",
+        "C": "approximately / unit",
+        "D": "unit / equivalent"
+      },
+      "answer": "A",
+      "analysis": "修饰results，需形容词。后文“Some favoured higher intensity, others low”表明结果矛盾，故选“contradictory”；固定搭配“make no difference”表示“没有影响”，符合语境。"
+    },
+    {
+      "question_number": 6,
+      "sentence": "The optimum for improving mood is ______ intensity, perhaps because low intensity is too dull while high intensity is too unpleasant.",
+      "options": {
+        "A": "moderate",
+        "B": "vigorous",
+        "C": "contradictory",
+        "D": "detailed"
+      },
+      "answer": "A",
+      "analysis": "修饰intensity，需形容词。后文“low intensity is too dull while high intensity is too unpleasant”暗示最佳为“moderate intensity（中等强度）”。"
+    },
+    {
+      "question_number": 7,
+      "sentence": "When Toni Morrison died in 2019, the world lost one of its most influential authors. But Morrison was not ______ in this regard.",
+      "options": {
+        "A": "unique",
+        "B": "literary",
+        "C": "deteriorate",
+        "D": "comprehend"
+      },
+      "answer": "A",
+      "analysis": "系动词后接形容词。“Morrison was not unique”表示“莫里森并非个例”，与后文“Numerous writers”呼应。"
+    },
+    {
+      "question_number": 8,
+      "sentence": "Such ______ accomplishments highlight an important point. Our capacity to speak, write and learn new vocabulary does not seem to ______ with age.",
+      "options": {
+        "A": "literary / deteriorate",
+        "B": "deteriorate / comprehend",
+        "C": "comprehend / journey",
+        "D": "journey / sample"
+      },
+      "answer": "A",
+      "analysis": "修饰accomplishments，需形容词。“literary accomplishments”表示“文学成就”，符合语境；不定式符号to后接动词原形。“deteriorate with age”表示“随年龄增长而衰退”，与后文形成对比。"
+    },
+    {
+      "question_number": 9,
+      "sentence": "Our ability to produce and to ______ language is well preserved into older adulthood.",
+      "options": {
+        "A": "comprehend",
+        "B": "journey",
+        "C": "sample",
+        "D": "assume"
+      },
+      "answer": "A",
+      "analysis": "and连接并列结构，与produce（产出）对应。“comprehend language”表示“理解语言”，符合“语言产出与理解能力”的并列关系。"
+    },
+    {
+      "question_number": 10,
+      "sentence": "Language mastery is a ______ that we begin as infants and continue on for the rest of our lives.",
+      "options": {
+        "A": "journey",
+        "B": "sample",
+        "C": "unit",
+        "D": "component"
+      },
+      "answer": "A",
+      "analysis": "不定冠词a后接名词。“language mastery is a journey”表示“语言掌握是一个过程”，后文进一步说明是持续一生的旅程。"
+    },
+    {
+      "question_number": 11,
+      "sentence": "Some aspects of our language abilities, such as our knowledge of word meanings, ______ improve during middle and late adulthood.",
+      "options": {
+        "A": "actually",
+        "B": "approximately",
+        "C": "rarely",
+        "D": "traditionally"
+      },
+      "answer": "A",
+      "analysis": "副词修饰动词improve。“actually improve”表示“实际上会提升”，与普遍认知中“能力随年龄衰退”形成对比。"
+    },
+    {
+      "question_number": 12,
+      "sentence": "The researchers also studied a ______ of college students and found that their average vocabulary contained ______ 16,000 words.",
+      "options": {
+        "A": "sample / approximately",
+        "B": "approximately / unit",
+        "C": "unit / equivalent",
+        "D": "equivalent / sample"
+      },
+      "answer": "A",
+      "analysis": "不定冠词a后接名词。“a sample of college students”表示“一组大学生样本”，符合研究语境；修饰数字16,000。“approximately 16,000 words”表示“约16,000词”，符合研究数据表述习惯。"
+    },
+    {
+      "question_number": 13,
+      "sentence": "Older adults, with an average age of 75, ______ better than participants in their youth or middle years on tasks that required them to determine the meaning of words.",
+      "options": {
+        "A": "performed",
+        "B": "assumed",
+        "C": "comprehended",
+        "D": "deteriorated"
+      },
+      "answer": "A",
+      "analysis": "主语为older adults，需谓语动词。“performed better”表示“表现更好”，与后文“tasks that required them to determine the meaning of words”对应。"
+    },
+    {
+      "question_number": 14,
+      "sentence": "Language seems to be a skill that, contrary to what many might ______, does not weaken with age.",
+      "options": {
+        "A": "assume",
+        "B": "perform",
+        "C": "comprehend",
+        "D": "deteriorate"
+      },
+      "answer": "A",
+      "analysis": "情态动词might后接动词原形。“contrary to what many might assume”表示“与许多人假设的相反”，符合“语言能力不随年龄衰退”的结论。"
+    },
+    {
+      "question_number": 15,
+      "sentence": "New findings suggest that the kinds of ______ and strategic self-presentation behaviour we see in adults appear at a much younger age than ______ known.",
+      "options": {
+        "A": "complex / previously",
+        "B": "previously / revolving",
+        "C": "revolving / suddenly",
+        "D": "suddenly / complex"
+      },
+      "answer": "A",
+      "analysis": "and连接并列结构，与strategic（策略性的）对应。“complex self-presentation behaviour”表示“复杂的自我展示行为”，符合成年人行为特征；副词修饰known。“than previously known”表示“比先前已知的更早”，与“New findings”呼应。"
+    }
+  ]
+}

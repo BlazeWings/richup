@@ -1,0 +1,176 @@
+{
+  "opportunity_cards": {
+    "quiz_category": [
+      {
+        "id": 1,
+        "question": "看到道路标识上写着\"DETOUR\"是什么意思？",
+        "answer": "绕路/改道",
+        "analysis": "这是开车时的常见标志，表示前方道路封闭，需要绕路行驶。"
+      },
+      {
+        "id": 2,
+        "question": "看到物价标价上写着$9.99，美国人为什么常说这个价格？",
+        "answer": "Ten dollars",
+        "analysis": "美国人习惯把零点九九的尾数省略说\"ten dollars\"，这是一种文化习惯。"
+      },
+      {
+        "id": 3,
+        "question": "餐厅里常说的\"Chicken please!\"是什么意思？",
+        "answer": "请给我一份鸡肉",
+        "analysis": "这是对熟悉的服务员点餐，属于快餐文化场景。"
+      },
+      {
+        "id": 4,
+        "question": "赛后赢球时的感觉主要表达什么？",
+        "answer": "爽歪歪",
+        "analysis": "这是对赢球后爽感的直接形容，是日常交流中的文化常识表达。"
+      },
+      {
+        "id": 5,
+        "question": "\"French Fries\"在美国常叫什么？",
+        "answer": "薯条",
+        "analysis": "这是美国对薯条的常见称呼。"
+      },
+      {
+        "id": 6,
+        "question": "早点高峰期时，服务员问\"Sunny side up?\"指的是什么？",
+        "answer": "单面煎蛋",
+        "analysis": "这是早餐点餐场景的常用表达，特指煎蛋只煎一面、蛋黄保持液态的做法。"
+      },
+      {
+        "id": 7,
+        "question": "美国的首都是什么？",
+        "answer": "华盛顿特区",
+        "analysis": "很多人误以为是纽约，实际上美国首都是华盛顿特区。"
+      },
+      {
+        "id": 8,
+        "question": "英国的全称是什么？",
+        "answer": "大不列颠及北爱尔兰联合王国",
+        "analysis": "这是英国的正式名称，简称UK（United Kingdom）。"
+      },
+      {
+        "id": 9,
+        "question": "\"Down Under\"指的是哪个国家？",
+        "answer": "澳大利亚",
+        "analysis": "因为澳大利亚地处南半球，相对北半球而言位置偏\"下\"，所以被称为\"Down Under\"。"
+      },
+      {
+        "id": 10,
+        "question": "我们在万圣节晚上做什么？",
+        "answer": "挨家挨户要糖果",
+        "analysis": "\"Trick or treat\"（不给糖就捣蛋）是万圣节的核心活动，即挨家挨户索要糖果。"
+      },
+      {
+        "id": 11,
+        "question": "美国独立日是哪天？",
+        "answer": "7月4日",
+        "analysis": "该日期纪念1776年《独立宣言》通过，标志美国正式独立。"
+      },
+      {
+        "id": 12,
+        "question": "圣诞老人通常从什么地方进入房子？",
+        "answer": "烟囱",
+        "analysis": "这是圣诞传说中的重要细节，圣诞老人通过烟囱进入屋内派送礼物。"
+      },
+      {
+        "id": 13,
+        "question": "在美国拨打紧急电话应该打什么号码？",
+        "answer": "911",
+        "analysis": "这是美国最核心的紧急求助电话，涵盖报警、急救、消防等场景，是生活必备常识。"
+      },
+      {
+        "id": 14,
+        "question": "看到\"SALE 50% OFF\"是什么意思？",
+        "answer": "五折优惠",
+        "analysis": "这是购物场景的基础折扣表达，\"50% OFF\"表示原价减去50%，即五折。"
+      },
+      {
+        "id": 15,
+        "question": "\"ATM\"在英国指的是什么？",
+        "answer": "自动取款机",
+        "analysis": "是\"Automated Teller Machine\"的缩写，为全球通用的自动取款机标识，英国也沿用该表述。"
+      },
+      {
+        "id": 16,
+        "question": "在美国，红灯亮时可以右转吗？",
+        "answer": "通常可以（除非有标志禁止）",
+        "analysis": "美国交通规则中，红灯时在确保安全且无禁止标志的情况下可右转，交通拥堵时可能临时禁行。"
+      },
+      {
+        "id": 17,
+        "question": "在美国，\"M\"通常指什么？",
+        "answer": "地铁",
+        "analysis": "这是美国地铁的通用标志，代表\"Metro\"（地铁）或\"Underground Railway\"（地下铁路）。"
+      },
+      {
+        "id": 18,
+        "question": "停车标志\"P\"代表什么？",
+        "answer": "停车场",
+        "analysis": "\"P\"是\"Parking\"（停车）的缩写，为国际通用的停车场标识。"
+      },
+      {
+        "id": 19,
+        "question": "What comes once in a year, twice in a week, but never in a day?",
+        "answer": "The letter \"E\"",
+        "analysis": "从字母拼写逻辑分析：\"Year\"中含1个\"e\"，\"Week\"中含2个\"e\"，\"Day\"中无\"e\"；题目通过时间概念误导思维，核心是切换到字母维度解题，属于经典思维转换题。"
+      },
+      {
+        "id": 20,
+        "question": "What can you hold in your right hand, but never in your left hand?",
+        "answer": "Your left elbow",
+        "analysis": "从空间逻辑来看：右手可触及左肘，但左手无法握住自身所在的左肘，是利用身体部位空间关系设计的逻辑游戏。"
+      },
+      {
+        "id": 21,
+        "question": "I am not alive, but I can grow; I don't have lungs, but I need air; I don't have a mouth but water kills me. What am I?",
+        "answer": "Fire",
+        "analysis": "用生命体特征描述非生命物质：火（Fire）会蔓延（grow）、需要空气（oxygen）维持、遇水会熄灭（kills me），通过拟人化描述制造迷惑性，核心考察常识联想能力。"
+      },
+      {
+        "id": 22,
+        "question": "What question can you never answer yes to?",
+        "answer": "Are you asleep?",
+        "analysis": "属于悖论类题目：若回答\"yes\"，则说明未睡着，与问题矛盾；若睡着则无法回答，因此永远不能用\"yes\"回应。"
+      }
+    ],
+    "luck_category": [
+      {
+        "id": 23,
+        "content": "Won the first prize in the English competition and received a bonus of 300 mushrooms."
+      },
+      {
+        "id": 24,
+        "content": "Caught cheating by the teacher in winter and was fined one round of mushrooms."
+      },
+      {
+        "id": 25,
+        "content": "Memorized 20 words today and got a reward of 200 mushrooms."
+      },
+      {
+        "id": 26,
+        "content": "Fined 400 mushrooms for driving without wearing a helmet."
+      },
+      {
+        "id": 27,
+        "content": "Spent 200 mushrooms on buying school supplies and flowers at the start of the semester."
+      },
+      {
+        "id": 28,
+        "content": "Earned a 100-mushroom tip for buying breakfast for classmates."
+      },
+      {
+        "id": 29,
+        "content": "Awarded the National Medal of the People's Republic of China and received 1000 mushrooms."
+      },
+      {
+        "id": 30,
+        "content": "Received 500 mushrooms (covering the cost of ingredients) when putting dishes into the pot while cooking."
+      },
+      {
+        "id": 31,
+        "content": "Actively participated in group discussions and got a reward."
+      }
+    ]
+  }
+}

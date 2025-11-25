@@ -1,0 +1,505 @@
+{
+  "translation_grid": [
+    {
+      "question_number": 1,
+      "chinese_original": "狮舞（Lion Dance）是中国最广为流传的民间舞蹈之一",
+      "option_a": "Lion Dance is one of the most widespread folk dances in China.",
+      "option_b": "The Lion Dance is one of the most popular folk dance in China.",
+      "option_c": "Lion Dancing is one of the most widely spread folk dances of China.",
+      "option_d": "The Dance of Lion is one of China's most widespread folk dances.",
+      "answer": "A",
+      "analysis": "B 项 \"dance\" 应为复数 \"dances\"。C 项 \"Lion Dancing\" 不是标准说法，且 \"spread folk dances of China\" 表达不自然。D 项 \"The Dance of Lion\" 词序和表达不地道。"
+    },
+    {
+      "question_number": 2,
+      "chinese_original": "狮为百兽之首，在中国传统中，狮子被视为是能带来好运的吉祥物",
+      "option_a": "The lion is the king of all animals, and in Chinese tradition, it is regarded as a mascot that can bring good luck.",
+      "option_b": "The lion heads all beasts, in Chinese tradition, the lion is looked as a mascot can bring good luck.",
+      "option_c": "The lion is the head of hundred animals, in China's tradition, it is regarded as a mascot and could bring good lucks.",
+      "option_d": "Lion, which is the top of beasts, in Chinese tradition, is seen as a mascot and bringing good luck.",
+      "answer": "A",
+      "analysis": "B 项 \"looked as\" 应为 \"regarded as\"；\"can bring good luck\" 前缺少关系代词。C 项 \"hundred animals\" 和 \"good lucks\" 表达错误。D 项 \"bringing\" 非谓语使用错误。"
+    },
+    {
+      "question_number": 3,
+      "chinese_original": "中国将进一步发展经济、扩大开放，这对海外企业意味着更多的商机",
+      "option_a": "China will develop its economy further and open itself wider to the outside world, which offers more business opportunities to overseas enterprises.",
+      "option_b": "China will further develop economy and expand opening, this means more business opportunities for overseas enterprises.",
+      "option_c": "China will develop its economy more and enlarge its opening, that means more business chances to overseas companies.",
+      "option_d": "China will have further economic development and opening expansion, it means more commercial opportunities for enterprises overseas.",
+      "answer": "A",
+      "analysis": "B 项 \"expand opening\" 搭配不当；\"this means\" 造成句子粘连。C 项 \"enlarge opening\" 和 \"business chances\" 用词不地道。D 项表达臃肿，\"it means\" 造成句子粘连。"
+    },
+    {
+      "question_number": 4,
+      "chinese_original": "假日经济的现象表明：中国消费者的消费观正在发生巨大变化",
+      "option_a": "The phenomenon of holiday economy shows that Chinese people's consumption concept is undergoing great changes.",
+      "option_b": "The phenomena of holiday economy shows that Chinese consumers' consumption concept is undertaking great changes.",
+      "option_c": "The holiday economy phenomenon indicates: Chinese consumers' view on consumption is having great changes.",
+      "option_d": "The phenomenon of holiday economy shows that Chinese consumers' consumption concept is having huge changes.",
+      "answer": "A",
+      "analysis": "B 项 \"phenomena\" 与 \"shows\" 主谓不一致；\"undertaking changes\" 搭配不当。C 项使用冒号不如 \"that\" 正式；\"having great changes\" 表达不地道。D 项 \"having huge changes\" 不是标准搭配。"
+    },
+    {
+      "question_number": 5,
+      "chinese_original": "端午节，又叫龙舟节，是为了纪念爱国诗人屈原",
+      "option_a": "The Duanwu Festival, also called the Dragon Boat Festival, is to commemorate the patriotic poet Qu Yuan.",
+      "option_b": "The Dragon Boat Festival, also named Duanwu Festival, is for memory the patriotic poet Qu Yuan.",
+      "option_c": "The Duanwu Festival, also known as the Dragon Boat Festival, is in honor of the patriotic poet Qu Yuan.",
+      "option_d": "The Duanwu Festival, also calling the Dragon Boat Festival, is for commemorating the patriotic poet Qu Yuan.",
+      "answer": "A",
+      "analysis": "B 项 \"is for memory\" 语法错误。D 项 \"calling\" 现在分词误用。"
+    },
+    {
+      "question_number": 6,
+      "chinese_original": "这些物理课不仅让孩子们享受了一堂知识与乐趣兼具的物理课，也显示了我国通信科技的前进",
+      "option_a": "The lesson has not only offered children a physics lesson with knowledge and interest, but also shows the advance in communication technology of China.",
+      "option_b": "These physics lessons not only let children enjoy a lesson of knowledge and fun, but also displayed the advancement of our country's communication technology.",
+      "option_c": "These physics lessons not only offered children a physics lesson full of knowledge and interest, but also demonstrate the progress in communication technology in China.",
+      "option_d": "These lessons not only made children enjoy a physics lesson with both knowledge and fun, but also shows the progress of China's communication technology.",
+      "answer": "A",
+      "analysis": "B 项 \"a lesson of knowledge and fun\" 表达不地道。C 项 \"demonstrate\" 和 \"full of\" 虽可，但不如 A 项贴近原文。D 项 \"made children enjoy\" 生硬，\"shows\" 主谓不一致。"
+    },
+    {
+      "question_number": 7,
+      "chinese_original": "上海是朝气蓬勃，充满活力，丰富多彩的现代中国的缩影",
+      "option_a": "Shanghai is a dynamic, diverse and stimulating city - the very epitome of modern China.",
+      "option_b": "Shanghai is modern China's microcosm, which is vibrant, energetic and colorful.",
+      "option_c": "Shanghai is vigorous, full of energy and colorful, it is the epitome of modern China.",
+      "option_d": "Shanghai, which is young, lively and rich-color, is the miniature of modern China.",
+      "answer": "A",
+      "analysis": "B 项 \"modern China's microcosm\" 语序和表达不够优美。C 项 \"it is\" 造成句子粘连。D 项 \"rich-color\" 和 \"miniature\" 用词不准确。"
+    },
+    {
+      "question_number": 8,
+      "chinese_original": "吸烟污染空气，损害健康，使肺癌发病率大大增加",
+      "option_a": "Smoking pollutes air, damages health, and increases the incidence of lung cancer.",
+      "option_b": "Smoking makes air polluted, harms health, and makes the rate of lung cancer greatly increase.",
+      "option_c": "Smoking pollutes the air, damages health, and greatly increases the incidence of lung cancer.",
+      "option_d": "Smoking leads to air pollution, damages the health, and makes lung cancer incidence become higher.",
+      "answer": "A",
+      "analysis": "B 和 D 项使用了 \"make + n. + v.\" 的结构，不如 A 项直接正式。C 项添加了原文没有的 \"greatly\"，A 项是最忠实简洁的翻译。"
+    },
+    {
+      "question_number": 9,
+      "chinese_original": "越来越多受英文教育的海外华人父母，已经认识到孩子掌握中文的重要性",
+      "option_a": "An increasing number of English-educated Chinese parents overseas have come to the realization of the importance of their children's mastery of Chinese.",
+      "option_b": "More and more overseas Chinese parents who educated in English have realized the importance for their children to master Chinese.",
+      "option_c": "Increasingly English-educated overseas Chinese parents have recognized the importance that their children master Chinese.",
+      "option_d": "More and more English-educated overseas Chinese parents has realized the importance of their children commanding Chinese.",
+      "answer": "A",
+      "analysis": "B 项 \"who educated in English\" 语法错误。C 项 \"the importance that their children master\" 从句用法不标准。D 项主谓不一致，\"has\" 应为 \"have\"。"
+    },
+    {
+      "question_number": 10,
+      "chinese_original": "东方文明可以医治盛行于西方世界的一些顽疾",
+      "option_a": "The Oriental civilization can heal some of the prevailing, stubborn Western ills.",
+      "option_b": "Oriental civilization could cure some stubborn diseases that popular in the Western world.",
+      "option_c": "The Eastern civilization can heal some of the stubborn sicknesses prevailing in the Western world.",
+      "option_d": "Eastern civilization is able to treat some severe illnesses that are common in the Western world.",
+      "answer": "A",
+      "analysis": "B 项 \"could\" 语气不确定；\"diseases that popular\" 语法错误。C 项 \"sicknesses\" 多指具体疾病。D 项 \"treat\" 和 \"severe illnesses\" 偏向医学层面，未能体现社会问题的隐喻。"
+    },
+    {
+      "question_number": 11,
+      "chinese_original": "国际贸易的基本原则是平等互利",
+      "option_a": "Equality and mutual benefit is the fundamental principle of international trade.",
+      "option_b": "The basic principle of international trade is equality and mutual benefit.",
+      "option_c": "The fundamental principle for international trade is equal and mutual benefit.",
+      "option_d": "International trade's basic principle is equality and mutual beneficial.",
+      "answer": "A",
+      "analysis": "C 项 \"equal and mutual benefit\" 中 \"equal\" 是形容词，与名词 \"benefit\" 不平行。D 项 \"mutual beneficial\" 词性错误，\"beneficial\" 是形容词。"
+    },
+    {
+      "question_number": 12,
+      "chinese_original": "中国国际出版集团是中国最大的、最权威的外语出版发行单位",
+      "option_a": "The China International Publishing Group is the largest and the most authoritative foreign language publishing and distribution establishment.",
+      "option_b": "China International Publishing Group is the biggest and most authoritative unit of foreign language publishing and distribution in China.",
+      "option_c": "The China International Publishing Group is the largest and most authoritative foreign language publisher and distributor.",
+      "option_d": "China International Publishing Group, which is the biggest and most authoritative, is a foreign language publishing and distribution unit.",
+      "answer": "A",
+      "analysis": "B 项 \"unit\" 不如 \"establishment\" 正式。C 项 \"publisher and distributor\" 未能完全对应 \"出版发行单位\" 的整合概念。D 项句式冗长，不够简洁。"
+    },
+    {
+      "question_number": 13,
+      "chinese_original": "改革开放 30 年来，随着中国逐渐崛起成为政治经济强国，海外人士学习汉语的现象与日俱增",
+      "option_a": "As China is rising as a political and economic world power, thanks to its three-decade reform and opening up, more and more people in overseas countries start to learn Chinese.",
+      "option_b": "With China's rise as a political and economic power since 30 years reform and opening, the phenomenon of overseas people learning Chinese is increasing.",
+      "option_c": "In the 30 years of reform and opening up, as China gradually becomes a political and economic power, overseas people learning Chinese phenomenon grows daily.",
+      "option_d": "As China has been rising as a political and economic world power during the three decades of reform and opening, overseas individuals learning Chinese is on the rise.",
+      "answer": "A",
+      "analysis": "B 项 \"since 30 years reform\" 表达错误；\"the phenomenon...is increasing\" 搭配稍显生硬。C 项 \"overseas people learning Chinese phenomenon\" 表达错误。D 项 \"overseas individuals learning Chinese is\" 主谓不一致。"
+    },
+    {
+      "question_number": 14,
+      "chinese_original": "上海菜系是中国最年轻的地方菜系，通常被称为 \"本帮菜\"",
+      "option_a": "Shanghai cuisine, usually called Benbang cuisine, is the youngest among the major regional cuisines in China.",
+      "option_b": "Shanghai cuisine, often named as Benbang cuisine, is the youngest of China's major local cuisines.",
+      "option_c": "Shanghai dish, commonly known as Benbang dish, is the most young local cuisine in China.",
+      "option_d": "Shanghai's cuisine, usually referred to Benbang cuisine, is the youngest between the major regional cuisines of China.",
+      "answer": "A",
+      "analysis": "B 项 \"named as\" 不常用。C 项 \"dish\" 和 \"cuisine\" 概念不同；\"the most young\" 语法错误。D 项 \"referred to\" 后缺少 \"as\"；\"between\" 使用错误。"
+    },
+    {
+      "question_number": 15,
+      "chinese_original": "美国人强调效率、竞争和独创性，而中国人则将严谨规划放在首位",
+      "option_a": "American people emphasize efficiency, competition and originality while Chinese people give priority to careful planning.",
+      "option_b": "Americans stress efficiency, competition and original, while Chinese people put strict planning first.",
+      "option_c": "The American emphasizes efficiency, competition and originality, however, Chinese people put careful planning on the first place.",
+      "option_d": "American people emphasize on efficiency, competition and originality, but Chinese people give priority to careful planning.",
+      "answer": "A",
+      "analysis": "B 项 \"original\" 是形容词，此处应用名词 \"originality\"。C 项 \"The American\" 特指错误；\"on the first place\" 应为 \"in the first place\"。D 项 \"emphasize on\" 中的 \"on\" 是多余的。"
+    },
+    {
+      "question_number": 16,
+      "chinese_original": "武术在我国源远流长，是中华民族传统文化的瑰宝",
+      "option_a": "Wushu, or Chinese martial art, can be traced back to ancient times. It is a gem of Chinese traditional culture.",
+      "option_b": "Martial arts in China has a long history, and it is the treasure of Chinese traditional culture.",
+      "option_c": "Wushu in our country has a long history, it is a gem of the Chinese nation's traditional culture.",
+      "option_d": "Chinese martial art, with a long history, is the precious treasure of Chinese traditional culture.",
+      "answer": "A",
+      "analysis": "B 项 \"Martial arts\" 过于宽泛，未特指 \"Wushu\"；\"the treasure\" 冠词使用不如 \"a gem\" 生动。C 项 \"it is\" 造成句子粘连。D 项 \"precious treasure\" 略显冗余。"
+    },
+    {
+      "question_number": 17,
+      "chinese_original": "香港中文大学，简称 \"中大\"，成立于 1963 年",
+      "option_a": "The Chinese University of Hong Kong, CUHK for short, was founded in 1963.",
+      "option_b": "The Chinese University of Hong Kong, short for CUHK, was found in 1963.",
+      "option_c": "Chinese University of Hong Kong, abbreviated as \"CUHK\", was established in 1963.",
+      "option_d": "The Chinese University of Hong Kong, known as CUHK, was found in 1963.",
+      "answer": "A",
+      "analysis": "B 项和 D 项 \"was found\" 意为 \"被找到\"，应为 \"was founded\"（被建立）。C 项缺少定冠词 \"The\"，且 \"abbreviated as\" 虽正确，但不如 \"for short\" 常用。"
+    },
+    {
+      "question_number": 18,
+      "chinese_original": "过去 10 年，海平面升高和森林砍伐的速度都是前所未有的",
+      "option_a": "Sea level rose and forests were destroyed at an unprecedented rate during the last decade.",
+      "option_b": "In the past 10 years, the speed of sea level rise and deforestation are unprecedented.",
+      "option_c": "The rate of sea level rising and forest cutting down in the past decade has been unprecedented.",
+      "option_d": "Over the last ten years, sea level rise and forest destruction speed were never seen before.",
+      "answer": "A",
+      "analysis": "B 项 \"speed...are\" 主谓不一致。C 项 \"forest cutting down\" 表达不正式，\"has been\" 与并列主语不一致。D 项 \"destruction speed\" 表达不自然，\"were never seen before\" 不如 \"unprecedented\" 简洁。"
+    },
+    {
+      "question_number": 19,
+      "chinese_original": "为了切实保护儿童权益，中国的立法、司法、政府各有关部门以及社会团体都建立了相应的机制",
+      "option_a": "To effectively protect children's rights and interests, China's legislation, judicial and government departments concerned as well as non-governmental organizations have set up corresponding mechanisms.",
+      "option_b": "In order to protect children's rights, China's legislative, judicial, government departments and social groups have built corresponding mechanism.",
+      "option_c": "For the effective protection of children's interests, China's legislation, justice, government departments and social groups have set up relative mechanisms.",
+      "option_d": "To protect children' rights and interests practically, China's law, justice, government departments and social groups have set up according mechanisms.",
+      "answer": "A",
+      "analysis": "B 项 \"mechanism\" 应用复数；\"built\" 不如 \"set up\" 常用。C 项 \"relative mechanisms\" 意思不准确，应为 \"corresponding\"。D 项 \"according mechanisms\" 表达错误。"
+    },
+    {
+      "question_number": 20,
+      "chinese_original": "泰山的每个季节都有独特的魅力",
+      "option_a": "Each season here has its beauty.",
+      "option_b": "Every season of Mount Tai has unique charm.",
+      "option_c": "Each season in Mount Tai has its unique attractiveness.",
+      "option_d": "All seasons of Tai Mountain have their special charms.",
+      "answer": "A",
+      "analysis": "B、C、D 项意思正确，但不如 A 项在上下文和风格上与原文参考译文匹配。"
+    },
+    {
+      "question_number": 21,
+      "chinese_original": "青海省位于青藏高原北部，平均海拔 3000 米以上",
+      "option_a": "Qinghai Province is situated in the northern part of the Qinghai-Tibet Plateau, with an average altitude of over 3,000 meters.",
+      "option_b": "Qinghai Province locates in north of Qinghai-Tibet Plateau, with an average elevation over 3,000 meters.",
+      "option_c": "Qinghai Province is in the northern Qinghai-Tibet Plateau, its average height above sea level is more than 3,000 meters.",
+      "option_d": "Qinghai Province lies at the north of the Qinghai-Tibet Plateau, and has an average altitude of above 3,000 meters.",
+      "answer": "A",
+      "analysis": "B 项 \"locates in\" 主动语态错误，应为 \"is located in\" 或 \"is situated in\"；\"north of\" 前缺少 \"the\"。C 项 \"its average height...\" 造成句子粘连。D 项 \"at the north of\" 表示 \"在高原的北部（紧邻但不在内部）\"，方位表达不精确。"
+    },
+    {
+      "question_number": 22,
+      "chinese_original": "中国家庭十分重视孩子的教育",
+      "option_a": "Chinese families place great importance on their children's education.",
+      "option_b": "Chinese families attach great importance to their children's education.",
+      "option_c": "Chinese families think children's education is very important.",
+      "option_d": "Chinese families value their children's education greatly.",
+      "answer": "A",
+      "analysis": "C 和 D 项意思正确，但不如 A 和 B 项使用 \"place/attach importance to\" 的搭配正式和常见。A 项是原文给出的标准翻译。"
+    },
+    {
+      "question_number": 23,
+      "chinese_original": "立春（Start of Spring）是中国农历的第一个节气，标志着春天的开始",
+      "option_a": "The Start of Spring is the first solar term in the Chinese lunar calendar, marking the beginning of spring.",
+      "option_b": "The Start of Spring, which is the first solar term of Chinese lunar calendar, marks the beginning of spring.",
+      "option_c": "Start of Spring is the first solar term in China's lunar calendar, and it marks the start of spring.",
+      "option_d": "The Start of Spring, being the first solar term in the Chinese lunar calendar, marks the start of the spring.",
+      "answer": "A",
+      "analysis": "B 项 \"of Chinese lunar calendar\" 前缺少 \"the\"。C 项 \"Start of Spring\" 作为专有名词，前面最好加 \"The\"；\"China's lunar calendar\" 不如 \"the Chinese lunar calendar\" 常用。D 项 \"being\" 多余，\"the spring\" 中的 \"the\" 可省略。"
+    },
+    {
+      "question_number": 24,
+      "chinese_original": "南京长江大桥是长江上第一座由中国自行设计和建造的双层式铁路、公路两用桥梁",
+      "option_a": "The Nanjing Yangtze River Bridge is the first double-decker rail-road bridge over the Yangtze River that was designed and built by China independently.",
+      "option_b": "Nanjing Yangtze River Bridge is the first double-deck railway and highway bridge on the Yangtze River which was designed and built by China itself.",
+      "option_c": "The Nanjing Yangtze River Bridge is the first double-layer rail and road bridge across the Yangtze River that was designed and built by China independently.",
+      "option_d": "Nanjing Changjiang Bridge is the first two-layer railway and highway bridge over the Yangtze River that was designed and built by China on its own.",
+      "answer": "A",
+      "analysis": "B 项 \"double-deck\" 不如 \"double-decker\" 常用；\"on the Yangtze River\" 指接触水面，不如 \"over\" 或 \"across\" 准确。C 项 \"double-layer\" 常指材料分层，而非桥的层数。D 项 \"Nanjing Changjiang Bridge\" 混合了中英文，不规范；\"two-layer\" 同样不准确。"
+    },
+    {
+      "question_number": 25,
+      "chinese_original": "都江堰（Dujiangyan）坐落在成都平原西部的岷江上，始建于公元前三世纪",
+      "option_a": "Dujiangyan is located on the Minjiang River in the west of the Chengdu Plain. It was built in the third century BC.",
+      "option_b": "Dujiangyan sits on the Min River in the western Chengdu Plain, and was built in the 3rd century BC.",
+      "option_c": "Dujiangyan is located in the Minjiang River on the west of Chengdu Plain, its construction started in the third century BC.",
+      "option_d": "Dujiangyan, which is located on the Minjiang River at the west of the Chengdu Plain, was first built in the 3rd century B.C.",
+      "answer": "A",
+      "analysis": "B 项 \"sits on\" 不如 \"is located on\" 正式；\"Min River\" 可能造成混淆，原文为 \"Minjiang River\"。C 项 \"in the Minjiang River\" 介词错误，应为 \"on\"；\"its construction...\" 造成句子粘连。D 项 \"at the west of\" 方位表达不如 \"in the west of\" 准确。"
+    },
+    {
+      "question_number": 26,
+      "chinese_original": "普洱茶深受中国人喜爱，最好的普洱茶产自云南的西双版纳",
+      "option_a": "Pu'er tea is deeply loved by the Chinese people. The best Pu'er tea is produced in Xishuangbanna, Yunnan Province.",
+      "option_b": "Pu'er tea is deeply liked by Chinese. The best Pu'er tea comes from Xishuangbanna of Yunnan Province.",
+      "option_c": "Pu'er tea is very popular among Chinese people. The best Pu'er tea is produced from Xishuangbanna, Yunnan.",
+      "option_d": "Pu'er tea is deeply favored by the Chinese. Best Pu'er tea is produced in Xishuangbanna, Yunnan Province.",
+      "answer": "A",
+      "analysis": "B 项 \"liked by Chinese\" 不如 \"loved by the Chinese people\" 程度深且正式。C 项 \"produced from\" 介词使用不当。D 项 \"Best Pu'er tea\" 前缺少定冠词 \"The\"。"
+    },
+    {
+      "question_number": 27,
+      "chinese_original": "春节前夕吃团圆饭是中国人的传统",
+      "option_a": "Having a family reunion dinner on the eve of the Spring Festival is a tradition for Chinese people.",
+      "option_b": "Eating reunion dinner on the Spring Festival's eve is a Chinese tradition.",
+      "option_c": "To have a reunion meal on the eve of the Spring Festival is a tradition of Chinese.",
+      "option_d": "It is a tradition for Chinese to have reunion dinner before the Spring Festival.",
+      "answer": "A",
+      "analysis": "B 项 \"the Spring Festival's eve\" 所有格使用不常见。C 项 \"of Chinese\" 应为 \"of the Chinese people\" 或 \"for Chinese people\"。D 项 \"before the Spring Festival\" 不如 \"on the eve of\" 精确。"
+    },
+    {
+      "question_number": 28,
+      "chinese_original": "火锅是中国独创的美食，历史悠久",
+      "option_a": "Hot pot is a unique Chinese cuisine with a long history.",
+      "option_b": "Hot pot is a food invented by China, and has a long history.",
+      "option_c": "Hot pot, which is a creative Chinese food, has long history.",
+      "option_d": "The hot pot is a unique Chinese delicious food, with a long history.",
+      "answer": "A",
+      "analysis": "B 项 \"a food invented by China\" 表达不自然。C 项 \"long history\" 前缺少 \"a\"。D 项 \"The hot pot\" 特指错误；\"delicious food\" 冗余。"
+    },
+    {
+      "question_number": 29,
+      "chinese_original": "中国汉族人的全名由姓和名组成",
+      "option_a": "The full name of Han Chinese people consists of a family name and a given name.",
+      "option_b": "The complete name of Han Chinese is composed by a surname and a given name.",
+      "option_c": "A Han Chinese's full name is made up of a family name and a name.",
+      "option_d": "The full name of Han Chinese consists a surname and a given name.",
+      "answer": "A",
+      "analysis": "B 项 \"composed by\" 应为 \"composed of\"。C 项 \"a name\" 过于模糊，未区分 \"姓\" 和 \"名\"。D 项 \"consists\" 后缺少 \"of\"。"
+    },
+    {
+      "question_number": 30,
+      "chinese_original": "中国灯笼起源于东汉时期",
+      "option_a": "Chinese lanterns originated in the Eastern Han Dynasty.",
+      "option_b": "Chinese lanterns were originated from the Eastern Han Dynasty.",
+      "option_c": "The origin of Chinese lanterns is the Eastern Han Dynasty.",
+      "option_d": "Chinese lanterns first appeared in Eastern Han Dynasty.",
+      "answer": "A",
+      "analysis": "B 项 \"were originated\" 误用被动语态。C 项 \"The origin...is the Eastern Han Dynasty\" 表达不准确。D 项 \"Eastern Han Dynasty\" 前缺少 \"the\"。"
+    },
+    {
+      "question_number": 31,
+      "chinese_original": "由于通信网络的快速发展，中国智能手机用户数量近年来以惊人速度增长",
+      "option_a": "Due to the rapid development of communication networks, the number of smartphone users in China has grown at an astonishing rate in recent years.",
+      "option_b": "Because the communication network developed fast, the number of Chinese smartphone users increased at an amazing speed in recent years.",
+      "option_c": "Owing to the fast development of communication networks, the amount of smartphone users in China has been growing astonishingly in recent years.",
+      "option_d": "With the rapid development of communication network, the number of smartphone users in China raised at a surprising rate in recent years.",
+      "answer": "A",
+      "analysis": "B 项 \"Because the communication network developed fast\" 表达不正式。C 项 \"amount of smartphone users\" 错误，\"amount\" 用于不可数名词。D 项 \"network\" 应用复数；\"raised\" 是及物动词，此处应用 \"rose\" 或 \"increased\"。"
+    },
+    {
+      "question_number": 32,
+      "chinese_original": "公交车曾是中国人出行的主要交通工具",
+      "option_a": "Buses were once the main means of transportation for Chinese people.",
+      "option_b": "Buses were once the main transport tool for Chinese people's travel.",
+      "option_c": "Buses were the main transportation for Chinese people to travel in the past.",
+      "option_d": "The bus was once the main vehicle for Chinese people when they traveled.",
+      "answer": "A",
+      "analysis": "B 项 \"transport tool\" 和 \"Chinese people' travel\" 表达冗余。C 项 \"the main transportation\" 不如 \"the main means of transportation\" 准确。D 项 \"The bus\" 特指错误，应用复数；\"vehicle\" 词义偏窄。"
+    },
+    {
+      "question_number": 33,
+      "chinese_original": "黄山位于安徽省南部。它风景独特，尤以其日出和云海著称",
+      "option_a": "Mount Huang is located in the southern part of Anhui Province. It has unique scenery and is especially famous for its sunrise and sea of clouds.",
+      "option_b": "Huang Mountain lies in south Anhui Province. It has unique landscape, and is particularly known for its sunrise and cloud sea.",
+      "option_c": "Mount Huang is situated in southern Anhui Province. Its scenery is unique, and it is especially famous for its sunrise and sea of clouds.",
+      "option_d": "The Huangshan Mountain is in the south of Anhui Province. It has unique scenery, and is specially famous for its sunrise and sea of clouds.",
+      "answer": "A",
+      "analysis": "B 项 \"south Anhui Province\" 前缺少 \"the\"；\"cloud sea\" 不是标准说法。C 项 \"southern Anhui Province\" 前最好加 \"the\"。D 项 \"specially famous\" 用词不当，应为 \"especially\"。"
+    },
+    {
+      "question_number": 34,
+      "chinese_original": "长江 34",
+      "option_a": "长江是亚洲最长、世界第三长的河流",
+      "option_b": "The Yangtze River is the longest river in Asia and the third longest in the world.",
+      "option_c": "The Yangtze River is the longest river in Asia and the third long river in the world.",
+      "option_d": "The Changjiang River is Asia's longest river and the world's third longest.",
+      "option_e": "Yangtze River is the longest river in Asia and the third longest river of the world.",
+      "answer": "A",
+      "analysis": ""
+    },
+    {
+      "question_number": 35,
+      "chinese_original": "在中国，红色通常象征着好运、长寿和幸福",
+      "option_a": "In China, the color red usually symbolizes good luck, longevity, and happiness.",
+      "option_b": "In China, red color often represents good luck, long life and happiness.",
+      "option_c": "In China, the red color usually stands for good luck, longevity and happy.",
+      "option_d": "In China, red is usually a symbol of good luck, long life and happiness.",
+      "answer": "A",
+      "analysis": "B 项 \"red color\" 应为 \"the color red\"。C 项 \"happy\" 是形容词，与前面的名词不平行，应为 \"happiness\"。D 项意思正确，但 A 项与原文译文完全一致。"
+    },
+    {
+      "question_number": 36,
+      "chinese_original": "乌镇是浙江的一座古老水镇，坐落在京杭大运河畔",
+      "option_a": "Wuzhen is an ancient water town in Zhejiang, located by the Beijing-Hangzhou Grand Canal.",
+      "option_b": "Wuzhen is an old water town in Zhejiang, sitting beside the Beijing-Hangzhou Grand Canal.",
+      "option_c": "Wuzhen is a ancient water town in Zhejiang, which is located on the Beijing-Hangzhou Grand Canal.",
+      "option_d": "Wuzhen, an ancient water town in Zhejiang, is located at the Beijing-Hangzhou Grand Canal.",
+      "answer": "A",
+      "analysis": "B 项 \"old\" 不如 \"ancient\" 有历史感。C 项 \"a ancient\" 发音错误，应为 \"an ancient\"；\"on the canal\" 指在运河上，不如 \"by\" 或 \"beside\" 准确。D 项 \"at the canal\" 方位表达不如 \"by\" 常用。"
+    },
+    {
+      "question_number": 37,
+      "chinese_original": "中国父母往往过于关注孩子的学习，以至于不要他们帮忙做家务",
+      "option_a": "Chinese parents tend to focus so much on their children's studies that they do not ask them to help with housework.",
+      "option_b": "Chinese parents usually pay too much attention to their children's study, so they don't let them do housework.",
+      "option_c": "Chinese parents often concentrate on their children's learning so much that they avoid them helping in housework.",
+      "option_d": "Chinese parents are likely to focus too much on their children's studies, and therefore not require them to do housework.",
+      "answer": "A",
+      "analysis": "B 项 \"study\" 作为 \"学习\" 时是不可数名词，应用 \"studies\"。C 项 \"avoid them helping\" 用法错误。D 项 \"are likely to\" 语气不如 \"tend to\" 准确；\"not require\" 前缺少 \"they\"。"
+    },
+    {
+      "question_number": 38,
+      "chinese_original": "中国是世界上最古老的文明之一，拥有丰富的文化遗产和壮丽的自然风光",
+      "option_a": "China is one of the world's oldest civilizations, possessing rich cultural heritage and magnificent natural scenery.",
+      "option_b": "China is one of the oldest civilizations in the world, and has abundant cultural heritage and grand natural scenery.",
+      "option_c": "China is one of the world's most ancient civilizations, with rich cultural legacy and splendid natural views.",
+      "option_d": "China is one of the oldest civilizations of the world, owning rich cultural heritage and magnificent natural landscapes.",
+      "answer": "A",
+      "analysis": "B 项 \"grand natural scenery\" 搭配稍显生硬。C 项 \"natural views\" 不如 \"natural scenery\" 范围广。D 项 \"owning\" 不如 \"possessing\" 或 \"with\" 正式。"
+    },
+    {
+      "question_number": 39,
+      "chinese_original": "大熊猫是一种温顺的动物，长着独特的黑白皮毛",
+      "option_a": "The giant panda is a gentle animal with unique black and white fur.",
+      "option_b": "The giant panda is a mild animal, has unique black and white fur.",
+      "option_c": "Giant panda is a gentle animal which has unique black and white skin.",
+      "option_d": "The giant panda, a gentle animal, with unique black and white fur.",
+      "answer": "A",
+      "analysis": "B 项 \"has\" 前缺少连接词，造成句子结构错误。C 项 \"Giant panda\" 前缺少 \"The\"；\"skin\" 用于动物通常指皮肤，皮毛应用 \"fur\"。D 项缺少谓语动词，是句子片段。"
+    },
+    {
+      "question_number": 40,
+      "chinese_original": "中国教育工作者早就认识到读书对于国家的意义",
+      "option_a": "Chinese educators have long recognized the significance of reading for the nation.",
+      "option_b": "Chinese educators have long realized the meaning of reading to the nation.",
+      "option_c": "Chinese educators have long been aware of the importance of reading for the country.",
+      "option_d": "China's educators have long recognized the significance of reading to the nation.",
+      "answer": "A",
+      "analysis": "B 项 \"meaning\" 不如 \"significance\" 或 \"importance\" 程度深。C 项意思正确，但 A 项与原文译文完全一致。D 项 \"China's educators\" 不如 \"Chinese educators\" 常用。"
+    },
+    {
+      "question_number": 41,
+      "chinese_original": "古人将狮子视作是勇敢和力量的化身，能驱赶邪恶、保护人类",
+      "option_a": "Ancient people regarded the lion as a symbol of braveness and strength, which could drive away evil and protect humans.",
+      "option_b": "The ancients saw the lion as the embodiment of courage and power, that can drive off evil and protect people.",
+      "option_c": "Ancient people considered the lion as the incarnation of bravery and strength, which could expel evil and protect human.",
+      "option_d": "People in ancient times viewed the lion as a symbol of brave and strength, able to drive away evil and protect mankind.",
+      "answer": "A",
+      "analysis": "B 项 \"that\" 引导定语从句错误，应用 \"which\"；\"can\" 时态与主句不一致。C 项 \"protect human\" 中 \"human\" 作为名词应用复数 \"humans\"。D 项 \"brave\" 是形容词，此处应用名词 \"bravery\"。"
+    },
+    {
+      "question_number": 42,
+      "chinese_original": "在唐代（the Tang Dynasty），狮舞就已经被引入了皇室",
+      "option_a": "During the Tang Dynasty, the Lion Dance was already introduced into the royal family of the dynasty.",
+      "option_b": "In Tang Dynasty, Lion Dance had already been introduced to the royal family.",
+      "option_c": "During the Tang Dynasty, the Lion Dance was already introduced to the imperial family.",
+      "option_d": "In the Tang Dynasty, the Lion Dance has already been introduced into the royal court.",
+      "answer": "A",
+      "analysis": "B 项 \"In Tang Dynasty\" 前缺少 \"the\"；\"Lion Dance\" 前缺少 \"the\"。C 项 \"imperial family\" 不如原文 \"royal family\" 准确。D 项 \"has\" 现在完成时与过去时间背景不符。"
+    },
+    {
+      "question_number": 43,
+      "chinese_original": "因此，舞狮成为元宵节（the Lantern Festival）和其他节日的习俗，人们以此来祈祷好运、平安和幸福",
+      "option_a": "Therefore, performing the lion dance at the Lantern Festival and other festive occasions became a custom where people could pray for good luck, safety and happiness.",
+      "option_b": "Thus, lion dancing became a custom during the Lantern Festival and other festivals, people pray for good luck, peace and happiness through it.",
+      "option_c": "So, the lion dance becomes a tradition of the Lantern Festival and other holidays, for people to pray for good luck, safety and happy.",
+      "option_d": "Therefore, performing lion dance in Lantern Festival and other festive events became a custom, which people use to pray for good luck, safety and happy.",
+      "answer": "A",
+      "analysis": "B 项 \"people pray...\" 造成句子粘连；\"peace\" 不如 \"safety\" 贴近原文。C 项 \"becomes\" 时态错误，应为过去时 \"became\"。D 项 \"in Lantern Festival\" 前缺少 \"the\"；\"happy\" 应为名词 \"happiness\"。"
+    },
+    {
+      "question_number": 44,
+      "chinese_original": "海外企业不仅帮助了中国企业的成长，而且也在合作中获得了收益",
+      "option_a": "Overseas enterprises have not only helped Chinese enterprises with their growth, but also benefited from the cooperation.",
+      "option_b": "Overseas companies not only helped the growth of Chinese enterprises, but also gained benefits from the cooperation.",
+      "option_c": "Foreign enterprises have not only assisted Chinese enterprises to grow, but also obtained profits in the cooperation.",
+      "option_d": "Overseas enterprises not only contributed to the growth of Chinese companies, and also got benefits in the cooperation.",
+      "answer": "A",
+      "analysis": "B 项 \"helped the growth of\" 不如 \"helped...with their growth\" 直接。C 项 \"obtained profits\" 过于强调金钱利润，而 \"benefited\" 含义更广。D 项 \"not only...and also\" 搭配错误，应为 \"but also\"。"
+    },
+    {
+      "question_number": 45,
+      "chinese_original": "中国政府将继续提供有利的政策和条件，推动中国企业与国外企业进一步开展合作",
+      "option_a": "Chinese government will continue to offer favorable policies and conditions to promote the further cooperation between Chinese and overseas enterprises.",
+      "option_b": "The Chinese government will continue to provide favorable policies and conditions for promoting further cooperation between Chinese and foreign enterprises.",
+      "option_c": "China's government will keep on providing advantageous policies and conditions to push the further cooperation of Chinese and overseas enterprises.",
+      "option_d": "The government of China will continue to offer favourable policies and conditions, promoting the further cooperation of Chinese and foreign enterprises.",
+      "answer": "A",
+      "analysis": "B 项 \"for promoting\" 不如 \"to promote\" 表目的直接。C 项 \"advantageous\" 侧重 \"有利的，有优势的\"，不如 \"favorable\"（优惠的，有利的）贴合政策语境；\"push\" 不如 \"promote\" 正式。D 项 \"promoting\" 现在分词作状语，其逻辑主语是 \"The government\"，但句意是 \"提供政策和条件\" 这一行动旨在 \"推动合作\"，用不定式更佳。"
+    },
+    {
+      "question_number": 46,
+      "chinese_original": "根据统计数据，中国消费者的消费需求正在从基本生活必需品转向对休闲、舒适和个人发展的需求",
+      "option_a": "According to statistics, the demands of Chinese consumers are shifting from the basic necessities of life to leisure, comfort and personal development.",
+      "option_b": "Based on statistical data, Chinese consumers' demands are changing from basic life necessities to leisure, comfort and personal development needs.",
+      "option_c": "According to statistics, the demands of Chinese consumers is shifting from basic living necessities to leisure, comfort and personal development.",
+      "option_d": "Statistical data shows that Chinese consumers' demand is changing from the basic necessities of life to leisure, comfort and personal development.",
+      "answer": "A",
+      "analysis": "B 项 \"needs\" 在句尾冗余。C 项 \"demands...is\" 主谓不一致。D 项 \"demand\" 作为 \"需求\" 时常用复数 \"demands\"，且 \"Statistical data shows\" 不如 \"According to statistics\" 客观和常用。"
+    },
+    {
+      "question_number": 47,
+      "chinese_original": "因此产品结构应做相应调整，以适应社会的发展",
+      "option_a": "Therefore, the structure of products should be adjusted accordingly to adapt to social development.",
+      "option_b": "So, the product structure should be adjusted correspondingly to fit the social development.",
+      "option_c": "Thus, the structure of products ought to be adjusted accordingly, adapting to the development of society.",
+      "option_d": "Therefore, the product structure must make corresponding adjustments to meet the development of society.",
+      "answer": "A",
+      "analysis": "B 项 \"fit the social development\" 搭配不如 \"adapt to social development\" 常见。C 项 \"adapting\" 的逻辑主语是 \"structure\"，但 \"结构\" 本身不能 \"适应\"，应是 \"被调整以适应\"。D 项 \"must\" 语气过强，不如 \"should\" 符合原文；\"make adjustments\" 不如 \"be adjusted\" 简洁。"
+    },
+    {
+      "question_number": 48,
+      "chinese_original": "另一方面，服务质量要改善，以满足人们提高生活质量的要求",
+      "option_a": "On the other hand, services should be improved to satisfy people's demand for an improved quality of life.",
+      "option_b": "On the other hand, the quality of service needs to be improved to meet people's requirement for a better life quality.",
+      "option_c": "On another hand, service quality should be improved to satisfy people's demand for higher life quality.",
+      "option_d": "On the other hand, services need to improve to meet people's demand for an improved quality of life.",
+      "answer": "A",
+      "analysis": "B 项 \"a better life quality\" 词序应为 \"a better quality of life\"。C 项 \"On another hand\" 是错误表达，应为 \"On the other hand\"。D 项 \"services need to improve\" 主动语态错误，服务本身不能改善自己，应为 \"need to be improved\"。"
+    },
+    {
+      "question_number": 49,
+      "chinese_original": "几千年来，端午节的特色在于吃粽子（glutinous dumplings）和赛龙舟，尤其是在一些河湖密布的南方省份",
+      "option_a": "For thousands of years, the festival has been marked by glutinous dumplings and dragon boat races, especially in the southern provinces where there are many rivers and lakes.",
+      "option_b": "For thousands of years, the characteristic of the Dragon Boat Festival is eating zongzi and dragon boat racing, especially in some southern provinces with dense rivers and lakes.",
+      "option_c": "Over thousands of years, the festival is characterized by eating glutinous dumplings and holding dragon boat races, particularly in some southern provinces which have many rivers and lakes.",
+      "option_d": "For thousands of years, the festival's feature is eating zongzi and dragon boat race, especially in some southern provinces that are rich in rivers and lakes.",
+      "answer": "A",
+      "analysis": "B 项 \"the characteristic...is\" 现在时与 \"For thousands of years\" 时间背景不符。C 项 \"is characterized by\" 同样时态不当；\"holding dragon boat races\" 不如 \"dragon boat races\" 简洁。D 项 \"the festival's feature is\" 时态错误；\"dragon boat race\" 应用复数 \"races\"。"
+    },
+    {
+      "question_number": 50,
+      "chinese_original": "今天高超的武术大师已遍布世界各地，武术爱好者也与日俱增",
+      "option_a": "Today superb wushu masters are active all over the world, and amateurs are on the increase with each passing day.",
+      "option_b": "Today, superb martial arts masters are all over the world, and the number of wushu lovers are increasing daily.",
+      "option_c": "Nowadays, excellent wushu masters can be found around the globe, and martial arts enthusiasts are growing.",
+      "option_d": "Today, highly skilled wushu masters have spread all over the world, and the amateur of wushu is increasing day by day.",
+      "answer": "A",
+      "analysis": "B 项 \"the number...are\" 主谓不一致。C 项 \"enthusiasts are growing\" 搭配不当，是 \"数量\" 在增长，而不是 \"人\" 本身在增长。D 项 \"the amateur\" 应用复数 \"amateurs\" 或 \"the number of amateurs\"。"
+    }
+  ]
+}
