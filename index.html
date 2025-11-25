@@ -1,0 +1,1349 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大富翁英语学习游戏</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            user-select: none;
+        }
+
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        #game-board {
+            width: 660px;
+            height: 660px;
+            background: #f0f0f0;
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        /* 中央控制区域 */
+        .center-area {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .player-info {
+            width: 120px;
+            height: 80px;
+            background: white;
+            border-radius: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .player-info.active {
+            border-color: #ffd700;
+            animation: breathing 2s infinite;
+        }
+
+        @keyframes breathing {
+            0%, 100% { box-shadow: 0 0 5px #ffd700; }
+            50% { box-shadow: 0 0 20px #ffd700; }
+        }
+
+        .player-name {
+            font-weight: bold;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .player-mushrooms {
+            font-size: 16px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .mushroom-icon {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            background: #e74c3c;
+            border-radius: 50%;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        #dice-button {
+            width: 80px;
+            height: 80px;
+            background: #3498db;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin: 20px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        #dice-button:hover:not(:disabled) {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        #dice-button:active:not(:disabled) {
+            transform: scale(0.9);
+        }
+
+        #dice-button:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+
+        .dice-rolling {
+            animation: spin 0.5s infinite linear;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* 格子样式 */
+        .grid-cell {
+            position: absolute;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .grid-cell.highlight {
+            animation: glow 0.5s;
+        }
+
+        .grid-cell.current {
+            box-shadow: 0 0 20px #f39c12;
+            transform: scale(1.2);
+            z-index: 5;
+        }
+
+        @keyframes glow {
+            0% { box-shadow: 0 0 5px #f39c12; }
+            100% { box-shadow: 0 0 30px #f39c12; }
+        }
+
+        .grid-cell.start {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .grid-cell.library {
+            background: #3498db;
+            color: white;
+        }
+
+        .grid-cell.foreign-lang {
+            background: #9b59b6;
+            color: white;
+        }
+
+        .grid-cell.exam-hall {
+            background: #e67e22;
+            color: white;
+        }
+
+        .grid-cell.test-site {
+            background: #2ecc71;
+            color: white;
+        }
+
+        .grid-cell.opportunity {
+            background: #f1c40f;
+            color: #333;
+        }
+
+        /* 房产标识 */
+        .property-marker {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 15px;
+            height: 15px;
+            border-radius: 3px;
+            opacity: 0.7;
+            z-index: 3;
+        }
+
+        .property-marker.level-1 {
+            width: 15px;
+            height: 15px;
+            opacity: 0.7;
+        }
+
+        .property-marker.level-2 {
+            width: 25px;
+            height: 25px;
+            opacity: 0.9;
+            box-shadow: 0 0 10px currentColor;
+            animation: property-glow 2s infinite;
+        }
+
+        @keyframes property-glow {
+            0%, 100% { box-shadow: 0 0 5px currentColor; }
+            50% { box-shadow: 0 0 15px currentColor; }
+        }
+
+        /* 玩家幽灵 */
+        .player-ghost {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            border-radius: 50% 50% 0 0;
+            z-index: 4;
+            transition: all 0.3s;
+            pointer-events: none;
+        }
+
+        .player-ghost::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: inherit;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        .ghost-blue {
+            background: rgba(52, 152, 219, 0.8);
+        }
+
+        .ghost-orange {
+            background: rgba(230, 126, 34, 0.8);
+        }
+
+        /* 弹窗样式 */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            animation: slideIn 0.3s;
+        }
+
+        @keyframes slideIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .modal-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        .modal-body {
+            font-size: 16px;
+            line-height: 1.6;
+            color: #34495e;
+        }
+
+        .modal-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+        .modal-button {
+            padding: 12px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-button.primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .modal-button.primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+
+        .modal-button.secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .modal-button.secondary:hover {
+            background: #7f8c8d;
+        }
+
+        .question-content {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .question-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .question-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .question-option {
+            padding: 12px 15px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .question-option:hover {
+            border-color: #3498db;
+            background: #ecf0f1;
+        }
+
+        .question-option.selected {
+            border-color: #3498db;
+            background: #3498db;
+            color: white;
+        }
+
+        .countdown-timer {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .countdown-timer.warning {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* 输入框样式 */
+        .answer-input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            transition: border-color 0.3s;
+        }
+
+        .answer-input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        /* 机会卡样式 */
+        .opportunity-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        /* 反馈弹窗 */
+        .feedback-bubble {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px 40px;
+            border-radius: 30px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            z-index: 200;
+            animation: feedbackPop 0.5s;
+        }
+
+        @keyframes feedbackPop {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            80% { transform: translate(-50%, -50%) scale(1.1); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+
+        /* 胜利画面 */
+        .victory-screen {
+            text-align: center;
+            padding: 40px;
+        }
+
+        .victory-ghost {
+            width: 100px;
+            height: 80px;
+            border-radius: 50% 50% 0 0;
+            margin: 0 auto 20px;
+            animation: victoryFloat 2s infinite;
+        }
+
+        @keyframes victoryFloat {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        .victory-title {
+            font-size: 36px;
+            color: #f39c12;
+            margin-bottom: 20px;
+        }
+
+        .final-stats {
+            background: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .property-list {
+            max-height: 200px;
+            overflow-y: auto;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="game-board">
+            <!-- 格子将通过JS动态生成 -->
+            
+            <!-- 中央控制区域 -->
+            <div class="center-area">
+                <div class="player-info active" id="player1-info">
+                    <div class="player-name" style="color: #3498db;">玩家 1</div>
+                    <div class="player-mushrooms">
+                        <span id="player1-mushrooms">1500</span>
+                        <span class="mushroom-icon"></span>
+                    </div>
+                </div>
+                
+                <button id="dice-button" disabled>?</button>
+                
+                <div class="player-info" id="player2-info">
+                    <div class="player-name" style="color: #e67e22;">玩家 2</div>
+                    <div class="player-mushrooms">
+                        <span id="player2-mushrooms">1500</span>
+                        <span class="mushroom-icon"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 玩家幽灵 -->
+            <div class="player-ghost ghost-blue" id="ghost-1"></div>
+            <div class="player-ghost ghost-orange" id="ghost-2"></div>
+        </div>
+    </div>
+
+    <script>
+        // ==================== 游戏核心数据 ====================
+        class Game {
+            constructor() {
+                this.currentPlayer = 1;
+                this.players = {
+                    1: { position: 0, mushrooms: 1500, properties: [], color: '#3498db' },
+                    2: { position: 0, mushrooms: 1500, properties: [], color: '#e67e22' }
+                };
+                this.gridStatus = Array(40).fill(null).map(() => ({
+                    owner: null,
+                    level: 0,
+                    type: this.getGridType(0),
+                    usedQuestionIndex: null
+                }));
+                this.diceEnabled = false;
+                this.skipNextTurn = { 1: false, 2: false };
+                this.extraRolls = { 1: 0, 2: 0 };
+                this.gameOver = false;
+                
+                // 题库数据
+                this.questionBank = {
+                    translation: [],
+                    vocabulary: [],
+                    reading: [],
+                    wordSelection: []
+                };
+                this.usedQuestions = {
+                    translation: new Set(),
+                    vocabulary: new Set(),
+                    reading: new Set(),
+                    wordSelection: new Set()
+                };
+                this.opportunityCards = [];
+                this.luckCards = [];
+                
+                this.init();
+            }
+
+            async init() {
+                await this.loadQuestionBanks();
+                this.renderBoard();
+                this.renderPlayers();
+                this.diceEnabled = true;
+                this.updateUI();
+            }
+
+            getGridType(index) {
+                const specialGrids = {
+                    0: 'start',
+                    5: 'library', 15: 'library', 25: 'library', 35: 'library',
+                    10: 'foreign-lang', 20: 'foreign-lang', 30: 'foreign-lang',
+                    12: 'exam-hall'
+                };
+                if (specialGrids[index]) return specialGrids[index];
+                if (index % 7 === 3) return 'opportunity';
+                return ['translation', 'vocabulary', 'reading', 'word-selection'][index % 4];
+            }
+
+            async loadQuestionBanks() {
+                // 模拟加载题库数据（实际应从JSON文件加载）
+                // 由于无法直接加载外部文件，这里使用示例数据
+                this.questionBank.translation = [
+                    {
+                        chinese_original: "狮舞（Lion Dance）是中国最广为流传的民间舞蹈之一",
+                        option_a: "Lion Dance is one of the most widespread folk dances in China.",
+                        option_b: "The Lion Dance is one of the most popular folk dance in China.",
+                        option_c: "Lion Dancing is one of the most widely spread folk dances of China.",
+                        option_d: "The Dance of Lion is one of China's most widespread folk dances.",
+                        answer: "A",
+                        analysis: "B 项 \"dance\" 应为复数 \"dances\"。"
+                    }
+                ];
+                
+                this.questionBank.vocabulary = [
+                    {
+                        word: "bargain",
+                        option_a: "n. 交易；便宜货；v. 讨价还价；谈判",
+                        option_b: "n. 酒吧；酒馆；v. 禁止；阻拦",
+                        option_c: "n. 障碍；阻碍；v. 妨碍；阻碍",
+                        answer: "A"
+                    }
+                ];
+
+                this.questionBank.reading = [
+                    {
+                        passage: "New research suggests that pandas may be at risk of dying out because they are too comfortable.",
+                        question: "What do we learn from new research about pandas?",
+                        options: {
+                            "A": "They are losing habitat due to the building of roads and houses.",
+                            "B": "They have stopped seeking new mates for reproduction.",
+                            "C": "They may not adapt to the fragmentation of their habitat.",
+                            "D": "They may cease to exist as a result of enjoying too good a life."
+                        },
+                        answer: "D"
+                    }
+                ];
+
+                this.questionBank.wordSelection = [
+                    {
+                        sentence: "It's well known that physical exercise is beneficial not just to physical health but also to mental health.",
+                        options: {
+                            "A": "detailed / required",
+                            "B": "required / partly",
+                            "C": "partly / distinction",
+                            "D": "distinction / vigorous"
+                        },
+                        answer: "A"
+                    }
+                ];
+
+                // 机会卡
+                this.opportunityCards = [
+                    { id: 1, question: "看到道路标识上写着'DETOUR'是什么意思？", answer: "绕路/改道" },
+                    { id: 19, question: "What comes once in a year, twice in a week, but never in a day?", answer: "The letter \"E\"" }
+                ];
+
+                this.luckCards = [
+                    { content: "Won the first prize and received 300 mushrooms.", change: 300 },
+                    { content: "Caught cheating and was fined 100 mushrooms.", change: -100 }
+                ];
+            }
+
+            renderBoard() {
+                const board = document.getElementById('game-board');
+                const centerX = 330, centerY = 330;
+                const radius = 250;
+                
+                for (let i = 0; i < 40; i++) {
+                    const angle = (i * 9) - 90; // 每个格子9度，从顶部开始
+                    const radian = (angle * Math.PI) / 180;
+                    const x = centerX + radius * Math.cos(radian) - 28;
+                    const y = centerY + radius * Math.sin(radian) - 28;
+                    
+                    const cell = document.createElement('div');
+                    cell.className = `grid-cell ${this.gridStatus[i].type}`;
+                    cell.id = `grid-${i}`;
+                    cell.style.left = `${x}px`;
+                    cell.style.top = `${y}px`;
+                    cell.textContent = i;
+                    
+                    board.appendChild(cell);
+                }
+            }
+
+            renderPlayers() {
+                this.updatePlayerPosition(1);
+                this.updatePlayerPosition(2);
+            }
+
+            updatePlayerPosition(playerId) {
+                const player = this.players[playerId];
+                const cell = document.getElementById(`grid-${player.position}`);
+                const rect = cell.getBoundingClientRect();
+                const boardRect = document.getElementById('game-board').getBoundingClientRect();
+                
+                const ghost = document.getElementById(`ghost-${playerId}`);
+                const offset = playerId === 1 ? -20 : 20;
+                ghost.style.left = `${rect.left - boardRect.left + offset}px`;
+                ghost.style.top = `${rect.top - boardRect.top - 40}px`;
+            }
+
+            async rollDice() {
+                if (!this.diceEnabled || this.gameOver) return;
+                
+                this.diceEnabled = false;
+                const diceButton = document.getElementById('dice-button');
+                diceButton.classList.add('dice-rolling');
+                diceButton.disabled = true;
+                
+                // 骰子滚动动画
+                let rollCount = 0;
+                const rollInterval = setInterval(() => {
+                    diceButton.textContent = Math.floor(Math.random() * 6) + 1;
+                    rollCount++;
+                    if (rollCount > 10) {
+                        clearInterval(rollInterval);
+                        const finalValue = Math.floor(Math.random() * 6) + 1;
+                        diceButton.textContent = finalValue;
+                        diceButton.classList.remove('dice-rolling');
+                        
+                        setTimeout(() => this.movePlayer(finalValue), 500);
+                    }
+                }, 100);
+            }
+
+            async movePlayer(steps) {
+                const player = this.players[this.currentPlayer];
+                
+                // 移动动画
+                for (let i = 0; i < steps; i++) {
+                    player.position = (player.position + 1) % 40;
+                    this.updatePlayerPosition(this.currentPlayer);
+                    
+                    // 经过起点格奖励
+                    if (player.position === 0) {
+                        player.mushrooms += 288;
+                        this.showFeedback('经过起点！+288 蘑菇', 'success');
+                    }
+                    
+                    await this.sleep(300);
+                    
+                    // 高亮经过的格子
+                    const cell = document.getElementById(`grid-${player.position}`);
+                    cell.classList.add('highlight');
+                    setTimeout(() => cell.classList.remove('highlight'), 500);
+                }
+                
+                // 处理当前格子事件
+                await this.handleGridEvent(player.position);
+            }
+
+            async handleGridEvent(position) {
+                const grid = this.gridStatus[position];
+                const type = grid.type;
+                
+                switch (type) {
+                    case 'start':
+                        await this.handleStartGrid();
+                        break;
+                    case 'library':
+                        await this.handleLibraryGrid();
+                        break;
+                    case 'foreign-lang':
+                        await this.handleForeignLangGrid();
+                        break;
+                    case 'exam-hall':
+                        await this.handleExamHallGrid();
+                        break;
+                    case 'opportunity':
+                        await this.handleOpportunityGrid();
+                        break;
+                    default:
+                        await this.handleTestSiteGrid(position);
+                        break;
+                }
+                
+                this.updateUI();
+                this.endTurn();
+            }
+
+            async handleStartGrid() {
+                // 起点已在移动过程中处理
+                await this.sleep(500);
+            }
+
+            async handleLibraryGrid() {
+                this.showFeedback('进入图书馆！跳过下一轮，对手连投两次', 'info');
+                this.skipNextTurn[this.currentPlayer] = true;
+                const opponent = this.currentPlayer === 1 ? 2 : 1;
+                this.extraRolls[opponent] = 2;
+            }
+
+            async handleForeignLangGrid() {
+                this.showFeedback('被咖啡厅香味吸引！额外投骰判定...', 'info');
+                await this.sleep(1000);
+                
+                const extraDice = Math.floor(Math.random() * 6) + 1;
+                if (extraDice <= 4) {
+                    this.showFeedback('去买杯咖啡吧！跳过下一轮', 'warning');
+                    this.skipNextTurn[this.currentPlayer] = true;
+                } else {
+                    this.showFeedback('生活费不够，下次再说吧', 'info');
+                }
+            }
+
+            async handleExamHallGrid() {
+                this.showModal('四六级考场', '所有玩家同时答题！');
+                await this.sleep(1000);
+                
+                // 从阅读题库随机抽取题目
+                const question = this.getRandomQuestion('reading');
+                const result = await this.showReadingQuestion(question, 120);
+                
+                if (result.correct) {
+                    this.players[this.currentPlayer].mushrooms += 100;
+                    this.showFeedback('答对了！+100 蘑菇', 'success');
+                } else {
+                    this.players[this.currentPlayer].mushrooms -= 100;
+                    this.showFeedback('答错了！-100 蘑菇', 'error');
+                }
+            }
+
+            async handleOpportunityGrid() {
+                const isKnowledge = Math.random() > 0.5;
+                
+                if (isKnowledge) {
+                    const card = this.opportunityCards[Math.floor(Math.random() * this.opportunityCards.length)];
+                    const result = await this.showOpportunityCard(card);
+                    if (result.correct) {
+                        this.players[this.currentPlayer].mushrooms += 100;
+                        this.showFeedback('答对了！+100 蘑菇', 'success');
+                    }
+                } else {
+                    const card = this.luckCards[Math.floor(Math.random() * this.luckCards.length)];
+                    this.players[this.currentPlayer].mushrooms += card.change;
+                    const msg = card.change > 0 ? `+${card.change} 蘑菇` : `${card.change} 蘑菇`;
+                    this.showFeedback(msg, card.change > 0 ? 'success' : 'error');
+                }
+            }
+
+            async handleTestSiteGrid(position) {
+                const grid = this.gridStatus[position];
+                
+                if (!grid.owner) {
+                    // 空地：购买逻辑
+                    const price = 200; // 基础价格
+                    const decision = await this.showPurchaseDialog(price);
+                    
+                    if (decision === 'buy') {
+                        await this.handlePurchase(position, price);
+                    }
+                } else if (grid.owner === this.currentPlayer) {
+                    // 自己的地：升级逻辑
+                    if (grid.level === 1) {
+                        const decision = await this.showUpgradeDialog(200);
+                        if (decision === 'upgrade') {
+                            await this.handleUpgrade(position);
+                        }
+                    } else {
+                        this.showFeedback('已经升级到最高级了！', 'info');
+                    }
+                } else {
+                    // 对手的地：过路费逻辑
+                    const toll = grid.level === 2 ? 600 : Math.ceil(200 * 1.5);
+                    const result = await this.handleTollPayment(position, toll);
+                    
+                    if (!result.paid) {
+                        // 支付失败，处理破产
+                        await this.handleBankruptcy();
+                    }
+                }
+            }
+
+            async handlePurchase(position, price) {
+                const player = this.players[this.currentPlayer];
+                
+                if (player.mushrooms < price) {
+                    this.showFeedback('蘑菇不足，无法购买！', 'error');
+                    return false;
+                }
+                
+                const type = this.gridStatus[position].type;
+                const question = this.getRandomQuestion(type);
+                const result = await this.showQuestionDialog(question, type, 60);
+                
+                if (result.correct) {
+                    player.mushrooms -= price;
+                    this.gridStatus[position].owner = this.currentPlayer;
+                    this.gridStatus[position].level = 1;
+                    this.gridStatus[position].usedQuestionIndex = result.questionIndex;
+                    this.players[this.currentPlayer].properties.push({
+                        position: position,
+                        level: 1,
+                        price: price
+                    });
+                    
+                    this.renderProperty(position);
+                    this.showFeedback('购买成功！获得地契卡', 'success');
+                    return true;
+                } else {
+                    this.showFeedback('答题错误，购买失败', 'error');
+                    return false;
+                }
+            }
+
+            async handleUpgrade(position) {
+                const player = this.players[this.currentPlayer];
+                const price = 200; // 升级费用
+                
+                if (player.mushrooms < price) {
+                    this.showFeedback('蘑菇不足，无法升级！', 'error');
+                    return false;
+                }
+                
+                // 冻结费用
+                player.mushrooms -= price;
+                
+                const type = this.gridStatus[position].type;
+                const usedIndex = this.gridStatus[position].usedQuestionIndex;
+                const question = this.getRandomQuestion(type, [usedIndex]);
+                const result = await this.showQuestionDialog(question, type, 60);
+                
+                if (result.correct) {
+                    this.gridStatus[position].level = 2;
+                    const prop = this.players[this.currentPlayer].properties.find(p => p.position === position);
+                    if (prop) prop.level = 2;
+                    
+                    this.renderProperty(position);
+                    this.showFeedback('升级成功！房产已成豪华别墅', 'success');
+                    return true;
+                } else {
+                    // 升级失败，返还费用
+                    player.mushrooms += price;
+                    this.showFeedback('升级失败，费用已返还', 'warning');
+                    return false;
+                }
+            }
+
+            async handleTollPayment(position, toll) {
+                const player = this.players[this.currentPlayer];
+                const owner = this.gridStatus[position].owner;
+                
+                if (player.mushrooms >= toll) {
+                    const type = this.gridStatus[position].type;
+                    const usedIndex = this.gridStatus[position].usedQuestionIndex;
+                    const question = this.getRandomQuestion(type, [usedIndex]);
+                    const result = await this.showQuestionDialog(question, type, 60);
+                    
+                    if (result.correct) {
+                        this.showFeedback('答题正确！免费通行！', 'success');
+                        return { paid: true, amount: 0 };
+                    } else {
+                        player.mushrooms -= toll;
+                        this.players[owner].mushrooms += toll;
+                        this.showFeedback(`支付过路费 ${toll} 蘑菇`, 'warning');
+                        return { paid: true, amount: toll };
+                    }
+                } else {
+                    // 蘑菇不足，尝试卖房产
+                    if (!await this.sellPropertiesToPay(toll)) {
+                        return { paid: false };
+                    }
+                    
+                    // 卖房后重新支付
+                    player.mushrooms -= toll;
+                    this.players[owner].mushrooms += toll;
+                    this.showFeedback(`支付过路费 ${toll} 蘑菇`, 'warning');
+                    return { paid: true, amount: toll };
+                }
+            }
+
+            async sellPropertiesToPay(amount) {
+                const player = this.players[this.currentPlayer];
+                const properties = player.properties.sort((a, b) => a.price - b.price);
+                
+                for (let prop of properties) {
+                    if (player.mushrooms >= amount) break;
+                    
+                    const sellPrice = Math.floor(prop.price * 0.5);
+                    player.mushrooms += sellPrice;
+                    
+                    // 清除房产
+                    this.gridStatus[prop.position].owner = null;
+                    this.gridStatus[prop.position].level = 0;
+                    this.gridStatus[prop.position].usedQuestionIndex = null;
+                    
+                    // 移除房产标识
+                    const marker = document.querySelector(`#grid-${prop.position} .property-marker`);
+                    if (marker) marker.remove();
+                    
+                    this.showFeedback(`强制出售房产，获得 ${sellPrice} 蘑菇`, 'warning');
+                    await this.sleep(800);
+                }
+                
+                return player.mushrooms >= amount;
+            }
+
+            async handleBankruptcy() {
+                this.gameOver = true;
+                const winner = this.currentPlayer === 1 ? 2 : 1;
+                
+                this.showVictoryScreen(winner);
+            }
+
+            getRandomQuestion(type, excludeIndices = []) {
+                const bank = this.questionBank[type];
+                if (!bank || bank.length === 0) return null;
+                
+                const available = [];
+                for (let i = 0; i < bank.length; i++) {
+                    if (!this.usedQuestions[type].has(i) && !excludeIndices.includes(i)) {
+                        available.push(i);
+                    }
+                }
+                
+                if (available.length === 0) {
+                    // 题库耗尽，重置
+                    this.usedQuestions[type].clear();
+                    for (let i = 0; i < bank.length; i++) {
+                        if (!excludeIndices.includes(i)) {
+                            available.push(i);
+                        }
+                    }
+                }
+                
+                const randomIndex = available[Math.floor(Math.random() * available.length)];
+                return { ...bank[randomIndex], index: randomIndex };
+            }
+
+            renderProperty(position) {
+                const grid = this.gridStatus[position];
+                const cell = document.getElementById(`grid-${position}`);
+                
+                // 移除旧的房产标识
+                const oldMarker = cell.querySelector('.property-marker');
+                if (oldMarker) oldMarker.remove();
+                
+                // 添加新的房产标识
+                const marker = document.createElement('div');
+                marker.className = `property-marker level-${grid.level}`;
+                marker.style.backgroundColor = this.players[grid.owner].color;
+                cell.appendChild(marker);
+            }
+
+            showFeedback(message, type = 'info') {
+                const bubble = document.createElement('div');
+                bubble.className = 'feedback-bubble';
+                bubble.textContent = message;
+                bubble.style.border = `3px solid ${type === 'success' ? '#2ecc71' : type === 'error' ? '#e74c3c' : '#f39c12'}`;
+                
+                document.body.appendChild(bubble);
+                
+                setTimeout(() => {
+                    bubble.remove();
+                }, 2000);
+            }
+
+            showModal(title, content, buttons = []) {
+                return new Promise(resolve => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'modal-overlay';
+                    
+                    const modal = document.createElement('div');
+                    modal.className = 'modal-content';
+                    
+                    let buttonsHtml = '';
+                    if (buttons.length > 0) {
+                        buttonsHtml = `<div class="modal-buttons">${buttons.map(btn => 
+                            `<button class="modal-button ${btn.type}" onclick="window.modalResult('${btn.value}')">${btn.text}</button>`
+                        ).join('')}</div>`;
+                    }
+                    
+                    modal.innerHTML = `
+                        <div class="modal-header">${title}</div>
+                        <div class="modal-body">${content}</div>
+                        ${buttonsHtml}
+                    `;
+                    
+                    overlay.appendChild(modal);
+                    document.body.appendChild(overlay);
+                    
+                    window.modalResult = (value) => {
+                        overlay.remove();
+                        resolve(value);
+                    };
+                    
+                    // 如果没有按钮，2秒后自动关闭
+                    if (buttons.length === 0) {
+                        setTimeout(() => {
+                            overlay.remove();
+                            resolve();
+                        }, 2000);
+                    }
+                });
+            }
+
+            async showPurchaseDialog(price) {
+                const result = await this.showModal('购买领地', 
+                    `是否花费 ${price} 蘑菇购买此地？<br>当前余额: ${this.players[this.currentPlayer].mushrooms} 蘑菇`,
+                    [
+                        { text: '购买领地', type: 'primary', value: 'buy' },
+                        { text: '暂时放弃', type: 'secondary', value: 'skip' }
+                    ]
+                );
+                return result;
+            }
+
+            async showUpgradeDialog(price) {
+                const result = await this.showModal('升级房产', 
+                    `是否花费 ${price} 蘑菇升级到2级？<br>升级后过路费固定为600蘑菇`,
+                    [
+                        { text: '升级房产', type: 'primary', value: 'upgrade' },
+                        { text: '保持现状', type: 'secondary', value: 'skip' }
+                    ]
+                );
+                return result;
+            }
+
+            async showQuestionDialog(question, type, timeLimit) {
+                return new Promise(resolve => {
+                    const overlay = document.createElement('div');
+                    overlay.className = 'modal-overlay';
+                    
+                    const modal = document.createElement('div');
+                    modal.className = 'modal-content';
+                    
+                    let contentHtml = '';
+                    
+                    if (type === 'translation') {
+                        contentHtml = `
+                            <div class="question-content">
+                                <div class="question-title">翻译题</div>
+                                <p style="margin-bottom: 20px;">${question.chinese_original}</p>
+                                <div class="question-options">
+                                    <div class="question-option" data-value="A">${question.option_a}</div>
+                                    <div class="question-option" data-value="B">${question.option_b}</div>
+                                    <div class="question-option" data-value="C">${question.option_c}</div>
+                                    <div class="question-option" data-value="D">${question.option_d}</div>
+                                </div>
+                            </div>
+                        `;
+                    } else if (type === 'vocabulary') {
+                        contentHtml = `
+                            <div class="question-content">
+                                <div class="question-title">单词题: ${question.word}</div>
+                                <div class="question-options">
+                                    <div class="question-option" data-value="A">${question.option_a}</div>
+                                    <div class="question-option" data-value="B">${question.option_b}</div>
+                                    <div class="question-option" data-value="C">${question.option_c}</div>
+                                </div>
+                            </div>
+                        `;
+                    } else if (type === 'reading') {
+                        contentHtml = `
+                            <div class="question-content">
+                                <div class="question-title">阅读理解</div>
+                                <p style="margin-bottom: 20px; font-size: 14px;">${question.passage}</p>
+                                <p style="margin-bottom: 20px;"><strong>${question.question}</strong></p>
+                                <div class="question-options">
+                                    ${Object.entries(question.options).map(([key, value]) => 
+                                        `<div class="question-option" data-value="${key}">${key}: ${value}</div>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        `;
+                    } else if (type === 'word-selection') {
+                        const [first, second] = question.sentence.split('______');
+                        contentHtml = `
+                            <div class="question-content">
+                                <div class="question-title">选词填空</div>
+                                <p style="margin-bottom: 20px;">${first}____${second}</p>
+                                <div class="question-options">
+                                    ${Object.entries(question.options).map(([key, value]) => 
+                                        `<div class="question-option" data-value="${key}">${key}: ${value}</div>`
+                                    ).join('')}
+                                </div>
+                            </div>
+                        `;
+                    }
+                    
+                    modal.innerHTML = `
+                        <div class="modal-header">答题挑战</div>
+                        <div class="modal-body">${contentHtml}</div>
+                        <div class="countdown-timer" id="countdown">${timeLimit}</div>
+                    `;
+                    
+                    overlay.appendChild(modal);
+                    document.body.appendChild(overlay);
+                    
+                    // 倒计时
+                    let timeLeft = timeLimit;
+                    const timer = setInterval(() => {
+                        timeLeft--;
+                        const countdownEl = document.getElementById('countdown');
+                        countdownEl.textContent = timeLeft;
+                        
+                        if (timeLeft <= 10) {
+                            countdownEl.classList.add('warning');
+                        }
+                        
+                        if (timeLeft <= 0) {
+                            clearInterval(timer);
+                            overlay.remove();
+                            resolve({ correct: false, questionIndex: question.index });
+                        }
+                    }, 1000);
+                    
+                    // 选项点击
+                    modal.querySelectorAll('.question-option').forEach(option => {
+                        option.addEventListener('click', () => {
+                            clearInterval(timer);
+                            const selected = option.dataset.value;
+                            const correct = selected === question.answer;
+                            
+                            if (correct) {
+                                this.usedQuestions[type].add(question.index);
+                            }
+                            
+                            overlay.remove();
+                            resolve({ correct, questionIndex: question.index });
+                        });
+                    });
+                });
+            }
+
+            async showReadingQuestion(question, timeLimit) {
+                return this.showQuestionDialog(question, 'reading', timeLimit);
+            }
+
+            async showOpportunityCard(card) {
+                const result = await this.showModal('机会卡挑战', 
+                    `<p style="margin-bottom: 20px;">${card.question}</p>
+                    <input type="text" class="answer-input" placeholder="请输入答案" id="opportunity-answer">`,
+                    [
+                        { text: '提交答案', type: 'primary', value: 'submit' },
+                        { text: '放弃', type: 'secondary', value: 'skip' }
+                    ]
+                );
+                
+                if (result === 'submit') {
+                    const answer = document.getElementById('opportunity-answer').value.trim();
+                    const correct = this.checkOpportunityAnswer(answer, card.answer);
+                    return { correct };
+                }
+                
+                return { correct: false };
+            }
+
+            checkOpportunityAnswer(input, correct) {
+                // 简单的答案匹配（实际应更复杂）
+                const inputLower = input.toLowerCase();
+                const correctLower = correct.toLowerCase();
+                return inputLower.includes(correctLower) || correctLower.includes(inputLower);
+            }
+
+            showVictoryScreen(winner) {
+                const winnerData = this.players[winner];
+                const loserData = this.players[winner === 1 ? 2 : 1];
+                
+                const propertiesList = winnerData.properties.map(p => 
+                    `格子${p.position} - ${p.level === 2 ? '豪华别墅' : '普通房产'}`
+                ).join('<br>');
+                
+                this.showModal('游戏结束', 
+                    `<div class="victory-screen">
+                        <div class="victory-ghost" style="background: ${winnerData.color};"></div>
+                        <div class="victory-title">玩家 ${winner} 获胜！</div>
+                        <div class="final-stats">
+                            <p>最终蘑菇数: ${winnerData.mushrooms}</p>
+                            <p>拥有房产: ${winnerData.properties.length} 处</p>
+                        </div>
+                        <div class="property-list">
+                            <strong>房产列表:</strong><br>
+                            ${propertiesList || '无'}
+                        </div>
+                        <button class="modal-button primary" onclick="location.reload()">重新开始</button>
+                    </div>`
+                );
+            }
+
+            sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+            }
+
+            updateUI() {
+                // 更新蘑菇数显示
+                document.getElementById('player1-mushrooms').textContent = this.players[1].mushrooms;
+                document.getElementById('player2-mushrooms').textContent = this.players[2].mushrooms;
+                
+                // 更新当前玩家高亮
+                document.getElementById('player1-info').classList.toggle('active', this.currentPlayer === 1);
+                document.getElementById('player2-info').classList.toggle('active', this.currentPlayer === 2);
+                
+                // 更新骰子按钮状态
+                const diceButton = document.getElementById('dice-button');
+                if (this.gameOver) {
+                    diceButton.disabled = true;
+                } else if (this.skipNextTurn[this.currentPlayer]) {
+                    diceButton.disabled = true;
+                    diceButton.textContent = '跳过';
+                } else if (this.extraRolls[this.currentPlayer] > 0) {
+                    diceButton.disabled = false;
+                    diceButton.textContent = `×${this.extraRolls[this.currentPlayer]}`;
+                } else {
+                    diceButton.disabled = false;
+                    diceButton.textContent = '?';
+                }
+            }
+
+            endTurn() {
+                if (this.gameOver) return;
+                
+                // 处理跳回合
+                if (this.skipNextTurn[this.currentPlayer]) {
+                    this.skipNextTurn[this.currentPlayer] = false;
+                }
+                
+                // 处理连投
+                if (this.extraRolls[this.currentPlayer] > 0) {
+                    this.extraRolls[this.currentPlayer]--;
+                    if (this.extraRolls[this.currentPlayer] > 0) {
+                        this.updateUI();
+                        return; // 继续当前玩家回合
+                    }
+                }
+                
+                // 切换玩家
+                this.currentPlayer = this.currentPlayer === 1 ? 2 : 1;
+                this.diceEnabled = true;
+                this.updateUI();
+            }
+        }
+
+        // ==================== 启动游戏 ====================
+        const game = new Game();
+
+        // 骰子按钮事件
+        document.getElementById('dice-button').addEventListener('click', () => {
+            game.rollDice();
+        });
+
+        // 防止答题期间使用开发者工具
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>
